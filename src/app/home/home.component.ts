@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomeComponent implements OnInit {
     
-    wowNeatAString: string = "SpartaHack V";
+    wowNeatAString: string = "Wow, neat!";
 
     constructor() { }
 
