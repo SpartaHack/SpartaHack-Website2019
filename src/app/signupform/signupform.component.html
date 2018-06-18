@@ -1,11 +1,24 @@
 <div class="col-md-12">
     <h1> Sign Up Form </h1>
-
-    <label for="name-signup"><b>Email</b></label>
-    <input type="text" placeholder="Enter Name" name="name-signup" required>
-
-    <label for="email-signup"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email-signup" required>
-
-    <button type="submit" class="signupbtn">Sign Up</button>
+    <form name="form" (ngSubmit)="signup.form.valid && onSubmit()" #signup="ngForm" novalidate>
+    <div class="form-group">
+        <label for="name-signup">Name</label>
+        <input type="text" class="form-control" name="name-signup" [(ngModel)]="model.name" #lastName="ngModel" [ngClass]="{ 'is-invalid': signup.submitted && name.invalid }" required />
+        <div *ngIf="signup.submitted && name.invalid" class="invalid-feedback">
+            <div *ngIf="name.errors.required">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email-signup">Email</label>
+        <input type="text" class="form-control" name="email-signup" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': signup.submitted && email.invalid }" required email />
+        <div *ngIf="signup.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="signupbtn btn btn-primary" >Sign Up</button>
+    </div>
+    </form>
 </div>
+
