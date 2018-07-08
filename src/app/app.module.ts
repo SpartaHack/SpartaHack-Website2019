@@ -6,14 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
-import { SignupFormComponent} from './signupform/signupform.component';
-
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SignupFormComponent,
+    RegisterComponent,
     FaqComponent
 
   ],
