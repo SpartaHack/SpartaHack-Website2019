@@ -9,15 +9,14 @@
                     [(ngModel)]="userInformation.username" name="name"
                     #name="ngModel">
             </div>
-        </form>
-        <form>
             <div class="form-group">
                 <label for="pass">Password</label>
                 <input type="text" class="form-control" id="pass"
                     required
-                    [(ngModel)]="userInformation.username" name="pass"
+                    [(ngModel)]="userInformation.password" name="pass"
                     #pass="ngModel">
             </div>
+            <button (click)="onSubmit()" class="signupbtn btn btn-primary" >Login</button>
         </form>
     </div>
 </div>

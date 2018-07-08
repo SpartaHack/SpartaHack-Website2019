@@ -1,3 +1,4 @@
+import { LoginService } from './login/login.service';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AppRoutingModule } from './router.module';
@@ -9,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { ApplyComponent } from './apply/apply.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,12 @@ import { ApplyComponent } from './apply/apply.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
