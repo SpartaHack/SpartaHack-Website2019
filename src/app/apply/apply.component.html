@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1> Sign Up Form </h1>
+        <form name="form" (ngSubmit)="signup.form.valid && onSubmit()" #signup="ngForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" [(ngModel)]="userInformation.name" #name="ngModel" [ngClass]="{ 'is-invalid': name.touched && name.invalid }" required />
+                <div *ngIf="name.touched && name.invalid" class="invalid-feedback">
+                    <div>Name is required</div>
+                </div>
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email-signup" [(ngModel)]="userInformation.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required email />
+                <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
+                    <div>Email is required</div>
+                    <div>Email must be a valid email address</div>
+                </div>
+                <button type="submit" class="signupbtn btn btn-primary" >Sign Up</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

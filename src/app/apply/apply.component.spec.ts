@@ -1,24 +1,24 @@
-import { RegisterComponent } from './register.component';
+import { ApplyComponent } from './apply.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('FaqComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+  let component: ApplyComponent;
+  let fixture: ComponentFixture<ApplyComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      declarations: [ ApplyComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(ApplyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(RegisterComponent).toBeTruthy();
+    expect(ApplyComponent).toBeTruthy();
   });
 });
