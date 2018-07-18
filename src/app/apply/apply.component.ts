@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApplyService } from './apply.service';
+import { User } from '../shared/user/user.model';
 
 @Component({
     selector: 'apply',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ApplyComponent implements OnInit {
-    constructor() { }
+    constructor(
+        private applyService: ApplyService
+    ) { }
 
     userInformation = {
         name: "",
@@ -15,4 +19,18 @@ export class ApplyComponent implements OnInit {
     }
 
     ngOnInit() { }
+
+    onSubmit() {
+        let users: User[];
+        this.applyService.getUsers()
+                .subscribe(data => {
+                    users = data;
+                    for(let user of users) {
+                        if(user.name == this.userInformation.name) {
+                            console.log("name: " + user.name)
+                        }
+                    }
+                });
+    }
+
 }

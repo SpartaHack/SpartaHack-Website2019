@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { ApplyComponent } from './apply/apply.component';
+import { ApplyService } from './apply/apply.service';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    ApplyService,
   ],
   bootstrap: [AppComponent]
 })
