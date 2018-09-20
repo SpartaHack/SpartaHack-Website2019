@@ -1,0 +1,173 @@
+[
+    {
+        "answer": "Yes! As an MLH member event, all attendees must agree to the <a target=\"_blank\" href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>MLH Code of Conduct</a>",
+        "display": true,
+        "id": 21,
+        "placement": "home",
+        "priority": 22,
+        "question": "Do you have a Code of Conduct?",
+        "user_id": 10
+    },
+    {
+        "answer": "Reach out to us at <a href=\"mailto:hello@spartahack.com\">hello@spartahack.com</a> and we’ll get back to you.",
+        "display": true,
+        "id": 22,
+        "placement": "home",
+        "priority": 23,
+        "question": "I have a question that isn’t in this list!",
+        "user_id": 10
+    },
+    {
+        "answer": "You can park in <a href=\"http://maps.msu.edu/interactive/index.php?location=DPLE\" target=\"_blank\">Ramp 5</a> <strong>except</strong> for spaces on the first floor, spaces with a pay-by-plate designation, or 24-hour reserved spaces.",
+        "display": true,
+        "id": 27,
+        "placement": "live",
+        "priority": 28,
+        "question": "Where can I park?",
+        "user_id": 10
+    },
+    {
+        "answer": "Send them our way at <a href=\"mailto:hello@spartahack.com\">hello@spartahack.com</a> or come see us at the Help Desk on the first floor!",
+        "display": true,
+        "id": 34,
+        "placement": "live",
+        "priority": 35,
+        "question": "I have other questions!",
+        "user_id": 10
+    },
+    {
+        "answer": "Opening ceremony slides can be found <a href=\"https://drive.google.com/open?id=1OUvEu8a0w54WpaV8czX6JTS62UtTdTCRnUcsyzq-NF8\">here</a> and they include an overview of our judging procedure!",
+        "display": true,
+        "id": 36,
+        "placement": "live",
+        "priority": 37,
+        "question": "Where can I find your opening ceremony slides? What is your judging procedure?",
+        "user_id": null
+    },
+    {
+        "answer": "SpartaHack is a 36-hour programming marathon and competition held at Michigan State University on the weekend of January 19th-21st. We provide tons of meals, snacks, nap spaces, and swag, free of cost so all you need to worry about is making something cool.",
+        "display": true,
+        "id": 14,
+        "placement": "home",
+        "priority": 1,
+        "question": "What is SpartaHack?",
+        "user_id": 933
+    },
+    {
+        "answer": "Come see us at our Help Desk on the first floor.",
+        "display": true,
+        "id": 30,
+        "placement": "live",
+        "priority": 31,
+        "question": "Where can I borrow hardware?",
+        "user_id": 10
+    },
+    {
+        "answer": "Teams can have up to 4 students.",
+        "display": true,
+        "id": 31,
+        "placement": "live",
+        "priority": 32,
+        "question": "How many students can be on a team?",
+        "user_id": 10
+    },
+    {
+        "answer": "SpartaHack is January 19th in Wells Hall at Michigan State University. Check-in starts at 6pm then! Hope to see you there!",
+        "display": true,
+        "id": 37,
+        "placement": "home",
+        "priority": 38,
+        "question": "When and where is SpartaHack?",
+        "user_id": 933
+    },
+    {
+        "answer": "Applications are open! <a href=\"/apply\">Apply Here!</a>",
+        "display": true,
+        "id": 15,
+        "placement": "home",
+        "priority": 2,
+        "question": "How do I sign up for SpartaHack?",
+        "user_id": 9
+    },
+    {
+        "answer": "Definitely not! No programming experience is necessary; we have workshops and mentors at the event to help you learn about a variety of topics.",
+        "display": true,
+        "id": 16,
+        "placement": "home",
+        "priority": 17,
+        "question": "Do I need to know how to code to come to SpartaHack?",
+        "user_id": 933
+    },
+    {
+        "answer": "Ask questions in the <a href=\"http://bit.ly/sh17mentor\">Mentorship Slack</a> or submit a request with the SpartaHack mobile app!",
+        "display": true,
+        "id": 32,
+        "placement": "live",
+        "priority": 33,
+        "question": "How does your mentorship system work?",
+        "user_id": 11
+    },
+    {
+        "answer": "Anyone who is currently a student or has graduated within 12 months of SpartaHack! Graduate students, undergrads, and high-school students from any field of study are welcome.",
+        "display": true,
+        "id": 17,
+        "placement": "home",
+        "priority": 18,
+        "question": "Who can come to SpartaHack?",
+        "user_id": 933
+    },
+    {
+        "answer": "Whatever you want to! A lot of people use hackathons as an opportunity to learn a new piece of tech, while others work with tools they know already to build something more challenging. You can check out last year’s projects <a target=\"_blank\" href=\"https://spartahack2017.devpost.com/submissions\">here</a>.",
+        "display": true,
+        "id": 18,
+        "placement": "home",
+        "priority": 19,
+        "question": "What should I make at SpartaHack?",
+        "user_id": 933
+    },
+    {
+        "answer": "What are exfdsact nufgddmbers?",
+        "display": true,
+        "id": 134,
+        "placement": "live",
+        "priority": 3,
+        "question": "b5859ea4-e2b3-413e-a13b-f819ed3e7722",
+        "user_id": 933
+    },
+    {
+        "answer": "What are exfdsact nufgddmbers?",
+        "display": true,
+        "id": 135,
+        "placement": "live",
+        "priority": 3,
+        "question": "8c4fda76-ca8c-444b-881e-a5c70e8f3bfd",
+        "user_id": 933
+    },
+    {
+        "answer": "What are exfdsact nufgddmbers?",
+        "display": true,
+        "id": 136,
+        "placement": "live",
+        "priority": 3,
+        "question": "a342f95f-ee2a-4e98-a401-14a38ad2bc73",
+        "user_id": 933
+    },
+    {
+        "answer": "What are exfdsact nufgddmbers?",
+        "display": true,
+        "id": 137,
+        "placement": "live",
+        "priority": 3,
+        "question": "314048b0-0802-45f5-818b-d7ce29640644",
+        "user_id": 933
+    },
+    {
+        "answer": "What are exfdsact nufgddmbers?",
+        "display": true,
+        "id": 138,
+        "placement": "live",
+        "priority": 3,
+        "question": "b6765568-f463-4229-9fbd-fe065e35396f",
+        "user_id": 933
+    }
+]

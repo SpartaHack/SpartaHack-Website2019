@@ -16,7 +16,8 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['']);
     }
     onApply() {
-        this.router.navigate(['apply']);
+        // this.router.navigate(['apply']);
+        this.router.navigate(['subscribe']);
     }
     onLogIn() {
         this.router.navigate(['login']);

@@ -1,11 +1,16 @@
-<h1>FAQ:</h1>
-
-<div class="row">
-  <div class="col-sm">
-    <h3>Placeholder question</h3>
-  </div>
-
-  <div class="col-md">
-    <p>{{faqAnswer1}}
-  </div>
+<local-header [title]="'Frequently Asked Questions'"></local-header>
+<div class="row mt-4">
+    <div class="col-sm col-md-6 scrolling">
+        <div *ngFor="let faq of faqs; let first = first;">
+            <button class="btn faq-button btn-block" [ngClass]="{'faq-first': first}" (click)="onSelected(faq)">{{faq.question}}</button>
+        </div>
+    </div>
+    <div class="col-sm col-md-6 scrolling">
+        <div class="card">
+            <div class="card-body">
+                <h5>{{selected.question}}</h5>
+                <p [innerHTML]="selected.answer"></p>
+            </div>
+        </div>
+    </div>
 </div>

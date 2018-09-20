@@ -1,0 +1,30 @@
+.logo {
+    width: 90%;
+    margin: 2em auto;
+    display: block;
+}
+.logo-font {
+    font-family: 'StormFaze', sans-serif;
+    font-size: 2.75rem;
+    text-align: center;
+    color: #20044f;
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+    @media (min-width: 1000px) {
+        font-size: 4.5rem;
+    }
+}
+p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+.btn {
+    background-color: #20044f;
+}

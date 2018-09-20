@@ -3,8 +3,14 @@
     max-height: 64px;
 }
 .navbar {
-    background-color: #eeeeee;
+    background-color: #5f1a69;
 }
 .navbar-nav {
     float: right;
+}
+.nav-link {
+    color: white !important;
+}
+.nav-link:hover {
+    cursor: pointer;
 }
