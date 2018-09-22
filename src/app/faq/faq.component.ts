@@ -16,6 +16,9 @@ export class FaqComponent implements OnInit {
 
   ngOnInit() {
     this.faqs = this.route.snapshot.data['faqs'];
+
+    this.faqs.sort((n1,n2) => n1.priority - n2.priority);
+
     this.selected = this.faqs[0];
   }
 

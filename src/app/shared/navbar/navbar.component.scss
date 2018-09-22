@@ -5,12 +5,16 @@
 .navbar {
     background-color: #5f1a69;
 }
-.navbar-nav {
-    float: right;
+.navbar-collapse {
+    justify-content: flex-end; 
 }
 .nav-link {
     color: white !important;
+    font-size: 1.25rem;
 }
 .nav-link:hover {
     cursor: pointer;
+}
+.navbar-toggler {
+    margin-left: auto;
 }

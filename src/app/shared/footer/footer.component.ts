@@ -12,19 +12,19 @@ export class FooterComponent implements OnInit {
 
     ngOnInit() { }
 
-    homeClick() {
-        this.router.navigate(['']);
+    goToFacebook() {
+        window.location.href = "https://www.facebook.com/spartahackmsu/";
     }
 
-    resumeClick() {
-        this.router.navigate(['resume']);
+    goToTwitter() {
+        window.location.href = "https://twitter.com/SpartaHack";
     }
 
-    portfolioClick() {
-        this.router.navigate(['portfolio']);
+    goToInsta() {
+        window.location.href = "https://www.instagram.com/spartahackmsu/";
     }
 
-    aboutClick() {
-        this.router.navigate(['about']);
+    goToGitHub() {
+        window.location.href = "https://github.com/SpartaHack";
     }
 }

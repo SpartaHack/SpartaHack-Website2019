@@ -67,11 +67,11 @@ export class HomeComponent implements OnInit {
     }
 
     prospectusClick() {
-        window.location.href = ""
+        window.location.href = "https://drive.google.com/open?id=1l0X8r0GH8c0sKov5Lm_FBU45U2YrgbXS";
     }
 
     tierClick() {
-        window.location.href = ""
+        window.location.href = "https://drive.google.com/open?id=1mTQGKFJYCI8Y-v9X7MZiiy4aRwm0Eg9t";
     }
 
     constructor(private router: Router) { }

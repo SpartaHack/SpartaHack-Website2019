@@ -22,9 +22,13 @@ p {
 }
 h3 {
     text-align: center;
-    text-decoration-line: underline;
+    //text-decoration-line: underline;
     text-decoration-color: white;
+}
+.location {
+    letter-spacing: .1rem;
 }
 .btn {
     background-color: #20044f;
+    border-color: #ff0062;
 }

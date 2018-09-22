@@ -25,4 +25,7 @@ export class NavbarComponent implements OnInit {
     onFaq() {
         this.router.navigate(['faq']);
     }
+    onContact() {
+        window.scrollTo(0,document.body.scrollHeight);
+    }
 }
