@@ -1,0 +1,29 @@
+.faq-button {
+    white-space: normal;
+    background: rgba(255,255,255,0.5);
+    border-top: 2px solid black;
+    border-radius: 0
+}
+.faq-first {
+    border-top: 0;
+}
+
+.card {
+    height: 100%;
+    background-color: #45044f;
+}
+
+.scrolling {
+    display: inline-block;
+    position: relative;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 0;
+}
+
+.oversized-p {
+    font-size: 1.25rem;
+}

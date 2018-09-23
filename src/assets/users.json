@@ -1,0 +1,10 @@
+[
+    {
+        "username": "HSanders",
+        "admin": true
+    },
+    {
+        "username": "NKurt",
+        "admin": false
+    }
+]

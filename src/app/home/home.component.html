@@ -1,11 +1,47 @@
-<div class="row">
-    <div class="col-sm">
-        <p>Column 1</p>
-    </div>
-    <div class="col-sm">
-        <p>{{wowNeatAString}}</p>
-    </div>
-    <div class="col-sm">
-        <p>Column 3</p>
+<div class="row justify-content-center mb-4">
+    <div class="col-10 col-md-6">
+        <img class="logo" src="assets/images/flat-logo.svg" [@logoIn]="">
+        <svg [@textEnter]="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530.55 82.71"><title>Asset 10</title><g id="e6709e85-1f4d-42ad-be39-9daebd2b1931" data-name="Layer 2"><g id="830a1afb-2018-4e47-a786-1eee09ce1ce8" data-name="Layer 64"><text transform="translate(1 62.2)" font-size="72" fill="#20044f" stroke="#ff0062" stroke-miterlimit="10" stroke-width="2" font-family="Stormfaze-Regular, Stormfaze">s<tspan x="46.08" y="0" letter-spacing="-0.08em">p</tspan><tspan x="86.11" y="0" letter-spacing="0em">a</tspan><tspan x="135.93" y="0" letter-spacing="-0.03em">r</tspan><tspan x="182.3" y="0" letter-spacing="-0.09em">t</tspan><tspan x="218.16" y="0" letter-spacing="0em">ah</tspan><tspan x="319.03" y="0" letter-spacing="-0.04em">a</tspan><tspan x="365.9" y="0">ck v</tspan></text></g></g></svg>
     </div>
 </div>
+<div [@bodyEnter]="">
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-6">
+            <h3>January 18th - 20th, 2019</h3>
+        </div>
+        <div class="col-10 col-md-6 location">
+            <h3>East Lansing, Michigan</h3>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <p>SpartaHack V is Michigan State University's annual student-run hackathon. 
+                On the weekend of January 18th, we're bringing together students of all skill levels and disciplines to get creative with tech, 
+                connect with peers and professionals, and forget the words "I can't." We're excited to see what you will create!</p>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <p>Want to know more?</p>
+            <button class="btn btn-primary btn-lg btn-block" (click)="mailClick()">Sign up for the mailing list!</button>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <p>Interested in sponsoring for 2018? Email us at <a href="mailto:sponsor@spartahack.com">sponsor@spartahack.com</a></p>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-10 offset-1 col-md-6 col-lg-3 offset-md-0 offset-lg-2 mb-2">
+            <button class="btn btn-primary btn-lg btn-block" (click)="prospectusClick()">View Prospectus</button>
+        </div>
+        <div class="col-10 offset-1 col-md-6 col-lg-3 offset-md-0 offset-lg-2">
+            <button class="btn btn-primary btn-lg btn-block" (click)="tierClick()">View Sponsor Tiers</button>
+        </div>
+    </div>
+</div>
+
