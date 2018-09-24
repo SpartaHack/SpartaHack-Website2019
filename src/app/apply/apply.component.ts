@@ -15,4 +15,6 @@ export class ApplyComponent implements OnInit {
     }
 
     ngOnInit() { }
+
+    onSubmit() {}
 }
