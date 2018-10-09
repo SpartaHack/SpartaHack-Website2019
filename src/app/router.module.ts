@@ -17,7 +17,7 @@ const routes: Routes = [
         }    
     },
     { path: 'login', component: LoginComponent },
-    // { path: 'apply', component: ApplyComponent}
+    { path: 'apply', component: ApplyComponent},
     { path: 'subscribe', component: MailingListComponent }
 ];
 
