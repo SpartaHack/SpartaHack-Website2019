@@ -4,45 +4,50 @@
         <form name="form" (ngSubmit)="signup.form.valid && onSubmit()" #signup="ngForm" novalidate>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" [(ngModel)]="userInformation.name" #name="ngModel" [ngClass]="{ 'is-invalid': name.touched && name.invalid }" required />
+                <input type="text" class="form-control" name="name" [(ngModel)]="apply.name" #name="ngModel" [ngClass]="{ 'is-invalid': name.touched && name.invalid }" required />
                 <div *ngIf="name.touched && name.invalid" class="invalid-feedback">
                     <div>Name is required.</div>
                 </div>
-                <label for="email">Email</label>
-                <input type="text" class="form-control" name="email-signup" [(ngModel)]="userInformation.email" #email="ngModel" [ngClass]="{ 'is-invalid': email.touched && email.invalid }" required email />
-                <div *ngIf="email.touched && email.invalid" class="invalid-feedback">
-                    <div>Email is required</div>
-                    <div>Email must be a valid email address.</div>
+                <label for="birth_day">Birthday Day</label>
+                <input type="number" class="form-control" name="birth_date" [(ngModel)]="apply.birth_day" #birth_day="ngModel" [ngClass]="{ 'is-invalid': birth_day.touched && birth_day.invalid }" required />
+                <div *ngIf="birth_day.touched && birth_day.invalid" class="invalid-feedback">
+                    <div>Birthday Day is required.</div>
                 </div>
-                <label for="birthday_date">Birthday Day</label>
-                <input type="date" class="form-control" name="birthday_date" [(ngModel)]="userInformation.birthday_date" #birthday_date="ngModel" [ngClass]="{ 'is-invalid': birthday_date.touched && birthday_date.invalid }" required />
-                <div *ngIf="birthday_date.touched && birthday_date.invalid" class="invalid-feedback">
-                    <div>Birthday is required.</div>
+                <label for="birth_month">Birthday Month</label>
+                <input type="number" class="form-control" name="birth_month" [(ngModel)]="apply.birth_month" #birth_month="ngModel" [ngClass]="{ 'is-invalid': birth_month.touched && birth_month.invalid }" required />
+                <div *ngIf="birth_month.touched && birth_month.invalid" class="invalid-feedback">
+                    <div>Birthday Month is required.</div>
                 </div>
+                <label for="birth_year">Birthday Year</label>
+                <input type="number" class="form-control" name="birth_year" [(ngModel)]="apply.birth_year" #birth_year="ngModel" [ngClass]="{ 'is-invalid': birth_year.touched && birth_year.invalid }" required />
+                <div *ngIf="birth_year.touched && birth_year.invalid" class="invalid-feedback">
+                    <div>Birthday Year is required.</div>
+                </div>
+
                 <label for="education">Education</label>
-                <input type="text" class="form-control" name="education" [(ngModel)]="userInformation.education" #education="ngModel" [ngClass]="{ 'is-invalid': education.touched && education.invalid }" required  />
+                <input type="text" class="form-control" name="education" [(ngModel)]="apply.education" #education="ngModel" [ngClass]="{ 'is-invalid': education.touched && education.invalid }" required  />
                 <div *ngIf="education.touched && education.invalid" class="invalid-feedback">
-                    <div>Education is required.</div>   
+                    <div>Education is required.</div>
                 </div>
                 <label for="university">University</label>
-                <input type="text" class="form-control" name="university" [(ngModel)]="userInformation.university" #university="ngModel" [ngClass]="{ 'is-invalid': university.touched  }"  />    
-                
+                <input type="text" class="form-control" name="university" [(ngModel)]="apply.university" #university="ngModel" [ngClass]="{ 'is-invalid': university.touched  }"  />
+
                 <label for="other_university">Other University</label>
-                <input type="text" class="form-control" name="other_university" [(ngModel)]="userInformation.other_university" #other_university="ngModel" [ngClass]="{ 'is-invalid': other_university.touched }"  />
-                
+                <input type="text" class="form-control" name="other_university" [(ngModel)]="apply.other_university" #other_university="ngModel" [ngClass]="{ 'is-invalid': other_university.touched }"  />
+
                 <label for="travel_origin">Travel Origin</label>
-                <input type="text" class="form-control" name="travel_origin" [(ngModel)]="userInformation.travel_origin" #travel_origin="ngModel" [ngClass]="{ 'is-invalid': travel_origin.touched }" />
-               
+                <input type="text" class="form-control" name="travel_origin" [(ngModel)]="apply.travel_origin" #travel_origin="ngModel" [ngClass]="{ 'is-invalid': travel_origin.touched }" />
+
                 <label for="grad_season">Graduation Season</label>
-                <input type="text" class="form-control" name="grad_season" [(ngModel)]="userInformation.grad_season" #grad_season="ngModel" [ngClass]="{ 'is-invalid': grad_season.touched && grad_season.invalid }" required  />
+                <input type="text" class="form-control" name="grad_season" [(ngModel)]="apply.grad_season" #grad_season="ngModel" [ngClass]="{ 'is-invalid': grad_season.touched && grad_season.invalid }" required  />
                 <div *ngIf="grad_season.touched && grad_season.invalid" class="invalid-feedback">
-                    <div>Graduation season is required.</div>   
+                    <div>Graduation season is required.</div>
                 </div>
 
                 <label for="grad_year">Graduation Year</label>
-                <input type="text" class="form-control" name="grad_year" [(ngModel)]="userInformation.grad_year" #grad_year="ngModel" [ngClass]="{ 'is-invalid': grad_year.touched && grad_year.invalid }" required  />
+                <input type="text" class="form-control" name="grad_year" [(ngModel)]="apply.grad_year" #grad_year="ngModel" [ngClass]="{ 'is-invalid': grad_year.touched && grad_year.invalid }" required  />
                 <div *ngIf="grad_year.touched && grad_year.invalid" class="invalid-feedback">
-                    <div>Graduation year is required.</div>   
+                    <div>Graduation year is required.</div>
                 </div>
 
                 <label for="major">Major</label>
@@ -52,7 +57,7 @@
                     <option>Other</option>
                 </select>
                 <div *ngIf="major.touched && major.invalid" class="invalid-feedback">
-                    <div>Major is required.</div>   
+                    <div>Major is required.</div>
                 </div>
 
                 <label for="hackathons">Hackathons attended</label>
@@ -65,43 +70,38 @@
                     <option>5+</option>
                 </select>
                 <div *ngIf="hackathons.touched && hackathons.invalid" class="invalid-feedback">
-                    <div>Number of Hackathons attended in the past is required.</div>   
+                    <div>Number of Hackathons attended in the past is required.</div>
                 </div>
 
                 <label for="github">Github</label>
-                <input type="text" class="form-control" name="github" [(ngModel)]="userInformation.github" #github="ngModel" [ngClass]="{ 'is-invalid': github.touched }" />
-               
+                <input type="text" class="form-control" name="github" [(ngModel)]="apply.github" #github="ngModel" [ngClass]="{ 'is-invalid': github.touched }" />
+
                 <label for="linkedin">LinkedIn</label>
-                <input type="text" class="form-control" name="linkedin" [(ngModel)]="userInformation.linkedin" #linkedin="ngModel" [ngClass]="{ 'is-invalid': linkedin.touched }" />
-                
+                <input type="text" class="form-control" name="linkedin" [(ngModel)]="apply.linkedin" #linkedin="ngModel" [ngClass]="{ 'is-invalid': linkedin.touched }" />
+
                 <label for="website">Website</label>
-                <input type="text" class="form-control" name="website" [(ngModel)]="userInformation.website" #website="ngModel" [ngClass]="{ 'is-invalid': website.touched }" />
-               
+                <input type="text" class="form-control" name="website" [(ngModel)]="apply.website" #website="ngModel" [ngClass]="{ 'is-invalid': website.touched }" />
+
                 <label for="devpost">Devpost</label>
-                <input type="text" class="form-control" name="website" [(ngModel)]="userInformation.devpost" #devpost="ngModel" [ngClass]="{ 'is-invalid': devpost.touched }" />
-               
+                <input type="text" class="form-control" name="website" [(ngModel)]="apply.devpost" #devpost="ngModel" [ngClass]="{ 'is-invalid': devpost.touched }" />
+
                 <label for="other_link">Other Link</label>
-                <input type="text" class="form-control" name="other_link" [(ngModel)]="userInformation.other_link" #other_link="ngModel" [ngClass]="{ 'is-invalid': other_link.touched }" />
-               
+                <input type="text" class="form-control" name="other_link" [(ngModel)]="apply.other_link" #other_link="ngModel" [ngClass]="{ 'is-invalid': other_link.touched }" />
+
                 <label for="statement">Statement</label>
-                <input type="text" class="form-control" name="statement" [(ngModel)]="userInformation.statement" #statement="ngModel" [ngClass]="{ 'is-invalid': statement.touched }" />
-               
+                <textarea type="text" class="form-control" name="statement" [(ngModel)]="apply.statement" #statement="ngModel" [ngClass]="{ 'is-invalid': statement.touched }"></textarea>
+
                 <label for="race">Race</label>
-                <input type="text" class="form-control" name="race" [(ngModel)]="userInformation.race" #race="ngModel" [ngClass]="{ 'is-invalid': race.touched }" />
-               
+                <input type="text" class="form-control" name="race" [(ngModel)]="apply.race" #race="ngModel" [ngClass]="{ 'is-invalid': race.touched }" />
+
                 <label for="gender">Gender</label>
-                <input type="text" class="form-control" name="gender" [(ngModel)]="userInformation.gender" #gender="ngModel" [ngClass]="{ 'is-invalid': gender.touched }" />
-               
+                <input type="text" class="form-control" name="gender" [(ngModel)]="apply.gender" #gender="ngModel" [ngClass]="{ 'is-invalid': gender.touched }" />
+
                 <label for="outside_usa">Outside North America?</label>
-                <input type="text" class="form-control" name="outside_usa" [(ngModel)]="userInformation.outside_usa" #outside_usa="ngModel" [ngClass]="{ 'is-invalid': outside_usa.touched }" />
-               
-
-
+                <input type="text" class="form-control" name="outside_usa" [(ngModel)]="apply.outside_usa" #outside_usa="ngModel" [ngClass]="{ 'is-invalid': outside_usa.touched }" />
 
                 <button type="submit" class="signupbtn btn btn-primary" >Sign Up</button>
             </div>
         </form>
     </div>
 </div>
-
-
