@@ -1,9 +1,3 @@
-.faq-button {
-
-}
-.faq-first {
-    border-top: 0;
-}
 .scrolling {
     display: inline-block;
     position: relative;
@@ -15,49 +9,77 @@
     padding: 0;
 
 }
-
-.card {
-    height: 100%;
-    color: black;
-}
-
 #faq-list {
+  //Fixes awkward border-radius interactions
+  height: 380px;
+  margin-top: 10px;
 
   //Moves the scroll bar to the left hand side
   transform: scaleX(-1);
   div{
     transform: scaleX(-1);
 
-
-    width: 95%;
-    margin: auto;
     font-size: 1.5rem;
     button{
+      max-width: 95%;
+      margin: auto;
+
+      //Text wrap on the buttons
       white-space: normal;
-      //background: rgba(255,255,255,0.5);
-      border-bottom: 2px solid #e0cadc;
-      //border-bottom: 1px solid black;
+
+      border-bottom: 2px solid #f0ebef;
       border-radius: 0;
+
       background: none;
       color: #ebebeb;
     }
 
+    button:focus, button:hover, button:active{
+      max-width: 100%;
+      background: #f0ebef;
+      border: none;
+      color: black;
+      outline: none;
+    }
   }
-
-  div:hover {
-    width: 100%;
-    border: none;
-  }
-
 }
+#content-area{
+  background: #f0ebef;
+  border-radius: 10px;
+
+  div {
+    height: 100%;
+    color: black;
+    border: none;
+
+    div{
+      h5 {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+      }
+
+      div {
+        height: 2px;
+        width: 80%;
+        margin: 2% auto 2% auto;
+        background: #dbdbdb;
+      }
+    }
+  }
+}
+
 ::-webkit-scrollbar{
   width: 2.5%;
   background-color: rgba(0,0,0,0);
 }
 ::-webkit-scrollbar-track {
-  background-color: #f6f6f6;
+  //background: #f0ebef;
+  background: #5f1a69;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  //background-color:
+  //background: #5f1a69;
+  background: #f0ebef;
+  border-radius: 10px;
 }

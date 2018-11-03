@@ -5,10 +5,11 @@
             <button class="btn faq-button btn-block" [ngClass]="{'faq-first': first}" (click)="onSelected(faq)">{{faq.question}}</button>
         </div>
     </div>
-    <div class="col-sm col-md-6 scrolling">
+    <div class="col-sm col-md-6 scrolling" id="content-area">
         <div class="card">
             <div class="card-body">
                 <h5>{{selected.question}}</h5>
+                <div></div>
                 <p [innerHTML]="selected.answer"></p>
             </div>
         </div>
