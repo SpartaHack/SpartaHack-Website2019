@@ -1,6 +1,6 @@
 <local-header [title]="'Frequently Asked Questions'"></local-header>
 <div class="row mt-4">
-    <div class="col-sm col-md-6 scrolling">
+    <div class="col-sm col-md-6 scrolling" id="faq-list">
         <div *ngFor="let faq of faqs; let first = first;">
             <button class="btn faq-button btn-block" [ngClass]="{'faq-first': first}" (click)="onSelected(faq)">{{faq.question}}</button>
         </div>
