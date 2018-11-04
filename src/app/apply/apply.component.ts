@@ -1,4 +1,9 @@
+import { Apply } from './apply.model';
 import { Component, OnInit } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ApplyService } from './apply.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 
 @Component({
     selector: 'apply',
@@ -7,14 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ApplyComponent implements OnInit {
-    constructor() { }
+    constructor(private applyService: ApplyService) {     }
 
-    userInformation = {
-        name: "",
-        email: "",
-    }
+    application: Apply;
 
     ngOnInit() { }
 
-    onSubmit() {}
+    onSubmit() {
+        // this.applyService.postApplication(this.application).subscribe(data => {
+        //     if (data == true){
+        //         console.log("true")
+        //     }
+        // })
+    }
 }
