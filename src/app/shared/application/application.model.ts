@@ -1,5 +1,4 @@
-export class Apply {
-  name: string = '';
+export class Application {
   user_id: number;
   birth_day: number;
   bith_month: number;
@@ -18,10 +17,11 @@ export class Apply {
   devpost: string = '';
   other_link: string = '';
   statement: string = '';
-  created_at: string = '';
+  created_at: number = 0;
+  updated_at: number = 0;
   race: string = '';
   gender: string = '';
   outside_north_america: string = '';
+  status: string = '';
   accepted_date: number;
-
 }

@@ -1,8 +1,7 @@
-import { Apply } from './apply.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Application } from '../shared/application/application.model';
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { ApplyService } from './apply.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ApplicationService } from '../shared/application/application.service';
 
 
 @Component({
@@ -12,17 +11,38 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 
 export class ApplyComponent implements OnInit {
-    constructor(private applyService: ApplyService) {     }
 
-    application: Apply;
+    submitted: boolean = false;
 
-    ngOnInit() { }
+    error = "";
+
+    application: Application = new Application();
+
+    constructor(
+        private applyService: ApplicationService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) { }
+
+    ngOnInit() { 
+        //Signed in check
+        if(this.route.snapshot.data['user'].not_signed_in)
+        {
+            //redirect to login
+            this.router.navigate(['login']);
+        }
+        else
+        {
+            this.application.user_id = this.route.snapshot.data['user'].user_id
+        }
+    }
 
     onSubmit() {
-        // this.applyService.postApplication(this.application).subscribe(data => {
-        //     if (data == true){
-        //         console.log("true")
-        //     }
-        // })
+        this.applyService.postApplication(this.application).subscribe(response => {
+
+        },
+        error => {
+            this.error = error;
+        })
     }
 }

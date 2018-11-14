@@ -20,7 +20,7 @@ export class FaqService {
 
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set
-        return this.httpClient.get<Faq[]>("https://api.spartahack.com/faqs", httpOptions)
+        return this.httpClient.get<Faq[]>(environment.baseUrl + "/faqs", httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
