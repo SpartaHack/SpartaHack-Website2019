@@ -1,10 +1,12 @@
 import { AccountService } from './../account.service';
 import { UserInput } from './../account.model';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'create-account',
-    templateUrl: 'create-account.component.html'
+    templateUrl: 'create-account.component.html',
+    styleUrls: ['create-account.component.scss']
 })
 
 export class CreateAccountComponent {
@@ -18,7 +20,14 @@ export class CreateAccountComponent {
     //Model for the form's User Input
     userInput: UserInput = new UserInput();
 
-    constructor(private accountService: AccountService) { }
+    constructor(
+        private accountService: AccountService,
+        private router: Router
+    ) { }
+
+    onLogin() {
+        this.router.navigate(['login']);
+    }
 
     onSubmit() {
         

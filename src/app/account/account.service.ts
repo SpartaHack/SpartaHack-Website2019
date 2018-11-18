@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from '../../../node_modules/rxjs';
 import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,6 +16,7 @@ export class AccountService {
 
     constructor(
         private httpClient: HttpClient,
+        private router: Router
     ) { }
 
     createAccount(newUser: UserInput): Observable<any> {
@@ -32,8 +34,13 @@ export class AccountService {
         )
     }
 
-    static isUserLoggedIn(): boolean {
-        return localStorage.getItem('user id') != null
+    logout() {
+        //Unset session variables and return to home
+        window.sessionStorage.removeItem('application id');
+        window.sessionStorage.removeItem('user id');
+        window.sessionStorage.removeItem('auth token');
+
+        this.router.navigate(['']);
     }
 
     private handleError(error: HttpErrorResponse) {

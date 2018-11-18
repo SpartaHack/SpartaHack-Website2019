@@ -6,7 +6,8 @@ import { Credentials } from '../account.model';
 
 @Component({
     selector: 'login',
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    styleUrls: ['login.component.scss']
 })
 
 export class LoginComponent implements OnInit {
@@ -22,17 +23,21 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() { }
 
+    onCreate() {
+        this.router.navigate(['create']);
+    }
+
     onSubmit() {
         this.error = "";
 
         this.accountService.login(this.userInput).subscribe(
             response => { //Successful login
                 //Save variables needed to load dashboard
-                window.localStorage.setItem('application id', String(response.application_id))
-                window.localStorage.setItem('user id', String(response.id))
+                window.sessionStorage.setItem('application id', String(response.application_id))
+                window.sessionStorage.setItem('user id', String(response.id))
 
                 //Required to be passed in every header for restricted access pages
-                window.localStorage.setItem('auth token', String(response.auth_token))
+                window.sessionStorage.setItem('auth token', String(response.auth_token))
 
                 //Navigate Based on application status
                 if(response.application_id == null)

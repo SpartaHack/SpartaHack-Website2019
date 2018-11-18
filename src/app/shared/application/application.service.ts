@@ -1,18 +1,9 @@
-import { Application } from './application.model';
+import { Application, ApplicationSubmission } from './application.model';
 import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
-const httpOptions = {
-    headers: new HttpHeaders(
-        { 
-            'Content-Type': 'application/json',
-            'X-WWW-USER-TOKEN': window.localStorage.getItem('auth token')
-        }
-    )
-};
 
 @Injectable()
 export class ApplicationService {
@@ -21,11 +12,20 @@ export class ApplicationService {
         private httpClient: HttpClient,
     ) { }
 
-    postApplication(application: Application): Observable<any> {
+    postApplication(submission: ApplicationSubmission): Observable<any> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
 
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set
-        return this.httpClient.post<any>(environment.baseUrl + "/applications/", application, httpOptions)
+        return this.httpClient.post<any>(environment.baseUrl + "/applications", submission, httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
@@ -33,12 +33,25 @@ export class ApplicationService {
 
     getApplication(appID: number): Observable<Application> {
 
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set
         return this.httpClient.get<Application>(environment.baseUrl + "/applications/" + appID, httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
+    }
+
+    hasUserApplied() {
+        return window.sessionStorage.getItem('application id') != "null";
     }
 
     private handleError(error: HttpErrorResponse) {

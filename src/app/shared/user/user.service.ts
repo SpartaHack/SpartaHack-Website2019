@@ -5,15 +5,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-const httpOptions = {
-    headers: new HttpHeaders(
-        { 
-            'Content-Type': 'application/json',
-            'X-WWW-USER-TOKEN': window.localStorage.getItem('auth token')
-        }
-    )
-};
-
 @Injectable()
 export class UserService {
 
@@ -22,11 +13,25 @@ export class UserService {
     ) { }
 
     getUser(userId: number): Observable<User> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
         //Add a new User
         return this.httpClient.get<User>(environment.baseUrl + "/users/" + userId, httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
+    }
+
+    isUserLoggedIn(): boolean {
+        return Number(window.sessionStorage.getItem('user id')) != 0
     }
 
     private handleError(error: HttpErrorResponse) {

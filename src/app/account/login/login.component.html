@@ -9,7 +9,6 @@
     <div class="col-sm col-md-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title" style="color: black;">Account Information</h5>
                 <form #accountForm="ngForm" *ngIf="!submitted">
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -26,6 +25,7 @@
                     <button [disabled]="!accountForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
                 </form>
                 <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                <p class="new mt-3">New? Create an account <a (click)="onCreate()">here</a></p>
             </div>
         </div>
     </div>

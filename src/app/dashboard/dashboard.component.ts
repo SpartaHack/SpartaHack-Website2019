@@ -27,7 +27,11 @@ export class DashboardComponent implements OnInit {
             //redirect to login
             this.router.navigate(['login']);
         }
-        else if(this.route.snapshot.data['applicaiton'].not_signed_up)
+        else
+        {
+            this.user = this.route.snapshot.data['user'];
+        }
+        if(this.route.snapshot.data['application'].not_signed_up)
         {
             this.not_signed_up = true;
         }

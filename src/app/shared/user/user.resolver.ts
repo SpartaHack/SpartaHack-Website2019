@@ -10,8 +10,8 @@ export class UserResolver implements Resolve<any> {
     constructor(private userService: UserService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any>|Promise<any>|any {
-        if(AccountService.isUserLoggedIn()) {
-            return this.userService.getUser(Number(localStorage.getItem('user id')))
+        if(this.userService.isUserLoggedIn()) {
+            return this.userService.getUser(Number(window.sessionStorage.getItem('user id')))
         } 
         else {
             console.log("Not Signed In!");

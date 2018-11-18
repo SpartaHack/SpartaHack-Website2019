@@ -2,20 +2,53 @@
 
 <div class="row justify-content-center">
     <div class="col-sm col-md-8 mt-4"> 
-        <h3 style="text-align: center;">In order to attend SpartaHack V, we need a bit more information</h3>
+        <h3 style="text-align: center;">Fill out the form below!</h3>
     </div>
 </div>
 <div class="row justify-content-center">
         <div class="col-sm col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 *ngIf="!submitted" class="card-title" style="color: black;">Apply Now!</h5>
-                    <form *ngIf="!submitted" name="form" (ngSubmit)="signup.form.valid && onSubmit()" #signup="ngForm" novalidate>
+                    <h5 *ngIf="submitted" class="card-title" style="color: black; text-align: center;">You've Applied!</h5>
+                    <form *ngIf="!submitted" name="form" #applyForm="ngForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name"
-                                required [(ngModel)]="application.name" name="name" #name="ngModel">
-                            <small *ngIf="!(name.valid || name.pristine)" class="form-text text-danger">Name is Required</small>
+                            <label for="education">Education Level (Currently Pursuing)</label>
+                            <select required class="form-control" [(ngModel)]="application.education" name="education" #education="ngModel">
+                                <option value="" disabled selected>Select level</option>
+                                <option *ngFor="let l of educationLevels" [ngValue]="l">{{l}}</option>
+                            </select>
+                            <small *ngIf="!(education.valid || education.pristine)" class="form-text text-danger">Education Level is Required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="major">What is your current Major?</label>
+                            <input type="string" class="form-control" id="major" placeholder="Eg. Computer Science"
+                                required [(ngModel)]="application.major[0]" name="major" #major="ngModel">
+                            <small *ngIf="!(major.valid || major.pristine)" class="form-text text-danger">Major is Required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="university">What School are you attending?</label>
+                            <input type="text" class="form-control" id="university" placeholder="Eg. Michigan State"
+                                required [(ngModel)]="application.university" name="university" #university="ngModel">
+                            <small *ngIf="!(university.valid || university.pristine)" class="form-text text-danger">University is Required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="graduation_season">Graduation Date (est.)</label>
+                            <div class="form-inline">
+                                <select required class="form-control" [(ngModel)]="application.graduation_season" name="graduation_season" #graduations="ngModel">
+                                    <option value="" disabled selected>Select Season</option>
+                                    <option *ngFor="let s of graduationSeasons" [ngValue]="s">{{s}}</option>
+                                </select>
+                                <small *ngIf="!(graduations.valid || graduations.pristine)" class="form-text text-danger">Graduation Season is Required</small>
+                                <input type="number" class="form-control" id="graduation_year" placeholder="2019"
+                                    required [(ngModel)]="application.graduation_year" name="graduation_year" #graduationy="ngModel">
+                                <small *ngIf="!(graduationy.valid || graduationy.pristine)" class="form-text text-danger">Graduation Year is Required</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="travel_origin">Where are you traveling from?</label>
+                            <input type="text" class="form-control" id="travel_origin" placeholder="City or General Location"
+                                required [(ngModel)]="application.travel_origin" name="travel_origin" #travel_origin="ngModel">
+                            <small *ngIf="!(travel_origin.valid || travel_origin.pristine)" class="form-text text-danger">Travel is Required</small>
                         </div>
                         <div class="form-group">
                             <label for="birthday">Birthday</label>
@@ -25,90 +58,62 @@
                         </div>
                         <div class="form-group">
                             <label for="race">Race</label>
-                            <input type="text" class="form-control" id="race" placeholder="race"
-                                required [(ngModel)]="application.race" name="race" #race="ngModel">
+                            <select required class="form-control" [(ngModel)]="application.race[0]" name="race" #race="ngModel">
+                                <option value="" disabled selected>Select Race</option>
+                                <option *ngFor="let r of races" [ngValue]="r">{{r}}</option>
+                            </select>
                             <small *ngIf="!(race.valid || race.pristine)" class="form-text text-danger">Race is Required</small>
                         </div>
                         <div class="form-group">
                             <label for="gender">Gender</label>
-                            <input type="text" class="form-control" id="gender" placeholder="gender"
-                                required [(ngModel)]="application.gender" name="gender" #gender="ngModel">
+                            <select required class="form-control" [(ngModel)]="application.gender" name="gender" #gender="ngModel">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option *ngFor="let g of genders" [ngValue]="g">{{g}}</option>
+                            </select>
                             <small *ngIf="!(gender.valid || gender.pristine)" class="form-text text-danger">Gender is Required</small>
                         </div>
                         <div class="form-group">
-                            <label for="education">Education Level</label>
-                            <input type="date" class="form-control" id="education" placeholder="education"
-                                required [(ngModel)]="application.education" name="education" #education="ngModel">
-                            <small *ngIf="!(education.valid || education.pristine)" class="form-text text-danger">Education Level is Required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="university">What University are you attending?</label>
-                            <input type="text" class="form-control" id="university" placeholder="university"
-                                required [(ngModel)]="application.university" name="university" #university="ngModel">
-                            <small *ngIf="!(university.valid || university.pristine)" class="form-text text-danger">University is Required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="travel_origin">Where are you traveling from?</label>
-                            <input type="text" class="form-control" id="travel_origin" placeholder="travel_origin"
-                                required [(ngModel)]="application.travel_origin" name="travel_origin" #travel_origin="ngModel">
-                            <small *ngIf="!(travel_origin.valid || travel_origin.pristine)" class="form-text text-danger">Travel is Required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="graduation_season">When do you graduate?</label>
-                            <input type="string" class="form-control" id="graduation_season" placeholder="graduation_season"
-                                required [(ngModel)]="application.graduation_season" name="graduation_season" #graduations="ngModel">
-                            <small *ngIf="!(graduations.valid || graduations.pristine)" class="form-text text-danger">Graduation Season is Required</small>
-                            <input type="number" class="form-control" id="graduation_year" placeholder="graduation_year"
-                                required [(ngModel)]="application.graduation_year" name="graduation_year" #graduationy="ngModel">
-                            <small *ngIf="!(graduationy.valid || graduationy.pristine)" class="form-text text-danger">Graduation Year is Required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="major">What is your Major?</label>
-                            <input type="string" class="form-control" id="major" placeholder="major"
-                                required [(ngModel)]="application.major" name="major" #major="ngModel">
-                            <small *ngIf="!(major.valid || major.pristine)" class="form-text text-danger">Major is Required</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="hackathons">How many Hackathons have you attended?</label>
+                            <label for="hackathons">How many Hackathons have you attended? (est.)</label>
                             <input type="number" class="form-control" id="hackathons" placeholder="hackathons"
                                 required [(ngModel)]="application.hackathons" name="hackathons" #hackathons="ngModel">
                             <small *ngIf="!(hackathons.valid || hackathons.pristine)" class="form-text text-danger">Hackathons is Required</small>
                         </div>
                         <div class="form-group">
                             <label for="github">(optional) Github</label>
-                            <input type="text" class="form-control" id="github" placeholder="github"
+                            <input type="text" class="form-control" id="github" placeholder="Github Link"
                                 [(ngModel)]="application.github" name="github" #github="ngModel">
                         </div>
                         <div class="form-group">
                             <label for="linkedin">(optional) Linkedin</label>
-                            <input type="text" class="form-control" id="linkedin" placeholder="linkedin"
+                            <input type="text" class="form-control" id="linkedin" placeholder="Profile Link"
                                 [(ngModel)]="application.linkedin" name="linkedin" #linkedin="ngModel">
                         </div>
                         <div class="form-group">
                             <label for="website">(optional) Website</label>
-                            <input type="text" class="form-control" id="website" placeholder="website"
+                            <input type="text" class="form-control" id="website" placeholder="Website URL"
                                 [(ngModel)]="application.website" name="website" #website="ngModel">
                         </div>
                         <div class="form-group">
                             <label for="devpost">(optional) Devpost</label>
-                            <input type="text" class="form-control" id="devpost" placeholder="devpost"
+                            <input type="text" class="form-control" id="devpost" placeholder="Devpost Link"
                                 [(ngModel)]="application.devpost" name="devpost" #devpost="ngModel">
                         </div>
                         <div class="form-group">
                             <label for="other_link">(optional) Other Link?</label>
-                            <input type="text" class="form-control" id="other_link" placeholder="other_link"
+                            <input type="text" class="form-control" id="other_link" placeholder="Anything else you might have!"
                                 [(ngModel)]="application.other_link" name="other_link" #other="ngModel">
                         </div>
                         <div class="form-group">
                             <label for="statement">(optional) Provide a statement outlining why you would like to attend.</label>
-                            <input type="text" class="form-control" id="statement" placeholder="statement"
+                            <textarea rows="4" class="form-control" id="statement" placeholder="statement"
                                 [(ngModel)]="application.statement" name="statement" #statement="ngModel">
+                            </textarea>
                         </div>
 
-                        <button type="submit" class="signupbtn btn btn-primary" >Sign Up</button>
+                        <button [disabled]="!applyForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
                     </form>
                     <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
-                    <p class="mt-3" *ngIf="submitted">Thank you for your interest! You will hear back from us soon!</p>
+                    <p style="color: black; text-align: center;" class="mt-3" *ngIf="submitted">Thank you for your interest! You will hear back from us soon!</p>
                 </div>
             </div>
         </div>
