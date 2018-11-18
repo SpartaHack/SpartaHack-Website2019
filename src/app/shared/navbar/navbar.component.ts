@@ -2,7 +2,7 @@ import { AccountService } from '../../account/account.service';
 import { ApplicationService } from './../application/application.service';
 import { UserService } from './../user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'navbar',
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
             private applicationService: ApplicationService,
             private accountService: AccountService) {
         router.events.forEach((event) => {
-            if(event instanceof NavigationStart) {
+            if(event instanceof NavigationEnd) {
                 //See if there is any state change
                 this.refreshNavbar();
             }

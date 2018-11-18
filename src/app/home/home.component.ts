@@ -62,8 +62,12 @@ import { trigger, transition, style, animate } from '../../../node_modules/@angu
 
 export class HomeComponent implements OnInit {
     
-    mailClick() {
-        this.router.navigate(['subscribe'])
+    faqClick() {
+        this.router.navigate(['faq'])
+    }
+
+    createClick() {
+        this.router.navigate(['create'])
     }
 
     prospectusClick() {
