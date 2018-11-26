@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
     resettingPassword = false;
     passwordReset = false;
+    resetEmail: string = "";
 
     constructor(
         private accountService: AccountService,
