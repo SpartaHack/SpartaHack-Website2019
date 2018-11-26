@@ -56,6 +56,13 @@
                             <small *ngIf="!(travel_origin.valid || travel_origin.pristine)" class="form-text text-danger">Travel is Required</small>
                         </div>
                         <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input [textMask]="{mask: phoneMask}" type="text" class="form-control" id="phone" placeholder="(555) 555-5555" [ngClass]="{'error': phoneError}"
+                                required [(ngModel)]="application.phone" name="phone" #phone="ngModel">
+                            <small *ngIf="!(phone.valid || phone.pristine)" class="form-text text-danger">Phone is Required</small>
+                            <small *ngIf="phoneError != ''" class="form-text text-danger">{{phoneError}}</small>
+                        </div>
+                        <div class="form-group">
                             <label for="birthday">Birthday</label>
                             <input type="date" class="form-control" id="birthday" placeholder="Birthday" [ngClass]="{'error': birthError}"
                                 required [(ngModel)]="application.birth_day" name="birthday" #birthday="ngModel">
