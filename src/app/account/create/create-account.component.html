@@ -1,0 +1,52 @@
+<local-header [title]="'Sign Up!'"></local-header>
+
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 mt-4"> 
+        <h3 style="text-align: center;">Create an account to apply to SpartaHack V!</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 *ngIf="!submitted" class="card-title" style="color: black;">Account Information</h5>
+                <form #accountForm="ngForm" *ngIf="!submitted">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class="form-control" id="first-name" placeholder="First Name" maxlength="30"
+                            required [(ngModel)]="userInput.first_name" name="firstName" #firstName="ngModel">
+                        <small *ngIf="!(firstName.valid || firstName.pristine)" class="form-text text-danger">First Name is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name" maxlength="30">Last Name</label>
+                        <input type="text" class="form-control" id="last-name" placeholder="Last Name" maxlength="30"
+                            required [(ngModel)]="userInput.last_name" name="lastName" #lastName="ngModel">
+                        <small *ngIf="!(lastName.valid || lastName.pristine)" class="form-text text-danger">Last Name is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="example@msu.edu" maxlength="50"
+                            required [(ngModel)]="userInput.email" name="email" #email="ngModel"> 
+                        <small *ngIf="!(email.valid || email.pristine)" class="form-text text-danger">Email is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="strong but memorable" maxlength="30"
+                            required [(ngModel)]="userInput.password" name="password" #password="ngModel"> 
+                        <small *ngIf="!(password.valid || password.pristine)" class="form-text text-danger">Password is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_confirmation">Confirm Password</label>
+                        <input type="password" class="form-control" id="password_confirmation" placeholder="same as above" maxlength="30"
+                            required [(ngModel)]="userInput.password_confirmation" name="password_confirmation" #passwordc="ngModel"> 
+                        <small *ngIf="!(passwordc.valid || passwordc.pristine)" class="form-text text-danger">Confirmation is Required</small>
+                    </div>
+                    <button [disabled]="!accountForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
+                </form>
+                <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                <p class="login mt-3" *ngIf="!submitted">Already have an account? <a (click)="onLogin()">Login</a></p>
+                <p class="login text-dark mt-3" *ngIf="submitted">Thank you for your interest! You should recieve a confirmation email shortly.  <a (click)="onLogin()">Login Now!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
