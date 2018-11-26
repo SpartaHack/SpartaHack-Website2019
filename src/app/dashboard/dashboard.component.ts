@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
     user: User;
 
     not_signed_up: boolean = false;
+    deleting: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -43,5 +44,13 @@ export class DashboardComponent implements OnInit {
 
     onApplyClick() {
         this.router.navigate(['apply']);
+    }
+
+    onEdit() {
+
+    }
+
+    onDelete() {
+        this.deleting = true;
     }
 }
