@@ -32,8 +32,8 @@ const routes: Routes = [
     },
     { path: 'dashboard', component: DashboardComponent,
         resolve: {
-            application: ApplicationResolver,
-            user: UserResolver
+            user: UserResolver,
+            application: ApplicationResolver
         } 
     }
     

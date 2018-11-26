@@ -39,13 +39,32 @@ export class CreateAccountComponent {
                     this.submitted = true;
                 }
             }, error => {
-                console.error(error);
-                this.error = error.message;
+                if(!this.isEmpty(error.error_list))
+                {
+                    console.log('here');
+                    for (var key in error.error_list) {
+                        if (error.error_list.hasOwnProperty(key)) {
+                            this.error = error.error_list[key];
+                        }
+                    }
+                }
+                else
+                {
+                    this.error = "Something is not right! Have you used this email before?."
+                }
             });
         }
         else {
             this.error = "Your Password and Confirmation do not match!"
         }
+    }
+
+    isEmpty(obj) {
+        for(var key in obj) {
+            if(obj.hasOwnProperty(key))
+                return false;
+        }
+        return true;
     }
 
     passwordsMatch() {

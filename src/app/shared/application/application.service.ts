@@ -1,4 +1,4 @@
-import { Application, ApplicationSubmission } from './application.model';
+import { Application, ApplicationSubmission, College } from './application.model';
 import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -50,12 +50,43 @@ export class ApplicationService {
             )
     }
 
+    getColleges(): Observable<College[]> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json'
+                }
+            )
+        };
+
+        //get the user information based on username
+        //Eventually, this makes the call to the API, Not a local data set
+        return this.httpClient.get<College[]>("assets/json/colleges.json", httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
     hasUserApplied() {
         return window.sessionStorage.getItem('application id') != "null";
     }
 
     private handleError(error: HttpErrorResponse) {
-        // return an observable with a user-facing error message
-        return throwError(error);
+        // TODO: More informative errors from backend for creation
+        if(error.error.error_list != {})
+        {
+            return throwError(
+                error.error
+            );
+        }
+        else
+        {
+            return throwError(
+                {
+                    message: "An Error Occurred. Please double check entries."
+                }
+            );
+        }
       };
 }

@@ -53,4 +53,9 @@ export class ApplicationSubmission {
     race: string[] = [];
     gender: string = '';
     outside_north_america: string = '';
+    reimbursement: boolean = false;
+}
+
+export class College {
+  name: string = '';
 }

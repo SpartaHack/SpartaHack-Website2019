@@ -48,7 +48,7 @@ export class AccountService {
         if(error.error.error_list != {})
         {
             return throwError(
-                error.error.error_list
+                error.error
             );
         }
         else

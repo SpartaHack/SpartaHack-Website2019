@@ -21,14 +21,19 @@
                         </div>
                         <div class="form-group">
                             <label for="major">What is your current Major?</label>
-                            <input type="string" class="form-control" id="major" placeholder="Eg. Computer Science"
-                                required [(ngModel)]="application.major[0]" name="major" #major="ngModel">
-                            <small *ngIf="!(major.valid || major.pristine)" class="form-text text-danger">Major is Required</small>
+                            <ng-multiselect-dropdown [placeholder]="'Select One or More'" name="major" #major="ngModel" required
+                                [data]="majorList" [(ngModel)]="selectedMajors" [settings]="majorDropdownSettings">
+                            </ng-multiselect-dropdown>
                         </div>
                         <div class="form-group">
                             <label for="university">What School are you attending?</label>
-                            <input type="text" class="form-control" id="university" placeholder="Eg. Michigan State"
-                                required [(ngModel)]="application.university" name="university" #university="ngModel">
+                            <input type="text" class="form-control" id="university" placeholder="Eg. Michigan State" matInput [matAutocomplete]="auto" maxlength="100"
+                                required [(ngModel)]="application.university" (ngModelChange)="onCollegeType()" name="university" #university="ngModel">
+                            <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let college of filteredColleges" [value]="college">
+                                    {{ college }}
+                                </mat-option>
+                            </mat-autocomplete>
                             <small *ngIf="!(university.valid || university.pristine)" class="form-text text-danger">University is Required</small>
                         </div>
                         <div class="form-group">
@@ -46,23 +51,22 @@
                         </div>
                         <div class="form-group">
                             <label for="travel_origin">Where are you traveling from?</label>
-                            <input type="text" class="form-control" id="travel_origin" placeholder="City or General Location"
+                            <input type="text" class="form-control" id="travel_origin" placeholder="City or General Location" maxlength="100"
                                 required [(ngModel)]="application.travel_origin" name="travel_origin" #travel_origin="ngModel">
                             <small *ngIf="!(travel_origin.valid || travel_origin.pristine)" class="form-text text-danger">Travel is Required</small>
                         </div>
                         <div class="form-group">
                             <label for="birthday">Birthday</label>
-                            <input type="date" class="form-control" id="birthday" placeholder="Birthday"
+                            <input type="date" class="form-control" id="birthday" placeholder="Birthday" [ngClass]="{'error': birthError}"
                                 required [(ngModel)]="application.birth_day" name="birthday" #birthday="ngModel">
                             <small *ngIf="!(birthday.valid || birthday.pristine)" class="form-text text-danger">Birthday is Required</small>
+                            <small *ngIf="birthError != ''" class="form-text text-danger">{{birthError}}</small>
                         </div>
                         <div class="form-group">
                             <label for="race">Race</label>
-                            <select required class="form-control" [(ngModel)]="application.race[0]" name="race" #race="ngModel">
-                                <option value="" disabled selected>Select Race</option>
-                                <option *ngFor="let r of races" [ngValue]="r">{{r}}</option>
-                            </select>
-                            <small *ngIf="!(race.valid || race.pristine)" class="form-text text-danger">Race is Required</small>
+                            <ng-multiselect-dropdown [placeholder]="'Select One or More'" name="race" #race="ngModel" required
+                                [data]="raceList" [(ngModel)]="selectedRaces" [settings]="raceDropdownSettings">
+                            </ng-multiselect-dropdown>
                         </div>
                         <div class="form-group">
                             <label for="gender">Gender</label>
@@ -79,37 +83,70 @@
                             <small *ngIf="!(hackathons.valid || hackathons.pristine)" class="form-text text-danger">Hackathons is Required</small>
                         </div>
                         <div class="form-group">
-                            <label for="github">(optional) Github</label>
-                            <input type="text" class="form-control" id="github" placeholder="Github Link"
-                                [(ngModel)]="application.github" name="github" #github="ngModel">
-                        </div>
-                        <div class="form-group">
-                            <label for="linkedin">(optional) Linkedin</label>
-                            <input type="text" class="form-control" id="linkedin" placeholder="Profile Link"
-                                [(ngModel)]="application.linkedin" name="linkedin" #linkedin="ngModel">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">(optional) Website</label>
-                            <input type="text" class="form-control" id="website" placeholder="Website URL"
-                                [(ngModel)]="application.website" name="website" #website="ngModel">
-                        </div>
-                        <div class="form-group">
-                            <label for="devpost">(optional) Devpost</label>
-                            <input type="text" class="form-control" id="devpost" placeholder="Devpost Link"
-                                [(ngModel)]="application.devpost" name="devpost" #devpost="ngModel">
-                        </div>
-                        <div class="form-group">
-                            <label for="other_link">(optional) Other Link?</label>
-                            <input type="text" class="form-control" id="other_link" placeholder="Anything else you might have!"
-                                [(ngModel)]="application.other_link" name="other_link" #other="ngModel">
-                        </div>
-                        <div class="form-group">
-                            <label for="statement">(optional) Provide a statement outlining why you would like to attend.</label>
-                            <textarea rows="4" class="form-control" id="statement" placeholder="statement"
+                            <label for="statement">Provide a statement outlining why you would like to attend.</label>
+                            <textarea rows="4" class="form-control" id="statement" placeholder="statement (500 char max)" required maxlength="500"
                                 [(ngModel)]="application.statement" name="statement" #statement="ngModel">
                             </textarea>
                         </div>
-
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="travel" 
+                                    [(ngModel)]="application.reimbursement" name="reimbursement" #reimbursement="ngModel">
+                                <label class="form-check-label" for="travel">
+                                  Check this if you need travel reimbursement.
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="github">(optional) Github</label>
+                            <input type="text" class="form-control" id="github" placeholder="Github Link" [ngClass]="{'error': githubError}" maxlength="150"
+                                [(ngModel)]="application.github" name="github" #github="ngModel">
+                            <small *ngIf="githubError != ''" class="form-text text-danger">{{githubError}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin">(optional) Linkedin</label>
+                            <input type="text" class="form-control" id="linkedin" placeholder="Profile Link" [ngClass]="{'error': linkedinError}" maxlength="150"
+                                [(ngModel)]="application.linkedin" name="linkedin" #linkedin="ngModel">
+                                <small *ngIf="linkedinError != ''" class="form-text text-danger">{{linkedinError}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="website">(optional) Website</label>
+                            <input type="text" class="form-control" id="website" placeholder="Website URL" [ngClass]="{'error': websiteError}" maxlength="150"
+                                [(ngModel)]="application.website" name="website" #website="ngModel">
+                                <small *ngIf="websiteError != ''" class="form-text text-danger">{{websiteError}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="devpost">(optional) Devpost</label>
+                            <input type="text" class="form-control" id="devpost" placeholder="Devpost Link" [ngClass]="{'error': devpostError}" maxlength="150"
+                                [(ngModel)]="application.devpost" name="devpost" #devpost="ngModel">
+                                <small *ngIf="devpostError != ''" class="form-text text-danger">{{devpostError}}</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="other_link">(optional) Other Link?</label>
+                            <input type="text" class="form-control" id="other_link" placeholder="Anything else you might have!" [ngClass]="{'error': otherError}" maxlength="150"
+                                [(ngModel)]="application.other_link" name="other_link" #other="ngModel">
+                                <small *ngIf="otherError != ''" class="form-text text-danger">{{otherError}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="conduct" required
+                                    [(ngModel)]="conductChecked" name="conduct" #conduct="ngModel">
+                                <label class="form-check-label" for="conduct">
+                                    I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct.</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="data" required
+                                    [(ngModel)]="dataSharingChecked" name="data" #data="ngModel">
+                                <label class="form-check-label" for="data">
+                                    I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, 
+                                    and occasional messages about hackathons in-line with the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>. 
+                                    I further agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>.
+                                </label>
+                            </div>
+                        </div>
                         <button [disabled]="!applyForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
                     </form>
                     <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>

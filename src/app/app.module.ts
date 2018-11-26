@@ -1,3 +1,5 @@
+import { SponsorsComponent } from './home/sponsors/sponsors.component';
+import { MajorsService } from './shared/majors/majors.service';
 import { UserService } from './shared/user/user.service';
 import { ApplicationResolver } from './shared/application/application.resolver';
 import { UserResolver } from './shared/user/user.resolver';
@@ -24,6 +26,8 @@ import { HomeComponent } from './home/home.component';
 import { ApplyComponent } from './apply/apply.component';
 import { HttpClientModule, HttpClientJsonpModule } from '../../node_modules/@angular/common/http';
 import { CreateAccountComponent } from './account/create/create-account.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,8 @@ import { CreateAccountComponent } from './account/create/create-account.componen
     LocalHeaderComponent,
     FooterComponent,
     CreateAccountComponent,
-    DashboardComponent
+    DashboardComponent,
+    SponsorsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,13 +50,16 @@ import { CreateAccountComponent } from './account/create/create-account.componen
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    MatAutocompleteModule
   ],
   providers: [
     MailingListService,
     FaqService,
     FaqResolver,
     ApplicationService,
+    MajorsService,
     AccountService,
     UserService,
     UserResolver,

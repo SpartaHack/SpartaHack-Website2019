@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @font-face {
     font-family: 'StormFaze';
     src: url('./assets/fonts/stormfaze.ttf')  format('truetype');
@@ -9,4 +10,9 @@ body {
 }
 label {
     color: black;
+}
+
+input[type=checkbox]
+{
+  zoom: 1.0;
 }
