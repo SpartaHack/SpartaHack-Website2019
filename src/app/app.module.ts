@@ -1,3 +1,4 @@
+import { BadgeComponent } from './shared/badge/badge.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { MajorsService } from './shared/majors/majors.service';
 import { UserService } from './shared/user/user.service';
@@ -43,7 +44,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     FooterComponent,
     CreateAccountComponent,
     DashboardComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,
