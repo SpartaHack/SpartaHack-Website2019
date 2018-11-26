@@ -84,6 +84,8 @@ export class ApplyComponent implements OnInit {
     conductChecked = false;
     dataSharingChecked = false;
 
+    public phoneMask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+
     application: ApplicationSubmission = new ApplicationSubmission();
 
     constructor(

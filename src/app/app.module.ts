@@ -28,6 +28,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '../../node_modules/@ang
 import { CreateAccountComponent } from './account/create/create-account.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     HttpClientModule,
     HttpClientJsonpModule,
     NgMultiSelectDropDownModule.forRoot(),
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    TextMaskModule
   ],
   providers: [
     MailingListService,

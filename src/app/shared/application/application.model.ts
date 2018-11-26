@@ -29,6 +29,10 @@ export class Application {
   accepted_date: string = null;
   created_at: string = "";
   updated_at: string = "";
+
+  //Features added after initital discussion
+  reimbursement: boolean = false;
+  phone: string = '';
 }
 
 export class ApplicationSubmission {
@@ -54,6 +58,7 @@ export class ApplicationSubmission {
     gender: string = '';
     outside_north_america: string = '';
     reimbursement: boolean = false;
+    phone: string = '';
 }
 
 export class College {
