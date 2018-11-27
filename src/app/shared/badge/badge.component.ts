@@ -36,7 +36,7 @@ export class BadgeComponent {
 
     @HostListener('window:scroll', ['$event'])
     checkScroll() {
-        console.log(window.pageYOffset);
+
       const componentPosition = 90
       const scrollPosition = window.pageYOffset
 
