@@ -1,0 +1,698 @@
+[
+  {
+    "item_id": 1,
+    "item_text": "General Agriculture"
+  },
+  {
+    "item_id": 2,
+    "item_text": "Agriculture Production And Management"
+  },
+  {
+    "item_id": 3,
+    "item_text": "Agricultural Economics"
+  },
+  {
+    "item_id": 4,
+    "item_text": "Animal Sciences"
+  },
+  {
+    "item_id": 5,
+    "item_text": "Food Science"
+  },
+  {
+    "item_id": 6,
+    "item_text": "Plant Science And Agronomy"
+  },
+  {
+    "item_id": 7,
+    "item_text": "Soil Science"
+  },
+  {
+    "item_id": 8,
+    "item_text": "Miscellaneous Agriculture"
+  },
+  {
+    "item_id": 9,
+    "item_text": "Forestry"
+  },
+  {
+    "item_id": 10,
+    "item_text": "Natural Resources Management"
+  },
+  {
+    "item_id": 11,
+    "item_text": "Fine Arts"
+  },
+  {
+    "item_id": 12,
+    "item_text": "Drama And Theater Arts"
+  },
+  {
+    "item_id": 13,
+    "item_text": "Music"
+  },
+  {
+    "item_id": 14,
+    "item_text": "Visual And Performing Arts"
+  },
+  {
+    "item_id": 15,
+    "item_text": "Commercial Art And Graphic Design"
+  },
+  {
+    "item_id": 16,
+    "item_text": "Film Video And Photographic Arts"
+  },
+  {
+    "item_id": 17,
+    "item_text": "Studio Arts"
+  },
+  {
+    "item_id": 18,
+    "item_text": "Miscellaneous Fine Arts"
+  },
+  {
+    "item_id": 19,
+    "item_text": "Environmental Science"
+  },
+  {
+    "item_id": 20,
+    "item_text": "Biology"
+  },
+  {
+    "item_id": 21,
+    "item_text": "Biochemical Sciences"
+  },
+  {
+    "item_id": 22,
+    "item_text": "Botany"
+  },
+  {
+    "item_id": 23,
+    "item_text": "Molecular Biology"
+  },
+  {
+    "item_id": 24,
+    "item_text": "Ecology"
+  },
+  {
+    "item_id": 25,
+    "item_text": "Genetics"
+  },
+  {
+    "item_id": 26,
+    "item_text": "Microbiology"
+  },
+  {
+    "item_id": 27,
+    "item_text": "Pharmacology"
+  },
+  {
+    "item_id": 28,
+    "item_text": "Physiology"
+  },
+  {
+    "item_id": 29,
+    "item_text": "Zoology"
+  },
+  {
+    "item_id": 30,
+    "item_text": "Neuroscience"
+  },
+  {
+    "item_id": 31,
+    "item_text": "Miscellaneous Biology"
+  },
+  {
+    "item_id": 32,
+    "item_text": "Cognitive Science And Biopsychology"
+  },
+  {
+    "item_id": 33,
+    "item_text": "General Business"
+  },
+  {
+    "item_id": 34,
+    "item_text": "Accounting"
+  },
+  {
+    "item_id": 35,
+    "item_text": "Actuarial Science"
+  },
+  {
+    "item_id": 36,
+    "item_text": "Business Management And Administration"
+  },
+  {
+    "item_id": 37,
+    "item_text": "Operations Logistics And E-Commerce"
+  },
+  {
+    "item_id": 38,
+    "item_text": "Business Economics"
+  },
+  {
+    "item_id": 39,
+    "item_text": "Marketing And Marketing Research"
+  },
+  {
+    "item_id": 40,
+    "item_text": "Finance"
+  },
+  {
+    "item_id": 41,
+    "item_text": "Human Resources And Personnel Management"
+  },
+  {
+    "item_id": 42,
+    "item_text": "International Business"
+  },
+  {
+    "item_id": 43,
+    "item_text": "Hospitality Management"
+  },
+  {
+    "item_id": 44,
+    "item_text": "Management Information Systems And Statistics"
+  },
+  {
+    "item_id": 45,
+    "item_text": "Miscellaneous Business & Medical Administration"
+  },
+  {
+    "item_id": 46,
+    "item_text": "Communications"
+  },
+  {
+    "item_id": 47,
+    "item_text": "Journalism"
+  },
+  {
+    "item_id": 48,
+    "item_text": "Mass Media"
+  },
+  {
+    "item_id": 49,
+    "item_text": "Advertising And Public Relations"
+  },
+  {
+    "item_id": 50,
+    "item_text": "Communication Technologies"
+  },
+  {
+    "item_id": 51,
+    "item_text": "Computer And Information Systems"
+  },
+  {
+    "item_id": 52,
+    "item_text": "Computer Programming And Data Processing"
+  },
+  {
+    "item_id": 53,
+    "item_text": "Computer Science"
+  },
+  {
+    "item_id": 54,
+    "item_text": "Information Sciences"
+  },
+  {
+    "item_id": 55,
+    "item_text": "Computer Administration Management And Security"
+  },
+  {
+    "item_id": 56,
+    "item_text": "Computer Networking And Telecommunications"
+  },
+  {
+    "item_id": 57,
+    "item_text": "Mathematics"
+  },
+  {
+    "item_id": 58,
+    "item_text": "Applied Mathematics"
+  },
+  {
+    "item_id": 59,
+    "item_text": "Statistics And Decision Science"
+  },
+  {
+    "item_id": 60,
+    "item_text": "Mathematics And Computer Science"
+  },
+  {
+    "item_id": 61,
+    "item_text": "General Education"
+  },
+  {
+    "item_id": 62,
+    "item_text": "Educational Administration And Supervision"
+  },
+  {
+    "item_id": 63,
+    "item_text": "School Student Counseling"
+  },
+  {
+    "item_id": 64,
+    "item_text": "Elementary Education"
+  },
+  {
+    "item_id": 65,
+    "item_text": "Mathematics Teacher Education"
+  },
+  {
+    "item_id": 66,
+    "item_text": "Physical And Health Education Teaching"
+  },
+  {
+    "item_id": 67,
+    "item_text": "Early Childhood Education"
+  },
+  {
+    "item_id": 68,
+    "item_text": "Science And Computer Teacher Education"
+  },
+  {
+    "item_id": 69,
+    "item_text": "Secondary Teacher Education"
+  },
+  {
+    "item_id": 70,
+    "item_text": "Special Needs Education"
+  },
+  {
+    "item_id": 71,
+    "item_text": "Social Science Or History Teacher Education"
+  },
+  {
+    "item_id": 72,
+    "item_text": "Teacher Education: Multiple Levels"
+  },
+  {
+    "item_id": 73,
+    "item_text": "Language And Drama Education"
+  },
+  {
+    "item_id": 74,
+    "item_text": "Art And Music Education"
+  },
+  {
+    "item_id": 75,
+    "item_text": "Miscellaneous Education"
+  },
+  {
+    "item_id": 76,
+    "item_text": "Library Science"
+  },
+  {
+    "item_id": 77,
+    "item_text": "Architecture"
+  },
+  {
+    "item_id": 78,
+    "item_text": "General Engineering"
+  },
+  {
+    "item_id": 79,
+    "item_text": "Aerospace Engineering"
+  },
+  {
+    "item_id": 80,
+    "item_text": "Biological Engineering"
+  },
+  {
+    "item_id": 81,
+    "item_text": "Architectural Engineering"
+  },
+  {
+    "item_id": 82,
+    "item_text": "Biomedical Engineering"
+  },
+  {
+    "item_id": 83,
+    "item_text": "Chemical Engineering"
+  },
+  {
+    "item_id": 84,
+    "item_text": "Civil Engineering"
+  },
+  {
+    "item_id": 85,
+    "item_text": "Computer Engineering"
+  },
+  {
+    "item_id": 86,
+    "item_text": "Electrical Engineering"
+  },
+  {
+    "item_id": 87,
+    "item_text": "Engineering Mechanics Physics And Science"
+  },
+  {
+    "item_id": 88,
+    "item_text": "Environmental Engineering"
+  },
+  {
+    "item_id": 89,
+    "item_text": "Geological And Geophysical Engineering"
+  },
+  {
+    "item_id": 90,
+    "item_text": "Industrial And Manufacturing Engineering"
+  },
+  {
+    "item_id": 91,
+    "item_text": "Materials Engineering And Materials Science"
+  },
+  {
+    "item_id": 92,
+    "item_text": "Mechanical Engineering"
+  },
+  {
+    "item_id": 93,
+    "item_text": "Metallurgical Engineering"
+  },
+  {
+    "item_id": 94,
+    "item_text": "Mining And Mineral Engineering"
+  },
+  {
+    "item_id": 95,
+    "item_text": "Naval Architecture And Marine Engineering"
+  },
+  {
+    "item_id": 96,
+    "item_text": "Nuclear Engineering"
+  },
+  {
+    "item_id": 97,
+    "item_text": "Petroleum Engineering"
+  },
+  {
+    "item_id": 98,
+    "item_text": "Miscellaneous Engineering"
+  },
+  {
+    "item_id": 99,
+    "item_text": "Engineering Technologies"
+  },
+  {
+    "item_id": 100,
+    "item_text": "Engineering And Industrial Management"
+  },
+  {
+    "item_id": 101,
+    "item_text": "Electrical Engineering Technology"
+  },
+  {
+    "item_id": 102,
+    "item_text": "Industrial Production Technologies"
+  },
+  {
+    "item_id": 103,
+    "item_text": "Mechanical Engineering Related Technologies"
+  },
+  {
+    "item_id": 104,
+    "item_text": "Miscellaneous Engineering Technologies"
+  },
+  {
+    "item_id": 105,
+    "item_text": "Materials Science"
+  },
+  {
+    "item_id": 106,
+    "item_text": "Nutrition Sciences"
+  },
+  {
+    "item_id": 107,
+    "item_text": "General Medical And Health Services"
+  },
+  {
+    "item_id": 108,
+    "item_text": "Communication Disorders Sciences And Services"
+  },
+  {
+    "item_id": 109,
+    "item_text": "Health And Medical Administrative Services"
+  },
+  {
+    "item_id": 110,
+    "item_text": "Medical Assisting Services"
+  },
+  {
+    "item_id": 111,
+    "item_text": "Medical Technologies Technicians"
+  },
+  {
+    "item_id": 112,
+    "item_text": "Health And Medical Preparatory Programs"
+  },
+  {
+    "item_id": 113,
+    "item_text": "Nursing"
+  },
+  {
+    "item_id": 114,
+    "item_text": "Pharmacy Pharmaceutical Sciences And Administration"
+  },
+  {
+    "item_id": 115,
+    "item_text": "Treatment Therapy Professions"
+  },
+  {
+    "item_id": 116,
+    "item_text": "Community And Public Health"
+  },
+  {
+    "item_id": 117,
+    "item_text": "Miscellaneous Health Medical Professions"
+  },
+  {
+    "item_id": 118,
+    "item_text": "Area Ethnic And Civilization Studies"
+  },
+  {
+    "item_id": 119,
+    "item_text": "Linguistics And Comparative Language And Literature"
+  },
+  {
+    "item_id": 120,
+    "item_text": "French German Latin And Other Common Foreign Language Studies"
+  },
+  {
+    "item_id": 121,
+    "item_text": "Other Foreign Languages"
+  },
+  {
+    "item_id": 122,
+    "item_text": "English Language And Literature"
+  },
+  {
+    "item_id": 123,
+    "item_text": "Composition And Rhetoric"
+  },
+  {
+    "item_id": 124,
+    "item_text": "Liberal Arts"
+  },
+  {
+    "item_id": 125,
+    "item_text": "Humanities"
+  },
+  {
+    "item_id": 126,
+    "item_text": "Intercultural And International Studies"
+  },
+  {
+    "item_id": 127,
+    "item_text": "Philosophy And Religious Studies"
+  },
+  {
+    "item_id": 128,
+    "item_text": "Theology And Religious Vocations"
+  },
+  {
+    "item_id": 129,
+    "item_text": "Anthropology And Archeology"
+  },
+  {
+    "item_id": 130,
+    "item_text": "Art History And Criticism"
+  },
+  {
+    "item_id": 131,
+    "item_text": "History"
+  },
+  {
+    "item_id": 132,
+    "item_text": "United States History"
+  },
+  {
+    "item_id": 133,
+    "item_text": "Cosmetology Services And Culinary Arts"
+  },
+  {
+    "item_id": 134,
+    "item_text": "Family And Consumer Sciences"
+  },
+  {
+    "item_id": 135,
+    "item_text": "Military Technologies"
+  },
+  {
+    "item_id": 136,
+    "item_text": "Physical Fitness Parks Recreation And Leisure"
+  },
+  {
+    "item_id": 137,
+    "item_text": "Construction Services"
+  },
+  {
+    "item_id": 138,
+    "item_text": "Electrical, Mechanical, And Precision Technologies And Production"
+  },
+  {
+    "item_id": 139,
+    "item_text": "Transportation Sciences And Technologies"
+  },
+  {
+    "item_id": 140,
+    "item_text": "Multi/Interdisciplinary Studies"
+  },
+  {
+    "item_id": 141,
+    "item_text": "Court Reporting"
+  },
+  {
+    "item_id": 142,
+    "item_text": "Pre-Law And Legal Studies"
+  },
+  {
+    "item_id": 143,
+    "item_text": "Criminal Justice And Fire Protection"
+  },
+  {
+    "item_id": 144,
+    "item_text": "Public Administration"
+  },
+  {
+    "item_id": 145,
+    "item_text": "Public Policy"
+  },
+  {
+    "item_id": 146,
+    "item_text": "N/A (Less Than Bachelor'S Degree)"
+  },
+  {
+    "item_id": 147,
+    "item_text": "Physical Sciences"
+  },
+  {
+    "item_id": 148,
+    "item_text": "Astronomy And Astrophysics"
+  },
+  {
+    "item_id": 149,
+    "item_text": "Atmospheric Sciences And Meteorology"
+  },
+  {
+    "item_id": 150,
+    "item_text": "Chemistry"
+  },
+  {
+    "item_id": 151,
+    "item_text": "Geology And Earth Science"
+  },
+  {
+    "item_id": 152,
+    "item_text": "Geosciences"
+  },
+  {
+    "item_id": 153,
+    "item_text": "Oceanography"
+  },
+  {
+    "item_id": 154,
+    "item_text": "Physics"
+  },
+  {
+    "item_id": 155,
+    "item_text": "Multi-Disciplinary Or General Science"
+  },
+  {
+    "item_id": 156,
+    "item_text": "Nuclear, Industrial Radiology, And Biological Technologies"
+  },
+  {
+    "item_id": 157,
+    "item_text": "Psychology"
+  },
+  {
+    "item_id": 158,
+    "item_text": "Educational Psychology"
+  },
+  {
+    "item_id": 159,
+    "item_text": "Clinical Psychology"
+  },
+  {
+    "item_id": 160,
+    "item_text": "Counseling Psychology"
+  },
+  {
+    "item_id": 161,
+    "item_text": "Industrial And Organizational Psychology"
+  },
+  {
+    "item_id": 162,
+    "item_text": "Social Psychology"
+  },
+  {
+    "item_id": 163,
+    "item_text": "Miscellaneous Psychology"
+  },
+  {
+    "item_id": 164,
+    "item_text": "Human Services And Community Organization"
+  },
+  {
+    "item_id": 165,
+    "item_text": "Social Work"
+  },
+  {
+    "item_id": 166,
+    "item_text": "Interdisciplinary Social Sciences"
+  },
+  {
+    "item_id": 167,
+    "item_text": "General Social Sciences"
+  },
+  {
+    "item_id": 168,
+    "item_text": "Economics"
+  },
+  {
+    "item_id": 169,
+    "item_text": "Criminology"
+  },
+  {
+    "item_id": 170,
+    "item_text": "Geography"
+  },
+  {
+    "item_id": 171,
+    "item_text": "International Relations"
+  },
+  {
+    "item_id": 172,
+    "item_text": "Political Science And Government"
+  },
+  {
+    "item_id": 173,
+    "item_text": "Sociology"
+  },
+  {
+    "item_id": 174,
+    "item_text": "Miscellaneous Social Sciences"
+  }
+]

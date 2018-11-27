@@ -1,5 +1,8 @@
+import { AccountService } from '../../account/account.service';
+import { ApplicationService } from './../application/application.service';
+import { UserService } from './../user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector: 'navbar',
@@ -8,19 +11,45 @@ import { Router } from '@angular/router';
 })
 
 export class NavbarComponent implements OnInit {
-    constructor(private router: Router) { }
 
-    ngOnInit() { }
+    loggedIn: boolean = false;
+    applied: boolean = false;
+
+    constructor(private router: Router, 
+            private userService: UserService, 
+            private applicationService: ApplicationService,
+            private accountService: AccountService) {
+        router.events.forEach((event) => {
+            if(event instanceof NavigationEnd) {
+                //See if there is any state change
+                this.refreshNavbar();
+            }
+          });
+    }
+
+    ngOnInit() { 
+
+    }
+
+    refreshNavbar() {
+        this.loggedIn = this.userService.isUserLoggedIn();
+        this.applied = this.applicationService.hasUserApplied();
+    }
 
     onHome() {
         this.router.navigate(['']);
     }
     onApply() {
-        // this.router.navigate(['apply']);
-        this.router.navigate(['subscribe']);
+        this.router.navigate(['apply']);
+    }
+    onDashboard() {
+        this.router.navigate(['dashboard']);
     }
     onLogIn() {
         this.router.navigate(['login']);
+    }
+    onLogOut() {
+        this.accountService.logout();
     }
     onFaq() {
         this.router.navigate(['faq']);

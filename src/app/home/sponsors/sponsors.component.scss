@@ -1,0 +1,53 @@
+.sponsor-text {
+    text-align: center;
+}
+.sponsor-logo {
+    margin: 0 auto;
+    width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+}
+.aptive {
+    @media (min-width: 576px) {
+        margin-top: 4.5rem!important;
+    }
+}
+.dow {
+    margin-top: 4rem!important;
+    @media (max-width: 768px) {
+        @media (min-width: 576px) {
+            margin-left: 26%;
+            margin-top: 2rem!important;
+        }
+    }
+}
+.msuleft {
+    @media (min-width: 768px) {
+        margin-left: 4%
+    }
+}
+.techstore {
+    width: 80%;
+}
+.last {
+    @media (min-width: 768px) {
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+}
+.zf {
+    @media (max-width: 768px) {
+        width: 50%
+    }
+    @media (min-width: 768px) {
+        width: 80%; 
+        margin-left: 5%;
+    }
+}
+.zfcontainer {
+    @media (max-width: 768px) {
+        justify-content: center;
+        align-items: center;
+        display: inherit;
+    }
+}

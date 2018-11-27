@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: ""
+  baseUrl: "http://api.elephant.spartahack.com"
+  //baseUrl: "https://api.spartahack.com"
 };
 
 /*

@@ -1,0 +1,32 @@
+<local-header [title]="'Login'"></local-header>
+
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 mt-4"> 
+        <h3 style="text-align: center;">Login to Spartahack</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form #accountForm="ngForm">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" maxlength="50"
+                            required [(ngModel)]="userInput.email" name="email" #email="ngModel"> 
+                        <small *ngIf="!(email.valid || email.pristine)" class="form-text text-danger">Email is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" maxlength="30"
+                            required [(ngModel)]="userInput.password" name="password" #password="ngModel"> 
+                        <small *ngIf="!(password.valid || password.pristine)" class="form-text text-danger">Password is Required</small>
+                    </div>
+                    <button [disabled]="!accountForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
+                </form>
+                <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                <p class="new mt-3">New? Create an account <a (click)="onCreate()">here</a></p>
+            </div>
+        </div>
+    </div>
+</div>
