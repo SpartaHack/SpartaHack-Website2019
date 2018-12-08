@@ -4,4 +4,5 @@ export class Faq {
     answer: string = "";
     priority: number = 0;
     placement: string = "";
+    display: boolean = false;
 }
