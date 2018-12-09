@@ -16,10 +16,6 @@ export class LoginComponent implements OnInit {
 
     error: string = "";
 
-    resettingPassword = false;
-    passwordReset = false;
-    resetEmail: string = "";
-
     constructor(
         private accountService: AccountService,
         private router: Router
@@ -32,16 +28,8 @@ export class LoginComponent implements OnInit {
     }
 
     onResetPassword() {
-        this.resettingPassword = true;
-
-    }
-
-    onResetCancel() {
-        this.resettingPassword = false;
-    }
-
-    onResetConfirm() {
-        this.passwordReset = true;
+        //navigate to reset page
+        this.router.navigate(['reset']);
     }
 
     onSubmit() {

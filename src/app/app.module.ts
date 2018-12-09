@@ -29,6 +29,7 @@ import { CreateAccountComponent } from './account/create/create-account.componen
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ResetComponent } from './account/reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     FooterComponent,
     CreateAccountComponent,
     DashboardComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,9 @@ export class AccountService {
     }
 
     resetPassword(email: string): Observable<User> {
-        return this.httpClient.post<User>(environment.baseUrl + "/users/request_password_token", email, httpOptions)
+        let emailJSON = {"email": email}
+
+        return this.httpClient.post<User>(environment.baseUrl + "/users/request_password_token", emailJSON, httpOptions)
         .pipe(
             catchError(this.handleError)
         )

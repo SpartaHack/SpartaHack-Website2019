@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
 import { LoginComponent } from './account/login/login.component';
 import { UserResolver } from './shared/user/user.resolver';
+import { ResetComponent } from './account/reset/reset.component';
 
 const routes: Routes = [
     //{ path: 'subscribe', component: MailingListComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     //User Paths
     { path: 'create', component: CreateAccountComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'reset', component: ResetComponent },
     { path: 'apply', component: ApplyComponent, 
         resolve: {
             user: UserResolver
