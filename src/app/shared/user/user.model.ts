@@ -17,3 +17,9 @@ export class User {
     role: string = "";
     rsvp_id: number = null
 }
+
+export class PasswordChange {
+    current_password: string = "";
+    password: string = "";
+    password_confirmation: string = "";
+}

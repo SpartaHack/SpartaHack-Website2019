@@ -1,3 +1,5 @@
+import { DeleteAccountComponent } from './dashboard/delete-account/delete-account.component';
+import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
 import { BadgeComponent } from './shared/badge/badge.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { MajorsService } from './shared/majors/majors.service';
@@ -45,7 +47,9 @@ import { TextMaskModule } from 'angular2-text-mask';
     CreateAccountComponent,
     DashboardComponent,
     SponsorsComponent,
-    BadgeComponent
+    BadgeComponent,
+    ChangePasswordComponent,
+    DeleteAccountComponent
   ],
   imports: [
     BrowserModule,
