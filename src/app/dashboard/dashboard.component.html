@@ -1,9 +1,50 @@
 <local-header [title]="'Dashboard'"></local-header>
 
-<div class="row justify-content-center mb-4">
-    <div class="col-10 col-md-8">
-        <h3>Greetings, {{user.first_name}}!</h3>
-        <p *ngIf="not_signed_up">You haven't Applied Yet! <a (click)='onApplyClick()' >Apply Here</a></p>
-        <p *ngIf="!not_signed_up">You Have Applied! We will get back to you soon.</p>
+<div *ngIf="!managing">
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <h3>Greetings, {{user.first_name}}!</h3>
+            <p *ngIf="not_signed_up">You haven't Applied Yet! <a (click)='onApplyClick()' >Apply Here</a></p>
+            <p *ngIf="!not_signed_up">You Have Applied! We will get back to you soon.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-2">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-primary btn-block" (click)="onManage()">Manage Account</button>
+        </div>
     </div>
 </div>
+
+<div *ngIf="managing && !showingChangePassword && !showingEditApplication && !showingDeleteAccount">
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <h3>Account Management</h3>
+        </div>
+    </div>
+    <!-- <div class="row justify-content-center mb-2">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-primary btn-block" (click)="onEdit()">Edit Application</button>
+        </div>
+    </div> -->
+    <div class="row justify-content-center mb-2">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-primary btn-block" (click)="onPassword()">Change Password</button>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-warning btn-primary btn-block" (click)="onDelete()">Delete Account</button>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-primary btn-block" (click)="onDashboard()">Back to Dashboard</button>
+        </div>
+    </div>
+</div>
+
+<change-password style="z-index: 100;" [showing]="showingChangePassword"
+    (closed)="onPasswordClosed()"></change-password>
+<delete-account style="z-index: 100;" [showing]="showingDeleteAccount" [userID]="user.id"
+    (closed)="onDeleteClosed()"></delete-account>
+
