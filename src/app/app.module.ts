@@ -1,3 +1,4 @@
+import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
 import { DeleteAccountComponent } from './dashboard/delete-account/delete-account.component';
 import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
 import { BadgeComponent } from './shared/badge/badge.component';
@@ -26,7 +27,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
-import { ApplyComponent } from './apply/apply.component';
 import { HttpClientModule, HttpClientJsonpModule } from '../../node_modules/@angular/common/http';
 import { CreateAccountComponent } from './account/create/create-account.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
@@ -37,7 +37,7 @@ import { TextMaskModule } from 'angular2-text-mask';
   declarations: [
     AppComponent,
     HomeComponent,
-    ApplyComponent,
+    ApplyAndEditComponent,
     FaqComponent,
     NavbarComponent,
     LoginComponent,

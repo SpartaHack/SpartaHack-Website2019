@@ -1,7 +1,6 @@
 import { AccountService } from 'src/app/account/account.service';
 import { UserService } from './../../shared/user/user.service';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'delete-account',
