@@ -31,6 +31,25 @@ export class ApplicationService {
             )
     }
 
+    updateApplication(updatedApplication: ApplicationSubmission, id: number): Observable<any> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        //get the user information based on username
+        //Eventually, this makes the call to the API, Not a local data set
+        return this.httpClient.put<any>(environment.baseUrl + "/applications/" + id, updatedApplication, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
     getApplication(appID: number): Observable<Application> {
 
         let httpOptions = {

@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
     }
 
     onApplyClick() {
-        this.router.navigate(['apply']);
+        this.router.navigate(['application']);
     }
 
     onManage() {
@@ -67,10 +67,7 @@ export class DashboardComponent implements OnInit {
     }
 
     onEdit() {
-        this.showingEditApplication = true;
-    }
-    onEditClosed() {
-        this.showingEditApplication = false;
+        this.router.navigate(['application']);
     }
 
     onPassword() {
