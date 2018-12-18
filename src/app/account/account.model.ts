@@ -13,5 +13,5 @@ export class Credentials {
 
 export class PasswordReset {
     password: string = "";
-    passwordConfirmation: string = "";
+    password_confirmation: string = "";
 }

@@ -43,14 +43,14 @@ export class AccountService {
         )
     }
 
-    setNewPassword(passwords: PasswordReset): Observable<User> {
+    setNewPassword(passwords: PasswordReset, resetToken: string): Observable<User> {
         let newHttpOptions = {
             headers: new HttpHeaders({ 
                 'Content-Type': 'application/json',
-                'X-WWW-RESET-PASSWORD-TOKEN': window.sessionStorage.getItem('password_token')
+                'X-WWW-RESET-PASSWORD-TOKEN': resetToken
             })
         };
-        return this.httpClient.post<User>(environment.baseUrl + "/users/request_password", passwords, newHttpOptions)
+        return this.httpClient.post<User>(environment.baseUrl + "/users/reset_password", passwords, newHttpOptions)
         .pipe(
             catchError(this.handleError)
         )

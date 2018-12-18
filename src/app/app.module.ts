@@ -1,3 +1,4 @@
+import { SendResetComponent } from './account/reset/send-reset.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { MajorsService } from './shared/majors/majors.service';
 import { UserService } from './shared/user/user.service';
@@ -45,7 +46,8 @@ import { ResetComponent } from './account/reset/reset.component';
     CreateAccountComponent,
     DashboardComponent,
     SponsorsComponent,
-    ResetComponent
+    ResetComponent,
+    SendResetComponent
   ],
   imports: [
     BrowserModule,

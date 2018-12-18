@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
     onResetPassword() {
         //navigate to reset page
-        this.router.navigate(['reset']);
+        this.router.navigate(['send-reset']);
     }
 
     onSubmit() {
