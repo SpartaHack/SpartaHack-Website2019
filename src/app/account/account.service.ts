@@ -61,6 +61,7 @@ export class AccountService {
         window.sessionStorage.removeItem('application id');
         window.sessionStorage.removeItem('user id');
         window.sessionStorage.removeItem('auth token');
+        window.sessionStorage.removeItem('admin');
 
         this.router.navigate(['']);
     }

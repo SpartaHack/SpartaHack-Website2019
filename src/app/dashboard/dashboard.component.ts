@@ -22,6 +22,8 @@ export class DashboardComponent implements OnInit {
     showingEditApplication: boolean = false;
     showingDeleteAccount: boolean = false;
 
+    adminButtonEnabled: boolean = false;
+
     constructor(
         private route: ActivatedRoute,
         private router: Router
@@ -37,6 +39,12 @@ export class DashboardComponent implements OnInit {
         else
         {
             this.user = this.route.snapshot.data['user'];
+
+            if(this.user.role == "organizer" || this.user.role == "director")
+            {
+                this.adminButtonEnabled = true;
+            }
+
         }
         if(this.route.snapshot.data['application'].not_signed_up)
         {
@@ -50,6 +58,10 @@ export class DashboardComponent implements OnInit {
 
     onApplyClick() {
         this.router.navigate(['application']);
+    }
+
+    onAdmin() {
+        this.router.navigate(['admin']);
     }
 
     onManage() {

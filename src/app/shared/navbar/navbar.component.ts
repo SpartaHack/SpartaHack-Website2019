@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
 
     loggedIn: boolean = false;
     applied: boolean = false;
+    admin: boolean = false;
 
     constructor(private router: Router, 
             private userService: UserService, 
@@ -34,6 +35,7 @@ export class NavbarComponent implements OnInit {
     refreshNavbar() {
         this.loggedIn = this.userService.isUserLoggedIn();
         this.applied = this.applicationService.hasUserApplied();
+        this.admin = this.userService.isAdmin();
     }
 
     onHome() {
@@ -56,5 +58,8 @@ export class NavbarComponent implements OnInit {
     }
     onContact() {
         window.scrollTo(0,document.body.scrollHeight);
+    }
+    onAdmin() {
+        this.router.navigate(['admin']);
     }
 }

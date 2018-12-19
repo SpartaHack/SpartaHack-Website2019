@@ -165,7 +165,7 @@ export class ApplyAndEditComponent implements OnInit {
             this.error = "Please agree to the terms above."
         }
         else {
-            this.applyService.updateApplication(this.application, this.route.snapshot.data['user'].application_id).subscribe(response => {
+            this.applyService.updateApplicationSubmission(this.application, this.route.snapshot.data['user'].application_id).subscribe(response => {
                 this.submitted = true;
                 window.sessionStorage.setItem("application id", response.id);
             },

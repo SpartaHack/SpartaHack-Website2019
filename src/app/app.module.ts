@@ -1,3 +1,5 @@
+import { AllApplicationResolver } from './shared/application/all-application.resolver';
+import { AdminComponent } from './admin/admin.component';
 import { SendResetComponent } from './account/reset/send-reset.component';
 import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
 import { DeleteAccountComponent } from './dashboard/delete-account/delete-account.component';
@@ -34,6 +36,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TextMaskModule } from 'angular2-text-mask';
 import { ResetComponent } from './account/reset/reset.component';
+import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +56,9 @@ import { ResetComponent } from './account/reset/reset.component';
     SendResetComponent,
     BadgeComponent,
     ChangePasswordComponent,
-    DeleteAccountComponent
+    DeleteAccountComponent,
+    AdminComponent,
+    ReviewApplicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,8 @@ import { ResetComponent } from './account/reset/reset.component';
     AccountService,
     UserService,
     UserResolver,
-    ApplicationResolver
+    ApplicationResolver,
+    AllApplicationResolver
   ],
   bootstrap: [AppComponent]
 })

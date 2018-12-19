@@ -1,3 +1,4 @@
+import { UserService } from './../../shared/user/user.service';
 import { Router } from '@angular/router';
 import { AccountService } from './../account.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
 
     constructor(
         private accountService: AccountService,
+        private userService: UserService,
         private router: Router
     ) { }
 
@@ -43,6 +45,11 @@ export class LoginComponent implements OnInit {
 
                 //Required to be passed in every header for restricted access pages
                 window.sessionStorage.setItem('auth token', String(response.auth_token))
+
+                //Set admin status. If they are not an admin on login, they never will be.
+                if(response.role == "organizer" || response.role == "director") {
+                    window.sessionStorage.setItem('admin', "True");
+                }
 
                 //Navigate Based on application status
                 if(response.application_id == null)

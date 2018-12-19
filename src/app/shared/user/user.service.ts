@@ -63,9 +63,12 @@ export class UserService {
             )
     }
 
-
     isUserLoggedIn(): boolean {
         return Number(window.sessionStorage.getItem('user id')) != 0
+    }
+
+    isAdmin() {
+        return window.sessionStorage.getItem('admin') == "True";
     }
 
     private handleError(error: HttpErrorResponse) {

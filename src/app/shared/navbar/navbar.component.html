@@ -20,6 +20,9 @@
         <li *ngIf="loggedIn && !applied" class="nav-item">
           <a class="nav-link" (click)="onApply()">Apply!</a>
         </li>
+        <li *ngIf="admin" class="nav-item">
+          <a class="nav-link" (click)="onAdmin()">Admin</a>
+        </li>
         <li *ngIf="loggedIn" class="nav-item">
           <a class="nav-link" (click)="onLogOut()">Log Out</a>
         </li>
