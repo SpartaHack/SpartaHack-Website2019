@@ -4,7 +4,6 @@ import { ApplicationResolver } from './shared/application/application.resolver';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateAccountComponent } from './account/create/create-account.component';
 import { FaqResolver } from './faq/faq.resolver';
-import { ApplyComponent } from './apply/apply.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
