@@ -27,6 +27,11 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['create']);
     }
 
+    onResetPassword() {
+        //navigate to reset page
+        this.router.navigate(['send-reset']);
+    }
+
     onSubmit() {
         this.error = "";
 

@@ -1,3 +1,4 @@
+import { SendResetComponent } from './account/reset/send-reset.component';
 import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
 import { DeleteAccountComponent } from './dashboard/delete-account/delete-account.component';
 import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
@@ -32,6 +33,7 @@ import { CreateAccountComponent } from './account/create/create-account.componen
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ResetComponent } from './account/reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     CreateAccountComponent,
     DashboardComponent,
     SponsorsComponent,
+    ResetComponent,
+    SendResetComponent,
     BadgeComponent,
     ChangePasswordComponent,
     DeleteAccountComponent
