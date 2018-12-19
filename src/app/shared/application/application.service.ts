@@ -23,15 +23,13 @@ export class ApplicationService {
             )
         };
 
-        //get the user information based on username
-        //Eventually, this makes the call to the API, Not a local data set
         return this.httpClient.post<any>(environment.baseUrl + "/applications", submission, httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
     }
 
-    updateApplication(updatedApplication: ApplicationSubmission, id: number): Observable<any> {
+    updateApplicationSubmission(updatedApplication: ApplicationSubmission, id: number): Observable<any> {
 
         let httpOptions = {
             headers: new HttpHeaders(
@@ -42,9 +40,40 @@ export class ApplicationService {
             )
         };
 
-        //get the user information based on username
-        //Eventually, this makes the call to the API, Not a local data set
         return this.httpClient.put<any>(environment.baseUrl + "/applications/" + id, updatedApplication, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
+    updateApplication(updatedApplication: Application, id: number): Observable<any> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        return this.httpClient.put<any>(environment.baseUrl + "/applications/" + id, updatedApplication, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
+    getAllApplications(): Observable<Application[]> {
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        return this.httpClient.get<Application[]>(environment.baseUrl + "/applications" , httpOptions)
             .pipe(
                 catchError(this.handleError)
             )
@@ -61,8 +90,6 @@ export class ApplicationService {
             )
         };
 
-        //get the user information based on username
-        //Eventually, this makes the call to the API, Not a local data set
         return this.httpClient.get<Application>(environment.baseUrl + "/applications/" + appID, httpOptions)
             .pipe(
                 catchError(this.handleError)
@@ -79,8 +106,7 @@ export class ApplicationService {
             )
         };
 
-        //get the user information based on username
-        //Eventually, this makes the call to the API, Not a local data set
+        //get list of colleges from a local json file
         return this.httpClient.get<College[]>("assets/json/colleges.json", httpOptions)
             .pipe(
                 catchError(this.handleError)

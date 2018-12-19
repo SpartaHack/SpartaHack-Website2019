@@ -10,7 +10,12 @@
     </div>
     <div class="row justify-content-center mb-2">
         <div class="col-10 col-md-8">
-            <button class="btn btn-primary btn-block" (click)="onManage()">Manage Account</button>
+            <button class="btn btn-primary btn-block" (click)="onManage()">Manage Account/Application</button>
+        </div>
+    </div>
+    <div *ngIf="adminButtonEnabled" class="row justify-content-center mb-2">
+        <div class="col-10 col-md-8">
+            <button class="btn btn-primary btn-block" (click)="onAdmin()">Admin Dashboard</button>
         </div>
     </div>
 </div>
@@ -21,7 +26,7 @@
             <h3>Account Management</h3>
         </div>
     </div>
-    <div class="row justify-content-center mb-2">
+    <div *ngIf="!not_signed_up" class="row justify-content-center mb-2">
         <div class="col-10 col-md-8">
             <button class="btn btn-primary btn-block" (click)="onEdit()">Edit Application</button>
         </div>

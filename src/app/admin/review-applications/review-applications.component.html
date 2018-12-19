@@ -1,0 +1,92 @@
+<local-header [title]="'Review Applications'"></local-header>
+
+<div class="list-group" *ngIf="!reviewing">
+    <div *ngFor="let application of applications; let i = index;" class="list-group-item">
+        <div class="row justify-content-center mb-2 review-list" >
+            <div class="col-6 col-md-2">
+                <p>Application: {{application.id}}</p>
+            </div>
+            <div class="col-6 col-md-2">
+                <p>Status: <span 
+                    [ngClass]="{'waiting': application.status == 'Applied', 'accepted': application.status == 'Accepted', 'denied': application.status == 'Denied'}">
+                        {{application.status}}
+                    </span>
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <button class="btn btn-primary btn-block" (click)="onReview(i)">Review Application</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="reviewing">
+    <div class="row justify-content-center">
+        <div class="col-sm col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{applicationReviewing.id}}</h5>
+                    <p class="card-text">School: <span class="float-right">{{applicationReviewing.university}}</span></p>
+                    <p class="card-text">Education Level: 
+                        <span class="float-right">{{applicationReviewing.education}}</span>
+                    </p>
+                    <p class="card-text">Major(s): 
+                        <span class="float-right" *ngFor="let major of applicationReviewing.major let l = last;">{{major}}
+                            <span *ngIf="!l">, </span> 
+                        </span>
+                    </p>
+
+                    <p class="card-text mb-4">Expected Graduation: 
+                        <span class="float-right">{{applicationReviewing.graduation_season}} {{applicationReviewing.graduation_year}}</span> 
+                    </p>
+
+                    <p class="card-text">Races(s): 
+                        <span class="float-right" *ngFor="let race of applicationReviewing.race let l = last;">{{race}}
+                            <span *ngIf="!l">, </span> 
+                        </span>
+                    </p>
+                    <p class="card-text mb-4">Gender: 
+                        <span class="float-right">{{applicationReviewing.gender}}</span> 
+                    </p>
+                    <p class="card-text">Birthday: 
+                        <span class="float-right">{{applicationReviewing.birth_day}}/{{applicationReviewing.birth_month}}/{{applicationReviewing.birth_year}}</span>
+                    </p>
+
+                    <p class="card-text">Origin of Travel: 
+                        <span class="float-right">{{applicationReviewing.travel_origin}}</span>
+                    </p>
+                    <p class="card-text mb-4">Requesting Travel Reimbursement: 
+                        <span class="float-right">{{applicationReviewing.reimbursement}}</span>
+                    </p>
+                    
+                    <p class="card-text">Hackathons Attended: {{applicationReviewing.hackathons}}</p>
+                    <p class="card-text">Statement:</p>
+                    <p class="card-text mb-4">{{applicationReviewing.statement}}</p>
+                    
+                    <p class="card-text">Other Links</p>
+                    <p class="card-text" *ngIf="applicationReviewing.github != null"><a href="{{applicationReviewing.github}}">Github</a></p>
+                    <p class="card-text" *ngIf="applicationReviewing.linkedin != null"><a href="{{applicationReviewing.linkedin}">LinkedIn</a></p>
+                    <p class="card-text" *ngIf="applicationReviewing.website != null"><a href="{{applicationReviewing.website}}">Personal Website</a></p>
+                    <p class="card-text" *ngIf="applicationReviewing.devpost != null"><a href="{{applicationReviewing.devpost}}">Devpost</a></p>
+                    <p class="card-text mb-4" *ngIf="applicationReviewing.other_link != null"><a href="{{applicationReviewing.other_link}}">Other Link</a></p>
+
+                    <div class="row mb-2">
+                        <div class="col">
+                            <button (click)="onReviewClose()" class="btn btn-secondary btn-block">Cancel</button>
+                        </div>
+                        <div class="col">
+                            <button (click)="onDeny(applicationReviewing)" class="btn btn-primary btn-block btn-danger mr-2">Deny</button>                        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button (click)="onApprove(applicationReviewing)" class="btn btn-success btn-block mr-2">Approve!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
