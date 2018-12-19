@@ -26,7 +26,7 @@
                     <button [disabled]="!resetForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
                 </form>
                 <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
-                <p class="login text-dark mt-3" *ngIf="submitted">Your password has been reset.  <a (click)="onLogin()">Login Now!</a></p>
+                <p class="login text-dark mt-3" *ngIf="submitted">Your password has been reset.  <a style="color: blue;text-decoration: underline;cursor: pointer;" (click)="onLogin()">Login Now!</a></p>
             </div>
         </div>
     </div>

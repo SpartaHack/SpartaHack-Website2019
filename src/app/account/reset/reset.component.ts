@@ -19,10 +19,15 @@ export class ResetComponent implements OnInit {
     constructor(
         private accountService: AccountService,
         private activatedRoute: ActivatedRoute,
+        private router: Router
     ) { }
 
     ngOnInit() { 
         this.resetToken = this.activatedRoute.snapshot.params['token'];
+    }
+
+    onLogin() {
+        this.router.navigate(['login']);
     }
 
     onSubmit() {
