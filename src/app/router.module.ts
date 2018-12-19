@@ -1,10 +1,11 @@
+import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
 //import { MailingListComponent } from './mailing-list/mailing-list.component';
 import { ApplicationResolver } from './shared/application/application.resolver';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateAccountComponent } from './account/create/create-account.component';
 import { FaqResolver } from './faq/faq.resolver';
 import { ApplyComponent } from './apply/apply.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FaqComponent } from './faq/faq.component';
@@ -29,7 +30,7 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'send-reset', component: SendResetComponent },
     { path: 'reset/:token', component: ResetComponent },
-    { path: 'apply', component: ApplyComponent, 
+    { path: 'application', component: ApplyAndEditComponent, 
         resolve: {
             user: UserResolver
         } 

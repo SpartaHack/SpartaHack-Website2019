@@ -5,7 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'dashboard',
-    templateUrl: 'dashboard.component.html'
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.scss'] 
 })
 
 export class DashboardComponent implements OnInit {
@@ -14,6 +15,12 @@ export class DashboardComponent implements OnInit {
     user: User;
 
     not_signed_up: boolean = false;
+
+    managing: boolean = false;
+
+    showingChangePassword: boolean = false;
+    showingEditApplication: boolean = false;
+    showingDeleteAccount: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -42,6 +49,31 @@ export class DashboardComponent implements OnInit {
     }
 
     onApplyClick() {
-        this.router.navigate(['apply']);
+        this.router.navigate(['application']);
+    }
+
+    onManage() {
+        this.managing = true;
+    }
+    onDashboard() {
+        this.managing = false;
+    }
+
+    onDelete() {
+        this.showingDeleteAccount = true;
+    }
+    onDeleteClosed() {
+        this.showingDeleteAccount = false;
+    }
+
+    onEdit() {
+        this.router.navigate(['application']);
+    }
+
+    onPassword() {
+        this.showingChangePassword = true;
+    }
+    onPasswordClosed() {
+        this.showingChangePassword = false;
     }
 }

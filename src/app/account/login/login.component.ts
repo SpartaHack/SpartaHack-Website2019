@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
                 if(response.application_id == null)
                 {
                     //If not applied, go to apply
-                    this.router.navigate(['apply'])
+                    this.router.navigate(['application'])
                 }
                 else
                 {

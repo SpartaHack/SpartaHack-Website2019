@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { trigger, transition, style, animate } from '../../../node_modules/@angular/animations';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     selector: 'home',
@@ -78,7 +79,11 @@ export class HomeComponent implements OnInit {
         window.location.href = "https://drive.google.com/open?id=1mTQGKFJYCI8Y-v9X7MZiiy4aRwm0Eg9t";
     }
 
-    constructor(private router: Router) { }
+    goToUrl(url: string) {
+        this.document.location.href = url;
+    }
+
+    constructor(private router: Router, @Inject(DOCUMENT) private document: any) { }
 
     ngOnInit() { }
 }

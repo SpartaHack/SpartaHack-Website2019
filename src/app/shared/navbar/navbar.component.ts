@@ -40,7 +40,7 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['']);
     }
     onApply() {
-        this.router.navigate(['apply']);
+        this.router.navigate(['application']);
     }
     onDashboard() {
         this.router.navigate(['dashboard']);
