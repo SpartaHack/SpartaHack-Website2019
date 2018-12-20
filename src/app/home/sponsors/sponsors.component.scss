@@ -9,7 +9,7 @@
 }
 .aptive {
     @media (min-width: 576px) {
-        margin-top: 4.5rem!important;
+        margin-top: 2.85rem!important;
     }
     @media (max-width: 768px) {
         @media (min-width: 576px) {
@@ -17,8 +17,20 @@
         }
     }
 } 
+.stock {
+    margin-top: 1.5%;
+    @media (max-width: 768px) {
+        margin-top: -6%;
+    }
+}
+.deloitte {
+    margin-top: 20%;
+    @media (max-width: 768px) {
+        margin-top: 12%;
+    }
+}
 .dow {
-    margin-top: 4rem!important;
+    margin-top: 2rem!important;
     @media (max-width: 768px) {
         @media (min-width: 576px) {
             margin-top: 2rem!important;
