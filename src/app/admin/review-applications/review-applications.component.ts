@@ -22,6 +22,13 @@ export class ReviewApplicationsComponent implements OnInit {
 
     ngOnInit() {
         this.applications = this.route.snapshot.data['applications'];
+
+        //Move applications to be reviewed to the top
+        let applied = this.applications.filter(x => x.status == 'Applied');
+        let notApplied = this.applications.filter(x => x.status != 'Applied');
+
+        this.applications = [];
+        this.applications = applied.concat(notApplied);
     }
 
     onReview(index: number) {

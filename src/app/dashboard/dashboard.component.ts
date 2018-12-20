@@ -54,7 +54,10 @@ export class DashboardComponent implements OnInit {
         else
         {
             this.application = this.route.snapshot.data['application']
-            this.decisionMade = true;
+            if(this.application.status != 'Applied')
+            {
+                this.decisionMade = true;
+            }
         }
     }
 
