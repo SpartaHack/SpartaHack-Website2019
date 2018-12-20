@@ -5,7 +5,25 @@
         <div class="col-10 col-md-8">
             <h3>Greetings, {{user.first_name}}!</h3>
             <p *ngIf="not_signed_up">You haven't Applied Yet! <a (click)='onApplyClick()' >Apply Here</a></p>
-            <p *ngIf="!not_signed_up">You Have Applied! We will get back to you soon.</p>
+            <p *ngIf="!not_signed_up && !decisionMade">You Have Applied! We will get back to you soon.</p>
+            <p *ngIf="decisionMade">A decision has been made regarding your application.</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <div class="card" *ngIf="application.status == 'Accepted'">
+                <div class="card-body">
+                    <h5 class="card-title">Welcome!</h5>
+                    <p class="card-text">You have been accepted to attend Spartahack V! Be on the lookout for more information via email as the event gets closer.</p>
+                    <p class="card-text">See you in January!</p>
+                    <p class="card-text small">Questions? read <a (click)='onFaq()'>the FAQ</a>.</p>
+                </div>
+            </div>
+            <div class="card" *ngIf="application.status == 'Denied'">
+                <div class="card-body">
+                    <p class="card-text">Unfortunately, we are not able to offer you a spot at SpartaHack at this time.</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row justify-content-center mb-2">
@@ -26,7 +44,7 @@
             <h3>Account Management</h3>
         </div>
     </div>
-    <div *ngIf="!not_signed_up" class="row justify-content-center mb-2">
+    <div *ngIf="!not_signed_up && !decisionMade" class="row justify-content-center mb-2">
         <div class="col-10 col-md-8">
             <button class="btn btn-primary btn-block" (click)="onEdit()">Edit Application</button>
         </div>

@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
     user: User;
 
     not_signed_up: boolean = false;
+    decisionMade: boolean = false;
 
     managing: boolean = false;
 
@@ -53,6 +54,7 @@ export class DashboardComponent implements OnInit {
         else
         {
             this.application = this.route.snapshot.data['application']
+            this.decisionMade = true;
         }
     }
 
@@ -87,5 +89,9 @@ export class DashboardComponent implements OnInit {
     }
     onPasswordClosed() {
         this.showingChangePassword = false;
+    }
+
+    onFaq() {
+        this.router.navigate(['faq']);
     }
 }
