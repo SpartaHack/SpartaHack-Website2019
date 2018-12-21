@@ -1,5 +1,5 @@
-import { MajorsService } from './../shared/majors/majors.service';
-import { ApplicationSubmission } from './../shared/application/application.model';
+import { MajorsService } from '../shared/majors/majors.service';
+import { ApplicationSubmission } from '../shared/application/application.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ApplicationService } from '../shared/application/application.service';
@@ -10,12 +10,12 @@ class Item {
 }
 
 @Component({
-    selector: 'apply',
-    templateUrl: 'apply.component.html',
-    styleUrls: ['apply.component.scss']
+    selector: 'apply-and-edit',
+    templateUrl: 'apply-and-edit.component.html',
+    styleUrls: ['apply-and-edit.component.scss']
 })
 
-export class ApplyComponent implements OnInit {
+export class ApplyAndEditComponent implements OnInit {
 
     //options for vairous for options boxes
     educationLevels = [
@@ -69,9 +69,12 @@ export class ApplyComponent implements OnInit {
         'Prefer not to Specify'
     ]
 
+    birthdayString = "";
+
     filteredColleges = []
 
     submitted: boolean = false;
+    editing: boolean = false;
 
     error = "";
     githubError = "";
@@ -101,11 +104,6 @@ export class ApplyComponent implements OnInit {
             data => {this.majorList = data}
         )
 
-        //initalize colleges list
-        // this.applyService.getColleges().subscribe(
-        //     data => {this.colleges = data}
-        // )
-
         //Signed in check
         if(this.route.snapshot.data['user'].not_signed_in)
         {
@@ -120,35 +118,10 @@ export class ApplyComponent implements OnInit {
 
     onSubmit() {
 
-        //reset errors from previous attempts
-        this.githubError = "";
-        this.linkedinError = "";
-        this.websiteError = "";
-        this.devpostError = "";
-        this.otherError = "";
-        this.birthError = "";
-        this.error = "";
+        this.clearErrors();
+        this.formatData();
 
-        //split birth entry
-        let birthArray = this.application.birth_day.toString().split("-");
-        this.application.birth_day = Number(birthArray[2])
-        this.application.birth_month = Number(birthArray[1])
-        this.application.birth_year = Number(birthArray[0])
-
-        for (let major of this.selectedMajors) {
-            this.application.major.push(major.item_text)
-        }
-
-        for (let race of this.selectedRaces) {
-            this.application.race.push(race.item_text)
-        }
-
-        //Double check if university is in list. It it isn't, put it as 'other university'
-        if(!this.colleges.includes(this.application.university)) {
-            this.application.other_university = this.application.university;
-        }
-
-        if(!(this.conductChecked && this.dataSharingChecked)) {
+        if(!this.termsAgreedTo()) {
             this.error = "Please agree to the terms above."
         }
         else {
@@ -157,54 +130,138 @@ export class ApplyComponent implements OnInit {
                 window.sessionStorage.setItem("application id", response.id);
             },
             error => {
-                if(!this.isEmpty(error.error_list))
-                {
-                    console.log('here');
-                    for (var key in error.error_list) {
-                        if (error.error_list.hasOwnProperty(key)) {
-                            
-                            if(key == 'linkedin') {
-                                this.linkedinError = error.error_list[key];
-                                this.application.linkedin = null;
-                                this.error = "Please check the errors above.";
-                            }
-                            else if (key == 'devpost') {
-                                this.devpostError = error.error_list[key];
-                                this.application.devpost = null;
-                                this.error = "Please check the errors above.";
-                            }
-                            else if (key == 'github') {
-                                this.githubError = error.error_list[key];
-                                this.application.github = null;
-                                this.error = "Please check the errors above.";
-                            }
-                            else if (key == 'website') {
-                                this.websiteError = error.error_list[key];
-                                this.application.website = null;
-                                this.error = "Please check the errors above.";
-                            }
-                            else if (key == 'other_link') {
-                                this.otherError = error.error_list[key];
-                                this.application.other_link = null;
-                                this.error = "Please check the errors above.";
-                            }
-                            else if (key.includes('birth')) {
-                                this.birthError = error.error_list[key];
-                                this.error = "Please check the errors above.";
-                            }
-                            else {
-                                this.error = error.error_list[key];
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    this.error = "Something is not right! Please try again."
-                }
+                this.handleError(error);
             })
         }
-        //console.log(this.application)
+    }
+
+    onEditing() {
+        this.application = new ApplicationSubmission();
+        //Get old app data to submit
+        this.applyService.getApplication(this.route.snapshot.data['user'].application_id).subscribe(data => {
+            this.application = data;
+
+            this.birthdayString = this.application.birth_month + "-" + this.application.birth_day + "-" + this.application.birth_year;
+
+            for (let major of this.application.major) {
+                this.selectedMajors.push(this.majorList.find(item => item.item_text == major))
+            }
+
+            for (let race of this.application.race) {
+                this.selectedRaces.push(this.raceList.find(item => item.item_text == race))
+            }
+
+            this.submitted = false;
+            this.editing = true;
+        })
+    }
+
+    //The same as onSubmit, but it's a put, not a post
+    onEdit() {
+        this.clearErrors();
+        this.formatData();
+
+        if(!this.termsAgreedTo()) {
+            this.error = "Please agree to the terms above."
+        }
+        else {
+            this.applyService.updateApplicationSubmission(this.application, this.route.snapshot.data['user'].application_id).subscribe(response => {
+                this.submitted = true;
+                window.sessionStorage.setItem("application id", response.id);
+            },
+            error => {
+                this.handleError(error);
+            })
+        }
+    }
+
+    clearErrors() {
+        //reset errors from previous attempts
+        this.githubError = "";
+        this.linkedinError = "";
+        this.websiteError = "";
+        this.devpostError = "";
+        this.otherError = "";
+        this.birthError = "";
+        this.error = "";
+    }
+
+    formatData() {
+        delete this.application.accepted_date;
+
+        //split birth entry
+        let birthArray = this.birthdayString.split("-");
+        this.application.birth_day = Number(birthArray[2])
+        this.application.birth_month = Number(birthArray[1])
+        this.application.birth_year = Number(birthArray[0])
+
+        this.application.major = [];
+        for (let major of this.selectedMajors) {
+            this.application.major.push(major.item_text)
+        }
+
+        this.application.race = [];
+        for (let race of this.selectedRaces) {
+            this.application.race.push(race.item_text)
+        }
+
+
+        //Double check if university is in list. It it isn't, put it as 'other university'
+        if(!this.colleges.includes(this.application.university)) {
+            this.application.other_university = this.application.university;
+        }
+    }
+
+    termsAgreedTo() {
+        return this.conductChecked && this.dataSharingChecked;
+    }
+
+    handleError(error) {
+        if(!this.isEmpty(error.error_list))
+        {
+            console.log('here');
+            for (var key in error.error_list) {
+                if (error.error_list.hasOwnProperty(key)) {
+                    
+                    if(key == 'linkedin') {
+                        this.linkedinError = error.error_list[key];
+                        this.application.linkedin = null;
+                        this.error = "Please check the errors above.";
+                    }
+                    else if (key == 'devpost') {
+                        this.devpostError = error.error_list[key];
+                        this.application.devpost = null;
+                        this.error = "Please check the errors above.";
+                    }
+                    else if (key == 'github') {
+                        this.githubError = error.error_list[key];
+                        this.application.github = null;
+                        this.error = "Please check the errors above.";
+                    }
+                    else if (key == 'website') {
+                        this.websiteError = error.error_list[key];
+                        this.application.website = null;
+                        this.error = "Please check the errors above.";
+                    }
+                    else if (key == 'other_link') {
+                        this.otherError = error.error_list[key];
+                        this.application.other_link = null;
+                        this.error = "Please check the errors above.";
+                    }
+                    else if (key.includes('birth')) {
+                        this.birthError = error.error_list[key];
+                        this.error = "Please check the errors above.";
+                    }
+                    else {
+                        this.error = error.error_list[key];
+                    }
+                }
+            }
+        }
+        else
+        {
+            this.error = "Something is not right! Please try again."
+        }
     }
 
     isEmpty(obj) {

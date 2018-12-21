@@ -1,0 +1,33 @@
+<local-header [title]="'Reset'"></local-header>
+
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 mt-4"> 
+        <h3 style="text-align: center;">Reset Password</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 *ngIf="!submitted" class="card-title" style="color: black;">Reset your password</h5>
+                <form #resetForm="ngForm" *ngIf="!submitted">
+                    <div class="form-group">
+                        <label for="password">New Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="strong but memorable" maxlength="30"
+                            required [(ngModel)]="passwords.password" name="password" #password="ngModel"> 
+                        <small *ngIf="!(password.valid || password.pristine)" class="form-text text-danger">Password is Required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password_confirmation">Confirm Password</label>
+                        <input type="password" class="form-control" id="password_confirmation" placeholder="same as above" maxlength="30"
+                            required [(ngModel)]="passwords.password_confirmation" name="password_confirmation" #passwordc="ngModel"> 
+                        <small *ngIf="!(passwordc.valid || passwordc.pristine)" class="form-text text-danger">Confirmation is Required</small>
+                    </div>
+                    <button [disabled]="!resetForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
+                </form>
+                <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                <p class="login text-dark mt-3" *ngIf="submitted">Your password has been reset.  <a style="color: blue;text-decoration: underline;cursor: pointer;" (click)="onLogin()">Login Now!</a></p>
+            </div>
+        </div>
+    </div>
+</div>

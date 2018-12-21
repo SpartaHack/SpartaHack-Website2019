@@ -5,7 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'dashboard',
-    templateUrl: 'dashboard.component.html'
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.scss'] 
 })
 
 export class DashboardComponent implements OnInit {
@@ -14,6 +15,15 @@ export class DashboardComponent implements OnInit {
     user: User;
 
     not_signed_up: boolean = false;
+    decisionMade: boolean = false;
+
+    managing: boolean = false;
+
+    showingChangePassword: boolean = false;
+    showingEditApplication: boolean = false;
+    showingDeleteAccount: boolean = false;
+
+    adminButtonEnabled: boolean = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -30,6 +40,12 @@ export class DashboardComponent implements OnInit {
         else
         {
             this.user = this.route.snapshot.data['user'];
+
+            if(this.user.role == "organizer" || this.user.role == "director")
+            {
+                this.adminButtonEnabled = true;
+            }
+
         }
         if(this.route.snapshot.data['application'].not_signed_up)
         {
@@ -38,10 +54,47 @@ export class DashboardComponent implements OnInit {
         else
         {
             this.application = this.route.snapshot.data['application']
+            if(this.application.status != 'Applied')
+            {
+                this.decisionMade = true;
+            }
         }
     }
 
     onApplyClick() {
-        this.router.navigate(['apply']);
+        this.router.navigate(['application']);
+    }
+
+    onAdmin() {
+        this.router.navigate(['admin']);
+    }
+
+    onManage() {
+        this.managing = true;
+    }
+    onDashboard() {
+        this.managing = false;
+    }
+
+    onDelete() {
+        this.showingDeleteAccount = true;
+    }
+    onDeleteClosed() {
+        this.showingDeleteAccount = false;
+    }
+
+    onEdit() {
+        this.router.navigate(['application']);
+    }
+
+    onPassword() {
+        this.showingChangePassword = true;
+    }
+    onPasswordClosed() {
+        this.showingChangePassword = false;
+    }
+
+    onFaq() {
+        this.router.navigate(['faq']);
     }
 }

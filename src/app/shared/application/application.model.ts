@@ -59,6 +59,9 @@ export class ApplicationSubmission {
     outside_north_america: string = '';
     reimbursement: boolean = false;
     phone: string = '';
+
+    accepted_date: string = null;
+
 }
 
 export class College {

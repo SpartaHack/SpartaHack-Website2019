@@ -1,5 +1,5 @@
 import { User } from './../shared/user/user.model';
-import { UserInput, Credentials } from './account.model';
+import { UserInput, Credentials, PasswordReset } from './account.model';
 import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -34,11 +34,34 @@ export class AccountService {
         )
     }
 
+    resetPassword(email: string): Observable<User> {
+        let emailJSON = {"email": email}
+
+        return this.httpClient.post<User>(environment.baseUrl + "/users/request_password_token", emailJSON, httpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+    }
+
+    setNewPassword(passwords: PasswordReset, resetToken: string): Observable<User> {
+        let newHttpOptions = {
+            headers: new HttpHeaders({ 
+                'Content-Type': 'application/json',
+                'X-WWW-RESET-PASSWORD-TOKEN': resetToken
+            })
+        };
+        return this.httpClient.post<User>(environment.baseUrl + "/users/reset_password", passwords, newHttpOptions)
+        .pipe(
+            catchError(this.handleError)
+        )
+    }
+
     logout() {
         //Unset session variables and return to home
         window.sessionStorage.removeItem('application id');
         window.sessionStorage.removeItem('user id');
         window.sessionStorage.removeItem('auth token');
+        window.sessionStorage.removeItem('admin');
 
         this.router.navigate(['']);
     }

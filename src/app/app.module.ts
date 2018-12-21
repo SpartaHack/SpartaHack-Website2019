@@ -1,3 +1,9 @@
+import { AllApplicationResolver } from './shared/application/all-application.resolver';
+import { AdminComponent } from './admin/admin.component';
+import { SendResetComponent } from './account/reset/send-reset.component';
+import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
+import { DeleteAccountComponent } from './dashboard/delete-account/delete-account.component';
+import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
 import { BadgeComponent } from './shared/badge/badge.component';
 import { SponsorsComponent } from './home/sponsors/sponsors.component';
 import { MajorsService } from './shared/majors/majors.service';
@@ -24,18 +30,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
-import { ApplyComponent } from './apply/apply.component';
 import { HttpClientModule, HttpClientJsonpModule } from '../../node_modules/@angular/common/http';
 import { CreateAccountComponent } from './account/create/create-account.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TextMaskModule } from 'angular2-text-mask';
+import { ResetComponent } from './account/reset/reset.component';
+import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ApplyComponent,
+    ApplyAndEditComponent,
     FaqComponent,
     NavbarComponent,
     LoginComponent,
@@ -45,7 +52,13 @@ import { TextMaskModule } from 'angular2-text-mask';
     CreateAccountComponent,
     DashboardComponent,
     SponsorsComponent,
-    BadgeComponent
+    ResetComponent,
+    SendResetComponent,
+    BadgeComponent,
+    ChangePasswordComponent,
+    DeleteAccountComponent,
+    AdminComponent,
+    ReviewApplicationsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +80,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     AccountService,
     UserService,
     UserResolver,
-    ApplicationResolver
+    ApplicationResolver,
+    AllApplicationResolver
   ],
   bootstrap: [AppComponent]
 })
