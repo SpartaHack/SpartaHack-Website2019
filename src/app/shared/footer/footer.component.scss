@@ -4,7 +4,81 @@
         font-size: 1.5rem;
     }
 }
+<<<<<<< HEAD
 .icon {
     max-height: 64px;
     cursor: pointer;
 }
+=======
+
+@keyframes fadein{
+  0%{ display: block; opacity: 0; }
+  100%{ opacity: 1; }
+}
+@keyframes scaleup{
+  100%{ width: 100%; margin: 0 0 0 0; padding: 0 0 0 0; }
+}
+@keyframes scaledown{
+  0%{ width: 100%; }
+  100%{ width: 70%; }
+}
+.social-icons{
+    width: 40%;
+    margin: 7.5% auto 4%;
+    a{
+      display: inline-block;
+      width: 23%;
+      margin: 0 1% 0 1%;
+      img{
+        animation: scaledown .5s forwards;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .glitch-icon{
+        display: none;
+      }
+      .clean-icon{
+        display: auto;
+      }
+    }
+    a:hover{
+      img{
+        animation: scaleup .5s forwards;
+      }
+      .clean-icon{
+        display: none;
+      }
+      .glitch-icon{
+        display: inline-block;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      a{
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+
+        img{
+          width: 80%;
+          margin: auto auto;
+
+          padding: 0 0 0 0;
+        }
+      }
+      a:hover,
+      a:active{
+        img{
+          animation: scaleup .5s forwards;
+        }
+      }
+    }
+}
+
+@media (max-width: 768px) {
+  .social-icons{
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+>>>>>>> d7641955d1d2756b0aadc11a90819b1a6db794dd
