@@ -1,5 +1,9 @@
 <local-header [title]="'Frequently Asked Questions'"></local-header>
-<input id="faq-filter" type="text" #box (keyup.enter)="addFilter(box.value); box.value=''" placeholder="Search..."/>
+
+<div class="row mt-4">
+  <input class="col-sm col-md-6" id="faq-filter" type="text" #box (keyup.enter)="addFilter(box.value); box.value=''" placeholder="Search..."/>
+</div>
+
 <div class="row mt-4">
     <div class="col-sm col-md-6 scrolling" id="faq-list">
         <div *ngFor="let faq of faqs">

@@ -28,7 +28,7 @@ export class FaqComponent implements OnInit {
   }
   addFilter(filter: string) {
     if (!filter) { return; }
-    this.faqs = this.faqs.filter(faq => (faq.answer.toLowerCase().includes((filter.toLowerCase()))));// + this.faqs.filter(faq => (faq.question.toLowerCase().includes((filter.toLowerCase()))));
+    this.faqs = this.faqs.filter(faq => (faq.answer.toLowerCase().includes((filter.toLowerCase()))) || (faq.question.toLowerCase().includes((filter.toLowerCase()))) );
   }
   onSelected(faq: Faq) {
     this.selected = faq;

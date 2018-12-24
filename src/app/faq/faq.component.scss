@@ -10,8 +10,16 @@
 
 }
 #faq-filter {
-  height: 50px;
+  padding: 12.5% auto 12.5% auto;
   display: block;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #612f69;
+  color: white;
+}
+#faq-filter::placeholder {
+  color: white;
 }
 #faq-list {
   //Fixes awkward border-radius interactions
@@ -92,6 +100,10 @@
   #faq-list {
     margin-top: 2.5%;
     height: 125px;
+  }
+  #faq-filter {
+    width: 90%;
+    margin-left: 5%;
   }
   .scrolling {
     height: 275px;
