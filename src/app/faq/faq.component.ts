@@ -8,11 +8,12 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
   styleUrls: ['./faq.component.scss']
 })
 export class FaqComponent implements OnInit {
-  
+
   faqs: Faq[];
   selected: Faq;
 
   constructor(private route: ActivatedRoute) { }
+
 
   ngOnInit() {
     this.faqs = this.route.snapshot.data['faqs'];
@@ -25,7 +26,10 @@ export class FaqComponent implements OnInit {
 
     this.selected = this.faqs[0];
   }
-
+  addFilter(filter: string) {
+    if (!filter) { return; }
+    this.faqs = this.faqs.filter(faq => (faq.answer.toLowerCase().includes((filter.toLowerCase()))));// + this.faqs.filter(faq => (faq.question.toLowerCase().includes((filter.toLowerCase()))));
+  }
   onSelected(faq: Faq) {
     this.selected = faq;
   }
