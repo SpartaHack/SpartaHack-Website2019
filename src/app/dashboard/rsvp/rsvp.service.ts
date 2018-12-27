@@ -61,7 +61,7 @@ export class RsvpService {
     }
 
     isRsvp(): boolean {
-        return Number(window.sessionStorage.getItem('rsvp id')) != 0
+        return Number(window.sessionStorage.getItem('rsvp id')) != null;
     }
 
     private handleError(error: HttpErrorResponse) {
