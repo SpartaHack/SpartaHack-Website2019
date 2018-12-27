@@ -1,0 +1,76 @@
+<div *ngIf="showing">
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-md-8">
+            <h3>RSVP to Spartahack V !</h3>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10 col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <div *ngIf="!finished">
+                        <form #passwordForm="ngForm">
+                            <div class="form-group">
+                                <label for="attending">Are you attending Spartahack V?</label>
+                                <select required class="form-control" [(ngModel)]="rsvp.attending" name="attending" #attending="ngModel">
+                                    <option value="" disabled selected>Select Option</option>
+                                    <option [ngValue]="'Yes'">Yes</option>
+                                    <option [ngValue]="'No'">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dietary">Do you have any Dietary Restrictions?</label>
+                                <ng-multiselect-dropdown (onDropdownClose)="otherSelected()" [placeholder]="'Select One or More'" name="dietary" #dietary="ngModel" required
+                                    [data]="dietaryList" [(ngModel)]="selectedDietary" [settings]="dietaryDropdownSettings">
+                                </ng-multiselect-dropdown>
+                            </div>
+                            <div class="form-group" *ngIf="otherSelected()">
+                                <label for="other">Other Dietary Restriction:</label>
+                                <input type="text" class="form-control" id="other" maxlength="30"
+                                    [(ngModel)]="rsvp.other_dietary_restrictions" name="other" #other="ngModel"> 
+                            </div>
+                            <div class="form-group">
+                                <label for="resume">Add Resume (pdf only):</label>
+                                <input type="file" accept="application/pdf" class="form-control" id="resume" maxlength="30" 
+                                requireFile #resume_data [(ngModel)]="resumeRawData" name="resume" #resume="ngModel"> 
+                                <small *ngIf="!(resume.valid || resume.pristine)" class="form-text text-danger">Resume Required</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="shirt">Shirt Size</label>
+                                <select required class="form-control" [(ngModel)]="rsvp.shirt_size" name="shirt" #shirt="ngModel">
+                                    <option value="" disabled selected>Select Size</option>
+                                    <option *ngFor="let s of shirtSizes" [ngValue]="s">{{s}}</option>
+                                </select>
+                                <small *ngIf="!(shirt.valid || shirt.pristine)" class="form-text text-danger">Shirt Size is Required</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="carpool">SpartaHack can share my information with other attendees who are looking to organize carpools.</label>
+                                <select required class="form-control" [(ngModel)]="rsvp.carpool_sharing" name="carpool" #carpool="ngModel">
+                                    <option value="" disabled selected>Select Option</option>
+                                    <option [ngValue]="'Yes'">Yes</option>
+                                    <option [ngValue]="'No'" >No</option>
+                                </select>
+                                <small *ngIf="!(carpool.valid || carpool.pristine)" class="form-text text-danger">Carpool Selection is Required</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="job">What types of job opportunites are you interested in?</label>
+                                <select required class="form-control" [(ngModel)]="rsvp.jobs" name="job" #job="ngModel">
+                                    <option value="" disabled selected>Select Option</option>
+                                    <option *ngFor="let j of jobs" [ngValue]="j">{{j}}</option>
+                                </select>
+                                <small *ngIf="!(job.valid || job.pristine)" class="form-text text-danger">Shirt Size is Required</small>
+                            </div>
+                            <button (click)="onClose()" class="btn btn-secondary mr-2">Cancel</button>
+                            <button [disabled]="!passwordForm.valid" (click)="onSubmit()" class="btn btn-primary mr-2">Submit!</button>
+                        </form>
+                        <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                    </div>
+                    <div *ngIf="finished">
+                        <p class="login text-dark mt-3">We've got your RSVP! See you there!</p>
+                        <button (click)="onClose()" class="btn btn-primary mr-2">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

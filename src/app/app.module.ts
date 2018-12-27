@@ -1,3 +1,5 @@
+import { FileValidator } from './dashboard/rsvp/file-input.validator';
+import { FileValueAccessor } from './dashboard/rsvp/file-control-value-accessor';
 import { AllApplicationResolver } from './shared/application/all-application.resolver';
 import { AdminComponent } from './admin/admin.component';
 import { SendResetComponent } from './account/reset/send-reset.component';
@@ -37,6 +39,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { TextMaskModule } from 'angular2-text-mask';
 import { ResetComponent } from './account/reset/reset.component';
 import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
+import { RsvpService } from './dashboard/rsvp/rsvp.service';
+import { RsvpComponent } from './dashboard/rsvp/rsvp.component';
+import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
 
 @NgModule({
   declarations: [
@@ -58,7 +63,10 @@ import { ReviewApplicationsComponent } from './admin/review-applications/review-
     ChangePasswordComponent,
     DeleteAccountComponent,
     AdminComponent,
-    ReviewApplicationsComponent
+    ReviewApplicationsComponent,
+    RsvpComponent,
+    FileValueAccessor,
+    FileValidator
   ],
   imports: [
     BrowserModule,
@@ -81,7 +89,9 @@ import { ReviewApplicationsComponent } from './admin/review-applications/review-
     UserService,
     UserResolver,
     ApplicationResolver,
-    AllApplicationResolver
+    AllApplicationResolver,
+    RsvpService,
+    RsvpResolver
   ],
   bootstrap: [AppComponent]
 })
