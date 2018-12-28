@@ -76,18 +76,22 @@ export class RsvpComponent {
 
     onSubmit() {
 
-        let fi = this.resume.nativeElement;
+        let fi = this.resumeRawData;
         //Convert resume to Base64 string
-        if (fi.files && fi.files[0]) {
-            let file: File = fi.files[0];
+        if (fi[0]) {
+            let file: File = fi[0];
             var reader:FileReader = new FileReader();
 
             reader.onloadend = (e) => {
-                this.rsvp.resume = "data:application/pdf;base64," + reader.result.toString();
+                this.rsvp.resume = reader.result.toString();
+                this.sendRsvp();
             }
             reader.readAsDataURL(file);
         }
         
+    }
+
+    sendRsvp() {
         this.rsvp.dietary_restrictions = [];
         for (let restriction of this.selectedDietary) {
             this.rsvp.dietary_restrictions.push(restriction.item_text)
@@ -143,7 +147,6 @@ export class RsvpComponent {
                 }
             )
         }
-        
     }
 
     onClose() {
