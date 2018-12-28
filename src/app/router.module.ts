@@ -15,6 +15,7 @@ import { UserResolver } from './shared/user/user.resolver';
 import { ResetComponent } from './account/reset/reset.component';
 import { SendResetComponent } from './account/reset/send-reset.component';
 import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
+import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
 
 const routes: Routes = [
     //{ path: 'subscribe', component: MailingListComponent },
@@ -40,7 +41,8 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent,
         resolve: {
             user: UserResolver,
-            application: ApplicationResolver
+            application: ApplicationResolver,
+            rsvp: RsvpResolver
         } 
     },
     
