@@ -63,11 +63,17 @@
                             <small *ngIf="!(phone.valid || phone.pristine)" class="form-text text-danger">Phone is Required</small>
                             <small *ngIf="phoneError != ''" class="form-text text-danger">{{phoneError}}</small>
                         </div>
-                        <div class="form-group">
-                            <label for="birthday">Birthday</label>
-                            <input type="date" class="form-control" id="birthday" placeholder="Birthday" [ngClass]="{'error': birthError}"
-                                required [(ngModel)]="birthdayString" name="birthday" #birthday="ngModel">
+                        <div class="form-group" style="margin-bottom: -.5rem;">
+                            <label for="birthday" style="display: block;">Birthday</label>
+                            <input type="number" class="form-control birth" id="birthmonth" placeholder="MM" [ngClass]="{'error': birthError}"
+                                required [(ngModel)]="application.birth_month" name="birthmonth" #birthmonth="ngModel"> -
+                            <input type="number" class="form-control birth" id="birthday" placeholder="dd" [ngClass]="{'error': birthError}"
+                                required [(ngModel)]="application.birth_day" name="birthday" #birthday="ngModel"> -
+                            <input type="number" class="form-control birth" id="birthyear" placeholder="yyyy" [ngClass]="{'error': birthError}"
+                                required [(ngModel)]="application.birth_year" name="birthyear" #birthyear="ngModel"> -
                             <small *ngIf="!(birthday.valid || birthday.pristine)" class="form-text text-danger">Birthday is Required</small>
+                            <small *ngIf="!(birthmonth.valid || birthmonth.pristine)" class="form-text text-danger">Birth month is Required</small>
+                            <small *ngIf="!(birthyear.valid || birthyear.pristine)" class="form-text text-danger">Birth year is Required</small>
                             <small *ngIf="birthError != ''" class="form-text text-danger">{{birthError}}</small>
                         </div>
                         <div class="form-group">

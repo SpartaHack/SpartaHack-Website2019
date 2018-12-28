@@ -190,10 +190,10 @@ export class ApplyAndEditComponent implements OnInit {
         delete this.application.accepted_date;
 
         //split birth entry
-        let birthArray = this.birthdayString.split("-");
-        this.application.birth_day = Number(birthArray[2])
-        this.application.birth_month = Number(birthArray[1])
-        this.application.birth_year = Number(birthArray[0])
+        // let birthArray = this.birthdayString.split("-");
+        // this.application.birth_day = Number(birthArray[2])
+        // this.application.birth_month = Number(birthArray[1])
+        // this.application.birth_year = Number(birthArray[0])
 
         this.application.major = [];
         for (let major of this.selectedMajors) {

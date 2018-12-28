@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
                 //Save variables needed to load dashboard
                 window.sessionStorage.setItem('application id', String(response.application_id))
                 window.sessionStorage.setItem('user id', String(response.id))
+                window.sessionStorage.setItem('rsvp id', String(response.rsvp_id))
 
                 //Required to be passed in every header for restricted access pages
                 window.sessionStorage.setItem('auth token', String(response.auth_token))

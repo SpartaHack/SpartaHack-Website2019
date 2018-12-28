@@ -2,6 +2,7 @@ import { User } from './../shared/user/user.model';
 import { Application } from './../shared/application/application.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Rsvp } from './rsvp/rsvp.model';
 
 @Component({
     selector: 'dashboard',
@@ -13,15 +14,19 @@ export class DashboardComponent implements OnInit {
 
     application: Application;
     user: User;
+    rsvp: Rsvp = null;
 
     not_signed_up: boolean = false;
+    no_rsvp :boolean = false;
     decisionMade: boolean = false;
+    accepted: boolean = false;
 
     managing: boolean = false;
 
     showingChangePassword: boolean = false;
     showingEditApplication: boolean = false;
     showingDeleteAccount: boolean = false;
+    showingRsvp: boolean = false;
 
     adminButtonEnabled: boolean = false;
 
@@ -57,7 +62,18 @@ export class DashboardComponent implements OnInit {
             if(this.application.status != 'Applied')
             {
                 this.decisionMade = true;
+                if(this.application.status == 'Accepted') {
+                    this.accepted = true;
+                }
             }
+        }
+        if(this.route.snapshot.data['rsvp'].no_rsvp)
+        {
+            this.no_rsvp = true;
+        }
+        else 
+        {
+            this.rsvp = this.route.snapshot.data['rsvp'];
         }
     }
 
@@ -81,6 +97,13 @@ export class DashboardComponent implements OnInit {
     }
     onDeleteClosed() {
         this.showingDeleteAccount = false;
+    }
+
+    onRsvp() {
+        this.showingRsvp = true;
+    }
+    onRsvpClosed() {
+        this.showingRsvp = false;
     }
 
     onEdit() {
