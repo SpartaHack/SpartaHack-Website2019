@@ -1,6 +1,7 @@
 import { MailingListService } from './mailing-list.service';
 import { MailMember } from './mailing-list.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'mailing-list',
@@ -9,8 +10,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class MailingListComponent implements OnInit {
 
-    //Once user clicks button, display the form
-    active: boolean
     //Once User has submitted, close form
     submitted: boolean
 
@@ -25,22 +24,20 @@ export class MailingListComponent implements OnInit {
     }
 
     constructor(
-        private mailService: MailingListService
+        private mailService: MailingListService,
+        private router: Router
     ) { }
 
     ngOnInit() { }
 
-    activate() {
-        this.active = true;
-    }
 
     cancel() {
-        this.active = false;
         this.member = {
             email: '',
             firstName: '',
             lastName: ''
         }
+        this.router.navigate(['']);
     }
 
     onSubmit() {
