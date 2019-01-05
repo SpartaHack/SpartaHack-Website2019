@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Rsvp } from './rsvp.model';
 import { RsvpService } from './rsvp.service';
-import {FileValidator} from './file-input.validator';
+import { FileValidator } from './file-input.validator';
 
 class Item {
     item_id: number = 0;
@@ -49,13 +49,13 @@ export class RsvpComponent {
     @ViewChild("resume_data") resume;
 
     shirtSizes: string[] = [
-        'Unisex XS',
+        
         'Unisex S',
         'Unisex M',
         'Unisex L',
         'Unisex XL',
         'Unisex XXL',
-        "Women's XS",
+       
         "Women's S",
         "Women's M",
         "Women's L",

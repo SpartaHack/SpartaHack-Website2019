@@ -1,7 +1,7 @@
 import { AllApplicationResolver } from './shared/application/all-application.resolver';
 import { AdminComponent } from './admin/admin.component';
 import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
-//import { MailingListComponent } from './mailing-list/mailing-list.component';
+import { MailingListComponent } from './mailing-list/mailing-list.component';
 import { ApplicationResolver } from './shared/application/application.resolver';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateAccountComponent } from './account/create/create-account.component';
@@ -18,7 +18,7 @@ import { ReviewApplicationsComponent } from './admin/review-applications/review-
 import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
 
 const routes: Routes = [
-    //{ path: 'subscribe', component: MailingListComponent },
+    { path: 'volunteer', component: MailingListComponent },
 
     //Open Paths
     { path: '', component: HomeComponent },

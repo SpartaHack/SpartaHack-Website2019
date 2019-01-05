@@ -21,9 +21,9 @@ export class MailingListService {
                 .set('FNAME', member.firstName)
                 .set('LNAME', member.lastName)
 				.set('EMAIL', member.email)
-				.set('b_03bbf4682a83a01eb78a6f8ae_19195e58a9', ''); // hidden input name
+				.set('b_03bbf4682a83a01eb78a6f8ae_ff731469ad', ''); // hidden input name
 
-        let mailChimpURL = 'https://spartahack.us9.list-manage.com/subscribe/post-json?u=03bbf4682a83a01eb78a6f8ae&id=19195e58a9&' + params.toString()
+        let mailChimpURL = 'https://spartahack.us9.list-manage.com/subscribe/post-json?u=03bbf4682a83a01eb78a6f8ae&id=ff731469ad&' + params.toString()
 
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set

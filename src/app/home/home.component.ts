@@ -79,6 +79,10 @@ export class HomeComponent implements OnInit {
         window.location.href = "https://drive.google.com/open?id=1mTQGKFJYCI8Y-v9X7MZiiy4aRwm0Eg9t";
     }
 
+    volunteerClick() {
+        this.router.navigate(['volunteer']);
+    }
+
     goToUrl(url: string) {
         this.document.location.href = url;
     }
