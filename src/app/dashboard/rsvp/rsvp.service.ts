@@ -75,7 +75,7 @@ export class RsvpService {
         {
             return throwError(
                 {
-                    message: "An Error Occurred, please try again."
+                    message: error.status + ": " + error.statusText
                 }
             );
         }

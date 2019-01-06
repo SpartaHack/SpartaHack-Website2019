@@ -117,7 +117,7 @@ export class RsvpComponent {
                     }
                     else
                     {
-                        this.error = "Something is not right! Double check your info and try again."
+                        this.error = error.status + ": " + error.message
                     }
                 }
             )
@@ -142,7 +142,7 @@ export class RsvpComponent {
                     }
                     else
                     {
-                        this.error = "Something is not right! Double check your info and try again."
+                        this.error = error.status + ": " + error.message
                     }
                 }
             )
