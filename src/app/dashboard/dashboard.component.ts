@@ -104,6 +104,7 @@ export class DashboardComponent implements OnInit {
     }
     onRsvpClosed() {
         this.showingRsvp = false;
+        this.no_rsvp = false;
     }
 
     onEdit() {
