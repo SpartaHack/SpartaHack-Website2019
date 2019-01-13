@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 184.77 38.04" style="enable-background:new 0 0 184.77 38.04;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'SegoeUI';}
+	.st3{font-size:34.3844px;}
+</style>
+<rect x="-1.57" class="st0" width="186.34" height="38.04"/>
+<g id="icon">
+	<path class="st1" d="M12.25,25.04v-0.22c0-0.25,0.2-0.45,0.45-0.45h3.8c0.25,0,0.45,0.2,0.45,0.45v0.22c0,0.25-0.2,0.45-0.45,0.45
+		H12.7C12.46,25.48,12.25,25.28,12.25,25.04z"/>
+	<path class="st1" d="M7.77,9.77V9.55c0-0.25,0.2-0.45,0.45-0.45h3.8c0.25,0,0.45,0.2,0.45,0.45v0.22c0,0.25-0.2,0.45-0.45,0.45
+		H8.21C7.96,10.22,7.77,10.02,7.77,9.77z"/>
+	<path class="st1" d="M3.48,17.25v-0.22c0-0.25,0.2-0.45,0.45-0.45h3.8c0.25,0,0.45,0.2,0.45,0.45v0.22c0,0.25-0.2,0.45-0.45,0.45
+		h-3.8C3.68,17.69,3.48,17.49,3.48,17.25z"/>
+	<g>
+		<path class="st1" d="M15.44,24.08V5.87c0-0.3-0.24-0.54-0.54-0.54h-0.61c-0.3,0-0.54,0.24-0.54,0.54v18.21H15.44z"/>
+		<rect x="13.76" y="25.77" class="st1" width="1.68" height="2.1"/>
+	</g>
+	<g>
+		<path class="st1" d="M9.37,10.5v17.87c0,0.3,0.24,0.54,0.54,0.54h0.61c0.3,0,0.54-0.24,0.54-0.54V10.5H9.37z"/>
+		<rect x="9.37" y="6.08" class="st1" width="1.68" height="2.74"/>
+	</g>
+	<g>
+		<path class="st1" d="M6.68,16.36V5.87c0-0.3-0.24-0.54-0.54-0.54H5.53C5.24,5.33,5,5.57,5,5.87v10.5H6.68z"/>
+		<rect x="5" y="18.05" class="st1" width="1.68" height="9.81"/>
+	</g>
+	<g id="dots">
+		<rect x="4.95" y="28.63" class="st1" width="0.62" height="0.62"/>
+		<rect x="4.57" y="29.66" class="st1" width="0.46" height="0.46"/>
+		<rect x="6.25" y="28.42" class="st1" width="0.42" height="0.42"/>
+		<rect x="5.77" y="29.53" class="st1" width="0.27" height="0.27"/>
+		<rect x="6.64" y="29.21" class="st1" width="0.9" height="0.9"/>
+		<rect x="15.09" y="29.5" class="st1" width="0.62" height="0.62"/>
+		<rect x="15.62" y="28.62" class="st1" width="0.46" height="0.46"/>
+		<rect x="13.99" y="29.91" class="st1" width="0.42" height="0.42"/>
+		<rect x="14.62" y="28.95" class="st1" width="0.27" height="0.27"/>
+		<rect x="13.12" y="28.64" class="st1" width="0.9" height="0.9"/>
+		<rect x="9.14" y="4.76" class="st1" width="0.62" height="0.62"/>
+		<rect x="8.76" y="3.89" class="st1" width="0.46" height="0.46"/>
+		<rect x="10.44" y="5.16" class="st1" width="0.42" height="0.42"/>
+		<rect x="9.95" y="4.21" class="st1" width="0.27" height="0.27"/>
+		<rect x="10.83" y="3.89" class="st1" width="0.9" height="0.9"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 19.4587 29.5979)" class="st1 st2 st3">Dashboard</text>
+</svg>
