@@ -1,6 +1,6 @@
-<local-header [title]="'Dashboard'"></local-header>
+<local-header [title]="'assets/images/menu-icons/dashboard'"></local-header>
 
-<div *ngIf="!managing">
+<div *ngIf="!managing && !showingRsvp && !showingChangePassword && !showingEditApplication && !showingDeleteAccount">
     <div class="row justify-content-center mb-4">
         <div class="col-10 col-md-8">
             <h3>Greetings, {{user.first_name}}!</h3>
@@ -11,15 +11,22 @@
     </div>
     <div class="row justify-content-center mb-4">
         <div class="col-10 col-md-8" *ngIf="decisionMade">
-            <div class="card" *ngIf="application.status == 'Accepted'">
+            <div class="card" *ngIf="accepted">
                 <div class="card-body">
                     <h5 class="card-title">Welcome!</h5>
                     <p class="card-text">You have been accepted to attend Spartahack V! Be on the lookout for more information via email as the event gets closer.</p>
-                    <p class="card-text">See you in January!</p>
+                    <div *ngIf="no_rsvp">
+                        <p class="card-text">So we know to expect you, please RSVP below.</p>
+                        <button class="btn btn-primary btn-block mb-3" (click)="onRsvp()">Add your RSVP!</button>
+                    </div>
+                    <div *ngIf="!no_rsvp">
+                        <p class="card-text">You're all set! See you in January!</p>
+                        <!-- <button class="btn btn-primary btn-block mb-3" (click)="onRsvp()">Edit your RSVP!</button> -->
+                    </div>
                     <p class="card-text small">Questions? read <a (click)='onFaq()'>the FAQ</a>.</p>
                 </div>
             </div>
-            <div class="card" *ngIf="application.status == 'Denied'">
+            <div class="card" *ngIf="!accepted">
                 <div class="card-body">
                     <p class="card-text">Unfortunately, we are not able to offer you a spot at SpartaHack at this time.</p>
                 </div>
@@ -38,7 +45,7 @@
     </div>
 </div>
 
-<div *ngIf="managing && !showingChangePassword && !showingEditApplication && !showingDeleteAccount">
+<div *ngIf="managing && !showingRsvp && !showingChangePassword && !showingEditApplication && !showingDeleteAccount">
     <div class="row justify-content-center mb-4">
         <div class="col-10 col-md-8">
             <h3>Account Management</h3>
@@ -70,4 +77,5 @@
     (closed)="onPasswordClosed()"></change-password>
 <delete-account style="z-index: 100;" [showing]="showingDeleteAccount" [userID]="user.id"
     (closed)="onDeleteClosed()"></delete-account>
-
+<rsvp style="z-index: 100;" [showing]="showingRsvp" [oldRsvp]="rsvp"
+    (closed)="onRsvpClosed()"></rsvp>

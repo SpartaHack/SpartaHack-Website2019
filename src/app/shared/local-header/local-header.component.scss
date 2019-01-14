@@ -1,0 +1,10 @@
+//Adapts local header for images/replaces the inline style
+div div div {
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+
+  img {
+    height: 50px;
+    width: auto;
+  }
+}
