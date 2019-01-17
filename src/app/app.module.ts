@@ -1,3 +1,15 @@
+import { PrizeResolver } from './live/prizes/prizes.resolver';
+import { ScheduleService } from './live/schedule/schedule.service';
+import { ResourceService } from './live/resources/resources.service';
+import { ResourceResolver } from './live/resources/resources.resolver';
+import { PrizeService } from './live/prizes/prizes.service';
+import { AnnouncementResolver } from './live/announcements/announcements.resolver';
+import { AnnouncementService } from './live/announcements/announcements.service';
+import { LiveComponent } from './live/live.component';
+import { ResourcesComponent } from './live/resources/resources.component';
+import { PrizesComponent } from './live/prizes/prizes.component';
+import { LiveFaqComponent } from './live/faq/live-faq.component';
+import { AnnouncementsComponent } from './live/announcements/announcements.component';
 import { FileValidator } from './dashboard/rsvp/file-input.validator';
 import { FileValueAccessor } from './dashboard/rsvp/file-control-value-accessor';
 import { AllApplicationResolver } from './shared/application/all-application.resolver';
@@ -42,6 +54,8 @@ import { ReviewApplicationsComponent } from './admin/review-applications/review-
 import { RsvpService } from './dashboard/rsvp/rsvp.service';
 import { RsvpComponent } from './dashboard/rsvp/rsvp.component';
 import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
+import { ScheduleComponent } from './live/schedule/schedule.component';
+import { ScheduleResolver } from './live/schedule/schedule.resolver';
 
 @NgModule({
   declarations: [
@@ -66,7 +80,14 @@ import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
     ReviewApplicationsComponent,
     RsvpComponent,
     FileValueAccessor,
-    FileValidator
+    FileValidator,
+    //Live site
+    AnnouncementsComponent,
+    LiveFaqComponent,
+    PrizesComponent,
+    ResourcesComponent,
+    ScheduleComponent,
+    LiveComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +112,15 @@ import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
     ApplicationResolver,
     AllApplicationResolver,
     RsvpService,
-    RsvpResolver
+    RsvpResolver,
+    AnnouncementService,
+    AnnouncementResolver,
+    PrizeResolver,
+    PrizeService,
+    ResourceResolver,
+    ResourceService,
+    ScheduleResolver,
+    ScheduleService
   ],
   bootstrap: [AppComponent]
 })

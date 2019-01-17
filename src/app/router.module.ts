@@ -1,3 +1,4 @@
+import { LiveComponent } from './live/live.component';
 import { AllApplicationResolver } from './shared/application/all-application.resolver';
 import { AdminComponent } from './admin/admin.component';
 import { ApplyAndEditComponent } from './apply-and-edit/apply-and-edit.component';
@@ -52,6 +53,12 @@ const routes: Routes = [
             applications: AllApplicationResolver
         } 
     },
+
+    { path: 'live', component: LiveComponent,
+        resolve: {
+            faqs: FaqResolver
+        } 
+    }
 
 ];
 
