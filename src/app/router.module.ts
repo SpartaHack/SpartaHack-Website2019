@@ -27,7 +27,8 @@ const routes: Routes = [
     { path: 'volunteer', component: MailingListComponent },
 
     //Open Paths
-    { path: '', component: HomeComponent },
+    { path: '', redirectTo: 'live', pathMatch: 'full'},
+    { path: 'static', component: HomeComponent },
     { path: 'faq', component: FaqComponent,
         resolve: {
             faqs: FaqResolver

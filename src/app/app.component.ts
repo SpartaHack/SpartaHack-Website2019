@@ -17,7 +17,7 @@ export class AppComponent {
       if(event instanceof NavigationEnd) {
           //See if there is any state change
           window.scroll(0,0);
-          if(event.url.includes('live'))
+          if(event.urlAfterRedirects.includes('live'))
           {
             this.badgeEnabled = false;
           }
