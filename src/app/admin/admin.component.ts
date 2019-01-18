@@ -12,6 +12,7 @@ import { UserService } from '../shared/user/user.service';
 export class AdminComponent implements OnInit {
 
     user: User;
+    canReview: boolean = true;
 
     constructor(
         private userService: UserService,
@@ -26,6 +27,9 @@ export class AdminComponent implements OnInit {
         }
         else if(!this.userService.isAdmin()) {
             this.router.navigate(['']);
+        }
+        if(this.userService.isVolunteer()) {
+            this.canReview = false;
         }
     }
 

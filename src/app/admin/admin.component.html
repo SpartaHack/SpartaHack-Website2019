@@ -1,6 +1,6 @@
 <local-header [title]="'Admin Dashboard'"></local-header>
 
-<div class="row mb-2">
+<div *ngIf="canReview" class="row mb-2">
     <div class="col-12 col-md-6 mb-2 tall-column">
         <button class="btn btn-primary btn-block" (click)="onReview()">Review Applications</button>
     </div>

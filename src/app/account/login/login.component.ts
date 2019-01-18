@@ -50,6 +50,9 @@ export class LoginComponent implements OnInit {
                 //Set admin status. If they are not an admin on login, they never will be.
                 if(response.role == "organizer" || response.role == "director" || response.role == "volunteer") {
                     window.sessionStorage.setItem('admin', "True");
+                    if(response.role == "volunteer") {
+                        window.sessionStorage.setItem('volunteer', "True");
+                    }
                 }
 
                 //Navigate Based on application status

@@ -109,6 +109,11 @@ export class UserService {
         return window.sessionStorage.getItem('admin') == "True";
     }
 
+    isVolunteer() {
+        return window.sessionStorage.getItem('volunteer') == "True";
+
+    }
+
     private handleError(error: HttpErrorResponse) {
         if(error.error.error_list != {})
         {
