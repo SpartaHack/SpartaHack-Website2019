@@ -1,0 +1,33 @@
+.logo {
+    max-width: 64px;
+    max-height: 64px;
+}
+.logo-font {
+    font-family: 'StormFaze', sans-serif;
+    font-size: 2.75rem;
+    text-align: center;
+    color: #20044f;
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+    @media (min-width: 1000px) {
+        font-size: 4.5rem;
+    }
+}
+.title {
+    display: inline;
+    font-family: 'StormFaze'; 
+    font-size: 2rem;
+    @media (max-width: 410px) {
+        font-size: 1.5rem
+    }
+    @media (max-width: 360px) {
+        font-size: 1.25rem
+    }
+}
+.live {
+    text-align: center;
+    font-size: 2rem;
+    margin: -2rem auto -1rem auto;
+}

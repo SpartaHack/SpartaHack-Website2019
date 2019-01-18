@@ -30,6 +30,24 @@ export class UserService {
             )
     }
 
+    getAllUsers(): Observable<User[]> {
+
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        //Add a new User
+        return this.httpClient.get<User[]>(environment.baseUrl + "/users", httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
     deleteUser(userId: number): Observable<any> {
         let httpOptions = {
             headers: new HttpHeaders(
@@ -58,6 +76,26 @@ export class UserService {
         };
 
         return this.httpClient.post<User>(environment.baseUrl + "/users/change_password", passwords, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
+    checkIn(id: number): Observable<any> {
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        let data = {
+            "id": id
+        }
+
+        return this.httpClient.post<User>(environment.baseUrl + "/checkin", data, httpOptions)
             .pipe(
                 catchError(this.handleError)
             )

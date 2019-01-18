@@ -1,0 +1,117 @@
+.scrolling {
+    display: inline-block;
+    position: relative;
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    //border: 1px solid black;
+    padding: 0;
+
+}
+
+.card {
+  background-color: #612f69;
+}
+#faq-filter {
+  max-width: 40%;
+  margin-left: 5%;
+  padding: 12.5% auto 12.5% auto;
+  display: block;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: #634168b0;
+  color: white;
+}
+#faq-filter::placeholder {
+  color: white;
+}
+#faq-list {
+  //Fixes awkward border-radius interactions
+  height: 380px;
+  margin-top: 10px;
+
+  //Moves the scroll bar to the left hand side
+  transform: scaleX(-1);
+  div{
+    transform: scaleX(-1);
+
+    font-size: 1.5rem;
+    button{
+      max-width: 95%;
+      margin: auto;
+
+      //Text wrap on the buttons
+      white-space: normal;
+
+      border-bottom: 2px solid #f0ebef;
+      border-radius: 0;
+
+      background: none;
+      color: #ebebeb;
+    }
+
+    button:focus, button:hover, button:active{
+      max-width: 100%;
+      background: #f0ebef;
+      border: none;
+      color: black;
+      outline: none;
+    }
+  }
+}
+#content-area{
+  background: #f0ebef;
+  border-radius: 10px;
+
+  div {
+    height: 100%;
+    color: black;
+    border: none;
+
+    div{
+      h5 {
+        width: 95%;
+        margin: auto;
+        text-align: center;
+      }
+
+      div {
+        height: 2px;
+        width: 80%;
+        margin: 2% auto 2% auto;
+        background: #dbdbdb;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar{
+  width: 2.5%;
+  background-color: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-track {
+  //background: #f0ebef;
+  background: #5f1a69;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  //background: #5f1a69;
+  background: #f0ebef;
+  border-radius: 10px;
+}
+
+@media (max-width: 430px) {
+  #faq-list {
+    margin-top: 2.5%;
+    height: 125px;
+  }
+  #faq-filter {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .scrolling {
+    height: 275px;
+  }
+}
