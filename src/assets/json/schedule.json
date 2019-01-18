@@ -1,0 +1,275 @@
+[
+ {
+   "event": "Sponsor Check-in",
+   "day": "Friday",
+   "time": "5-8 PM",
+   "location": "Bus Loop Stairwell",
+   "type": "Logistics"
+ },
+ {
+   "event": "Hacker Check-in",
+   "day": "Friday",
+   "time": "6-8:30 PM",
+   "location": "B115",
+   "type": "Logistics"
+ },
+ {
+   "event": "Dinner",
+   "day": "Friday",
+   "time": "7-8 PM",
+   "location": "B Atrium",
+   "type": "Food"
+ },
+ {
+   "event": "Late Check-in",
+   "day": "Friday",
+   "time": "8:30 PM and on",
+   "location": "A136 (Help Desk)",
+   "type": "Logistics"
+ },
+ {
+   "event": "Opening Ceremony",
+   "day": "Friday",
+   "time": "9-10:30 PM",
+   "location": "B115",
+   "type": "Event"
+ },
+ {
+   "event": "Sparty Here",
+   "day": "Friday",
+   "time": "10-10:45 PM",
+   "location": "Everywhere!",
+   "type": "Logistics"
+ },
+ {
+   "event": "Team Forming",
+   "day": "Friday",
+   "time": "10:30-11:30 PM",
+   "location": "B106",
+   "type": "Event"
+ },
+ {
+   "event": "Hardware Lab Opens",
+   "day": "Friday",
+   "time": "10:00 PM",
+   "location": "A136 (Help Desk)",
+   "type": "Logistics"
+ },
+ {
+   "event": "Automotive Hacking & IoT Solved!",
+   "day": "Friday",
+   "time": "11-12 PM",
+   "location": "B117",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "Hacking Begins",
+   "day": "Saturday",
+   "time": "Midnight",
+   "location": "EVERYWHERE!",
+   "type": "Logistics"
+ },
+ {
+   "event": "Midnight Snack",
+   "day": "Saturday",
+   "time": "12:30-1:00 AM",
+   "location": "TCS Lounge",
+   "type": "Food"
+ },
+ {
+   "event": "Nap Rooms Open",
+   "day": "Saturday",
+   "time": "1:00 AM",
+   "location": "3rd floor A Wing",
+   "type": "Logistics"
+ },
+ {
+   "event": "MLH Cup Stacking",
+   "day": "Saturday",
+   "time": "1-2 AM",
+   "location": "B115",
+   "type": "Event"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "2-3 AM",
+   "location": "B115",
+   "type": "Event"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "3-5 AM",
+   "location": "B106",
+   "type": "Event"
+ },
+ {
+   "event": "Breakfast",
+   "day": "Saturday",
+   "time": "7-9 AM",
+   "location": "A120 (SpartaSnack)",
+   "type": "Food"
+ },
+ {
+   "event": "Intro to Google Cloud Platform",
+   "day": "Saturday",
+   "time": "10-11 AM",
+   "location": "B119",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "How to Create a Personalized User Experience: Framing Your Design Challenge",
+   "day": "Saturday",
+   "time": "11-noon",
+   "location": "B117",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "Lunch",
+   "day": "Saturday",
+   "time": "Noon-1 PM",
+   "location": "B Atrium",
+   "type": "Food"
+ },
+ {
+   "event": "FullStack: From Development to Deployment",
+   "day": "Saturday",
+   "time": "1-2 PM",
+   "location": "B119",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "API's - What they are and how to use them",
+   "day": "Saturday",
+   "time": "2-3 PM",
+   "location": "B117",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "TCS Tech Talk",
+   "day": "Saturday",
+   "time": "3-4 PM",
+   "location": "B119",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "5-6 PM",
+   "location": "B117",
+   "type": "Event"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "6-7 PM",
+   "location": "B106",
+   "type": "Event"
+ },
+ {
+   "event": "Dinner",
+   "day": "Saturday",
+   "time": "6-7 PM",
+   "location": "B Atrium",
+   "type": "Food"
+ },
+ {
+   "event": "Therapy Dogs",
+   "day": "Saturday",
+   "time": "7-9 PM",
+   "location": "B106",
+   "type": "Event"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "7:30-8:30 PM",
+   "location": "B100",
+   "type": "Event"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "9-10 PM",
+   "location": "B100",
+   "type": "Event"
+ },
+ {
+   "event": "SVGs - An Intro to More Rapid, Scaleable Front End Development",
+   "day": "Saturday",
+   "time": "10:30-11:30 PM",
+   "location": "B100",
+   "type": "Tech Talk"
+ },
+ {
+   "event": "TBD MINI EVENT",
+   "day": "Saturday",
+   "time": "11:30 PM -1 AM",
+   "location": "B106",
+   "type": "Event"
+ },
+ {
+   "event": "Midnight Snack",
+   "day": "Saturday",
+   "time": "Midnight",
+   "location": "B Atrium",
+   "type": "Food"
+ },
+ {
+   "event": "Jay Freeman a.k.a. saurik",
+   "day": "Sunday",
+   "time": "12:30-5:30 AM",
+   "location": "B117",
+   "type": "Event"
+ },
+ {
+   "event": "Breakfast",
+   "day": "Sunday",
+   "time": "7-9 AM",
+   "location": "A120 (SpartaSnack)",
+   "type": "Food"
+ },
+ {
+   "event": "Judge Registration",
+   "day": "Sunday",
+   "time": "10-noon",
+   "location": "B100",
+   "type": "Logistics"
+ },
+ {
+   "event": "Hacking Ends",
+   "day": "Sunday",
+   "time": "Noon",
+   "location": "spartahackV.devpost.com",
+   "type": "Logistics"
+ },
+ {
+   "event": "Lunch",
+   "day": "Sunday",
+   "time": "Noon-1 PM",
+   "location": "A120 (SpartaSnack)",
+   "type": "Food"
+ },
+ {
+   "event": "Judging Assignments",
+   "day": "Sunday",
+   "time": "12:45 PM",
+   "location": "B100",
+   "type": "Logistics"
+ },
+ {
+   "event": "Hack Expo",
+   "day": "Sunday",
+   "time": "1-3:30 PM",
+   "location": "B Hallway & Atrium",
+   "type": "Event"
+ },
+ {
+   "event": "Closing Ceremony",
+   "day": "Sunday",
+   "time": "4-5:30 PM",
+   "location": "B115",
+   "type": "Event"
+ }
+]

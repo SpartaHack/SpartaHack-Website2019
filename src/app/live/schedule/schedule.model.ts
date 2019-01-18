@@ -1,3 +1,7 @@
 export class Schedule {
-    //TBD
+    event: string = "";
+    day: string = "";
+    time: string = "";
+    location: string = "";
+    type: string = "";
 }

@@ -20,7 +20,7 @@ export class PrizeService {
 
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set
-        return this.httpClient.get<Prize[]>(environment.baseUrl + "TBD", httpOptions)
+        return this.httpClient.get<Prize[]>("assets/json/prizes.json", httpOptions)
             .pipe(
                 catchError(this.handleError)
             )

@@ -1,0 +1,41 @@
+<local-header [title]="'Check In'"></local-header>
+
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 mt-4"> 
+        <h3 style="text-align: center;">Check In User</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div *ngIf="!emailEntered">
+                    <p style="color: black">Enter a user's email</p>
+                    <form #checkEmailForm="ngForm">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" maxlength="50"
+                                required [(ngModel)]="emailToCheck" name="email" #resetEmailText="ngModel"> 
+                            <small *ngIf="!(emailText.valid || emailText.pristine)" class="form-text text-danger">Email is Required</small>
+                        </div>
+                        <button type="button" [disabled]="!checkEmailForm.valid" (click)="onCheckConfirm()" class="btn btn-primary mr-2">Submit</button>
+                        <button type="button" (click)="onCheckCancel()" class="btn btn-primary mr-2">Cancel</button>
+                    </form>
+                    <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+                </div>
+                <div *ngIf="emailEntered">
+                    <div *ngIf="userExists">
+                        <p style="color: black">This User exists!</p>
+                        <button type="button" (click)="onCheckIn()" class="btn btn-primary mr-2">Check User In!</button>
+                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Cancel</button>
+                    </div>
+                    <div *ngIf="!userExists">
+                        <p style="color: black">This User does not exist.</p>
+                        <button type="button" (click)="onCheckIn()" class="btn btn-primary mr-2">Check User In!</button>
+                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

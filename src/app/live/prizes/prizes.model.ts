@@ -1,3 +1,6 @@
 export class Prize {
-    //TBD
+    sponsor: string = "";
+    name: string = "";
+    prize: string = "";
+    resource: string = "";
 }

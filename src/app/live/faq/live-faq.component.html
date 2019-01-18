@@ -4,7 +4,7 @@
   <input class="col-sm col-md-6" id="faq-filter" type="text" #box (keyup.enter)="addFilter(box.value); box.value=''" placeholder="Search..."/>
 </div> -->
 
-<div class="row mt-4">
+<div class="row">
     <div class="col-sm col-md-6 scrolling" id="faq-list">
         <div *ngFor="let faq of faqs">
             <button class="btn faq-button btn-block" [ngClass]="{'faq-first': first}" (click)="onSelected(faq)">{{faq.question}}</button>

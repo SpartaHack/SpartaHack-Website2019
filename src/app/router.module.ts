@@ -1,3 +1,5 @@
+import { PrizeResolver } from './live/prizes/prizes.resolver';
+import { AnnouncementResolver } from './live/announcements/announcements.resolver';
 import { LiveComponent } from './live/live.component';
 import { AllApplicationResolver } from './shared/application/all-application.resolver';
 import { AdminComponent } from './admin/admin.component';
@@ -17,6 +19,7 @@ import { ResetComponent } from './account/reset/reset.component';
 import { SendResetComponent } from './account/reset/send-reset.component';
 import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
 import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
+import { ScheduleResolver } from './live/schedule/schedule.resolver';
 
 const routes: Routes = [
     { path: 'volunteer', component: MailingListComponent },
@@ -56,7 +59,10 @@ const routes: Routes = [
 
     { path: 'live', component: LiveComponent,
         resolve: {
-            faqs: FaqResolver
+            faqs: FaqResolver,
+            schedule: ScheduleResolver,
+            announcements: AnnouncementResolver,
+            prizes: PrizeResolver
         } 
     }
 

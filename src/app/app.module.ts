@@ -1,3 +1,4 @@
+import { MapComponent } from './live/map/map.component';
 import { PrizeResolver } from './live/prizes/prizes.resolver';
 import { ScheduleService } from './live/schedule/schedule.service';
 import { ResourceService } from './live/resources/resources.service';
@@ -87,7 +88,8 @@ import { ScheduleResolver } from './live/schedule/schedule.resolver';
     PrizesComponent,
     ResourcesComponent,
     ScheduleComponent,
-    LiveComponent
+    LiveComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

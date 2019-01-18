@@ -20,7 +20,7 @@ export class ScheduleService {
 
         //get the user information based on username
         //Eventually, this makes the call to the API, Not a local data set
-        return this.httpClient.get<Schedule[]>(environment.baseUrl + "TBD", httpOptions)
+        return this.httpClient.get<Schedule[]>("assets/json/schedule.json", httpOptions)
             .pipe(
                 catchError(this.handleError)
             )

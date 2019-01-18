@@ -1,0 +1,92 @@
+[
+    {
+        "sponsor": "AF Group",
+        "name": "Best Customer Experience (CX) Personal Assistant for Customers or Employee",
+        "prize": "$800 to split + Amazon Echo for each team member",
+        "resource": "<a href='http://aka.ms/azure4students'> Azure for Students </a>"
+    },
+    {
+        "sponsor": "Aptiv",
+        "name": "Best Sensor Fusion",
+        "prize": "$200 to split + Particle IoT Development Kit for each team member",
+        "resource": ""
+    },
+    {
+        "sponsor": "Auto-Owners Insurance",
+        "name": "Best Hack That Helps After a Disaster/Loss",
+        "prize": "One Gaming Kit per team member - $100 Steam gift card, blanket, and gaming accessories in an Auto-Owners branded duffel bag",
+        "resource": ""
+    },
+    {
+        "sponsor": "Deloitte",
+        "name": "Best Hack for Improving Learning Experience",
+        "prize": "4 Under Armour Backpacks",
+        "resource": "<a href='https://www2.deloitte.com/us/en/pages/risk/solutions/cyber-risk-services.html?id=us:2ps:3bi:risk:eng:adv:41116:na:na:xyJ2FYjb:952189935:77515633773471:be:Brand_Cyber_Risk:Brand_Cyber_Risk_Exact:br&msclkid='> Cyber Risk Services </a>"
+    },
+    {
+        "sponsor": "Dow",
+        "name": "Best Hack for Sustainability",
+        "prize": "Tello Quadcopter for each team member",
+        "resource": ""
+    },
+    {
+        "sponsor": "Dynatrace",
+        "name": "Best TypeScript Hack",
+        "prize": "$100 Amazon Gift Card for each team member (up to 4)",
+        "resource": ""
+    },
+    {
+        "sponsor": "Google",
+        "name": "Best Use of GCP",
+        "prize": "Google Home and Google Cardboard for each team member",
+        "resource": "Providing GCP Credits"
+    },
+    {
+        "sponsor": "Intrepid Control Systems",
+        "name": "Best Use of Intrepid Hardware",
+        "prize": "$50 Amazon Gift card to each team member (up to 4)",
+        "resource": "<a href='https://github.com/intrepidcs/neoobd2_sdk'>neoOBD 2 Pro SDK </a> <a href='https://www.intrepidcs.com/products/vehicle-network-adapters/neoobd-2-pro/'>neoOBD 2 pages</a>"
+    },
+    {
+        "sponsor": "MSU IT Services/MSU Tech Store",
+        "name": "Best Hack that Enables and Improves the Spartan Experience",
+        "prize": "$200 in MSU Tech Store gift cards to split",
+        "resource": ""
+    },
+    {
+        "sponsor": "MSUFCU",
+        "name": "Best Hack that Benefits the Community",
+        "prize": "$200 to split + an Arduino starter kit per team member",
+        "resource": ""
+    },
+    {
+        "sponsor": "Nexteer Automotive",
+        "name": "Best User Interface and Human Machine Interaction",
+        "prize": "$400 in gift cards to split",
+        "resource": ""
+    },
+    {
+        "sponsor": "SendGrid",
+        "name": "Best Use of SendGrid API",
+        "prize": "first prize: $3,000 in credits, second prize: $1,500 in credits",
+        "resource": ""
+    },
+    {
+        "sponsor": "StockX",
+        "name": "Best Use of StockX API",
+        "prize": "$1000 in StockX credit to split",
+        "resource": ""
+    },
+    {
+        "sponsor": "TATA Consultancy Services.",
+        "name": "Best Hack for Automotive - Autonomous and Electrification",
+        "prize": "$500 to split",
+        "resource": ""
+    },
+    {
+        "sponsor": "TATA Consultancy Services.",
+        "name": "Best Hack for Digital Twins",
+        "prize": "$500 to split",
+        "resource": ""
+    }
+]

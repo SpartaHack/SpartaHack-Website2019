@@ -1,1 +1,11 @@
 <local-header [title]="'Schedule'"></local-header>
+
+<div class="row">
+    <div class="col scrolling">
+        <div *ngFor="let entry of schedule" class="entry">
+            <h5>{{entry.event}}</h5>
+            <p>{{entry.day}} {{entry.time}}</p>
+            <p>{{entry.location}} <span style="float: right;">{{entry.type}}</span></p>
+        </div>
+    </div>
+</div>
