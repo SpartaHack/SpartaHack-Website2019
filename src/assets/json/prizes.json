@@ -1,5 +1,23 @@
 [
     {
+        "sponsor": "SpartaHack & SendGrid",
+        "name": "1st Place",
+        "prize": "$1000 to split and $3,000 in SendGrid credits",
+        "resource": ""
+    },
+    {
+        "sponsor": "SpartaHack & SendGrid",
+        "name": "2nd Place",
+        "prize": "$750 to split and $1,500 in SendGrid credits",
+        "resource": ""
+    },
+    {
+        "sponsor": "SpartaHack",
+        "name": "3rd Place",
+        "prize": "$500 to split",
+        "resource": ""
+    },
+    {
         "sponsor": "AF Group",
         "name": "Best Customer Experience (CX) Personal Assistant for Customers or Employee",
         "prize": "$800 to split + Amazon Echo for each team member",
@@ -63,12 +81,6 @@
         "sponsor": "Nexteer Automotive",
         "name": "Best User Interface and Human Machine Interaction",
         "prize": "$400 in gift cards to split",
-        "resource": ""
-    },
-    {
-        "sponsor": "SendGrid",
-        "name": "Best Use of SendGrid API",
-        "prize": "first prize: $3,000 in credits, second prize: $1,500 in credits",
         "resource": ""
     },
     {
