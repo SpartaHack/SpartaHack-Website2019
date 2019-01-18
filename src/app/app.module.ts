@@ -1,3 +1,4 @@
+import { CheckInComponent } from './admin/check-in/check-in.component';
 import { MapComponent } from './live/map/map.component';
 import { PrizeResolver } from './live/prizes/prizes.resolver';
 import { ScheduleService } from './live/schedule/schedule.service';
@@ -57,6 +58,7 @@ import { RsvpComponent } from './dashboard/rsvp/rsvp.component';
 import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
 import { ScheduleComponent } from './live/schedule/schedule.component';
 import { ScheduleResolver } from './live/schedule/schedule.resolver';
+import { AllUserResolver } from './shared/user/all-users.resolver';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,8 @@ import { ScheduleResolver } from './live/schedule/schedule.resolver';
     ResourcesComponent,
     ScheduleComponent,
     LiveComponent,
-    MapComponent
+    MapComponent,
+    CheckInComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +125,8 @@ import { ScheduleResolver } from './live/schedule/schedule.resolver';
     ResourceResolver,
     ResourceService,
     ScheduleResolver,
-    ScheduleService
+    ScheduleService,
+    AllUserResolver
   ],
   bootstrap: [AppComponent]
 })

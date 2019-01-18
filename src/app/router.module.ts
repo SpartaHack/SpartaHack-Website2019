@@ -1,3 +1,4 @@
+import { CheckInComponent } from './admin/check-in/check-in.component';
 import { PrizeResolver } from './live/prizes/prizes.resolver';
 import { AnnouncementResolver } from './live/announcements/announcements.resolver';
 import { LiveComponent } from './live/live.component';
@@ -20,6 +21,7 @@ import { SendResetComponent } from './account/reset/send-reset.component';
 import { ReviewApplicationsComponent } from './admin/review-applications/review-applications.component';
 import { RsvpResolver } from './dashboard/rsvp/rsvp.resolver';
 import { ScheduleResolver } from './live/schedule/schedule.resolver';
+import { AllUserResolver } from './shared/user/all-users.resolver';
 
 const routes: Routes = [
     { path: 'volunteer', component: MailingListComponent },
@@ -54,6 +56,11 @@ const routes: Routes = [
     { path: 'admin/review', component: ReviewApplicationsComponent,
         resolve: {
             applications: AllApplicationResolver
+        } 
+    },
+    { path: 'admin/check-in', component: CheckInComponent,
+        resolve: {
+            users: AllUserResolver
         } 
     },
 

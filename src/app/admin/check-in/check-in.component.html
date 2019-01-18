@@ -15,13 +15,12 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text" class="form-control" id="email" maxlength="50"
-                                required [(ngModel)]="emailToCheck" name="email" #resetEmailText="ngModel"> 
-                            <small *ngIf="!(emailText.valid || emailText.pristine)" class="form-text text-danger">Email is Required</small>
+                                required [(ngModel)]="emailToCheck" name="email" #email="ngModel"> 
+                            <small *ngIf="!(email.valid || email.pristine)" class="form-text text-danger">Email is Required</small>
                         </div>
                         <button type="button" [disabled]="!checkEmailForm.valid" (click)="onCheckConfirm()" class="btn btn-primary mr-2">Submit</button>
                         <button type="button" (click)="onCheckCancel()" class="btn btn-primary mr-2">Cancel</button>
                     </form>
-                    <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
                 </div>
                 <div *ngIf="emailEntered">
                     <div *ngIf="userExists">
@@ -30,11 +29,11 @@
                         <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Cancel</button>
                     </div>
                     <div *ngIf="!userExists">
-                        <p style="color: black">This User does not exist.</p>
-                        <button type="button" (click)="onCheckIn()" class="btn btn-primary mr-2">Check User In!</button>
-                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Cancel</button>
+                        <p style="color: black">No User Found with that email. If they do not have an account, have them fill out <a href="https://goo.gl/forms/dlmaapNy1CeMe60Y2">this form.</a></p>
+                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Go Back</button>
                     </div>
                 </div>
+                <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
             </div>
         </div>
     </div>

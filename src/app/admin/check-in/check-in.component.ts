@@ -26,13 +26,23 @@ export class CheckInComponent implements OnInit {
     //Adds a checkbox for minor forms if minor
     userisMinor: boolean = false;
 
+    error = "";
+
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private applicationService: ApplicationService,
         private userService: UserService) { }
 
     ngOnInit() {
+        //Is Logged in?
+        if(!this.userService.isUserLoggedIn()) {
+            //redirect to login
+            this.router.navigate(['login']);
+        }
+        else if(!this.userService.isAdmin()) {
+            this.router.navigate(['']);
+        }
+
         this.existingUsers = this.route.snapshot.data['users'];
     }
 
@@ -44,7 +54,10 @@ export class CheckInComponent implements OnInit {
                 this.userExists = true;
                 this.selectedUser = user;
 
-                //Fins if user is minor (probably via application)
+                if(this.selectedUser.checked_in == true)
+                {
+                    this.userIsCheckedIn = true;
+                }
 
                 break;
             }
@@ -59,7 +72,14 @@ export class CheckInComponent implements OnInit {
     onCheckIn() {
         this.selectedUser.checked_in = true;
         
-        //TODO: Update user on backend
+        this.userService.checkIn(this.selectedUser.id).subscribe(
+            data => {
+                this.userIsCheckedIn = true;
+            },
+            error => {
+                this.error = "Someting went wrong!";
+            }
+        );
 
         this.resetForm();
     }

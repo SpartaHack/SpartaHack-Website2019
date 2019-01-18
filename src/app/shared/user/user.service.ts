@@ -81,6 +81,26 @@ export class UserService {
             )
     }
 
+    checkIn(id: number): Observable<any> {
+        let httpOptions = {
+            headers: new HttpHeaders(
+                { 
+                    'Content-Type': 'application/json',
+                    'X-WWW-USER-TOKEN': window.sessionStorage.getItem('auth token')
+                }
+            )
+        };
+
+        let data = {
+            "id": id
+        }
+
+        return this.httpClient.post<User>(environment.baseUrl + "/checkin", data, httpOptions)
+            .pipe(
+                catchError(this.handleError)
+            )
+    }
+
     isUserLoggedIn(): boolean {
         return Number(window.sessionStorage.getItem('user id')) != 0
     }
