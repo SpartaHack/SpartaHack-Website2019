@@ -60,7 +60,8 @@
    "day": "Friday",
    "time": "11-12 PM",
    "location": "B117",
-   "type": "Tech Talk"
+   "type": "Tech Talk",
+   "description": "Almost all modern vehicles contain multiple communication networks called CAN that ECUs use to exchange myriad of key data critical to maintaining correct operation and safety of the vehicle. Intrepid provides professional hardware & software tools that make those data available to you so that you can build your own Automotive applications. Join us and learn about vehicle networks and how you can build exciting Automotive IoT applications using Intrepid tools."
  },
  {
    "event": "Hacking Begins",
@@ -90,6 +91,13 @@
    "location": "B115",
    "type": "Event"
  },
+ {
+  "event": "Intro to Git & GitHub",
+  "day": "Saturday",
+  "time": "2-3 AM",
+  "location": "B119",
+  "type": "Tech Talk"
+  },
  {
    "event": "Breakfast",
    "day": "Saturday",
@@ -137,14 +145,16 @@
    "day": "Saturday",
    "time": "3-4 PM",
    "location": "B119",
-   "type": "Tech Talk"
+   "type": "Tech Talk",
+   "description": "Digital technologies and capabilities created by TCS that are driving innovation across industries"
  },
  {
    "event": "Framework for Business Success in a Connected Ecosystem",
    "day": "Saturday",
    "time": "4-5 PM",
    "location": "B119",
-   "type": "Tech Talk"
+   "type": "Tech Talk",
+   "description": "With rapid evolution of technologies and customer expectations in a connected world, traditional businesses are being upended by new agile startups with radically different business models. And yet, our experience shows there is an abundance of opportunities for all businesses if they leverage certain technological capabilities and adopt new behaviors."
  },
  {
    "event": "Dinner",
@@ -166,13 +176,6 @@
    "time": "9-10 PM",
    "location": "A122",
    "type": "Event"
- },
- {
-   "event": "SVGs - An Intro to More Rapid, Scaleable Front End Development",
-   "day": "Saturday",
-   "time": "10:30-11:30 PM",
-   "location": "B100",
-   "type": "Tech Talk"
  },
  {
    "event": "Midnight Snack",
