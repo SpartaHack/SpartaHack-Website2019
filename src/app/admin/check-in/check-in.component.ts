@@ -1,3 +1,4 @@
+import { Application } from './../../shared/application/application.model';
 import { ApplicationService } from 'src/app/shared/application/application.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from './../../shared/user/user.model';
@@ -15,23 +16,25 @@ export class CheckInComponent implements OnInit {
 
     emailToCheck: string = "";
     selectedUser: User = new User();
+    selectedApplication: Application = new Application();
 
     //Email form is showing or not
-    emailEntered: boolean = false;
+    emailEntered: boolean = null;
 
     //User is either: non-existent, existant, or checked in.
-    userExists: boolean = false;
-    userIsCheckedIn: boolean = false;
+    userExists: boolean = null;
+    userIsCheckedIn: boolean = null;
 
     //Adds a checkbox for minor forms if minor
-    userisMinor: boolean = false;
+    userHasApplied: boolean = null;
 
     error = "";
 
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private userService: UserService) { }
+        private userService: UserService,
+        private applicationService: ApplicationService) { }
 
     ngOnInit() {
         //Is Logged in?
@@ -47,22 +50,38 @@ export class CheckInComponent implements OnInit {
     }
 
     onCheckConfirm() {
-        for (let user of this.existingUsers)
-        {
-            if(user.email.toLowerCase() == this.emailToCheck.toLowerCase())
+        (async () => { 
+            for (let user of this.existingUsers)
             {
-                this.userExists = true;
-                this.selectedUser = user;
-
-                if(this.selectedUser.checked_in == true)
+                if(user.email.toLowerCase() == this.emailToCheck.toLowerCase())
                 {
-                    this.userIsCheckedIn = true;
+                    this.userService.getUser(user.id).subscribe(
+                        data => {
+                            this.userExists = true;
+                            this.selectedUser = data;
+                            if(this.selectedUser.checked_in == true) {
+                                this.userIsCheckedIn = true;
+                            }
+    
+                            if(this.selectedUser.application_id != null) 
+                            {
+                                this.applicationService.getApplication(this.selectedUser.application_id).subscribe(
+                                    data => {
+                                        this.selectedApplication = data;
+                                        this.userHasApplied = true;
+                                    }
+                                )
+                            }
+                        }
+                    )
+                    break;
                 }
-
-                break;
             }
-        }
-        this.emailEntered = true;
+            await delay(2000);
+            
+            this.emailEntered = true;
+        })();
+
     }
 
     onCheckCancel() {
@@ -85,11 +104,16 @@ export class CheckInComponent implements OnInit {
     }
 
     resetForm() {
+        this.error = "";
         this.emailToCheck = "";
         this.selectedUser = new User();
-        this.emailEntered = false;
-        this.userExists = false;
-        this.userIsCheckedIn = false;
-        this.userisMinor = false;
+        this.emailEntered = null;
+        this.userExists = null;
+        this.userIsCheckedIn = null;
+        this.userHasApplied = null;
     }
+}
+
+async function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
 }
