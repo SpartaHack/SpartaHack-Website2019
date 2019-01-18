@@ -1,0 +1,56 @@
+<local-header [title]="'Check In'"></local-header>
+
+<div class="row justify-content-center">
+    <div class="col-sm col-md-8 mt-4"> 
+        <h3 style="text-align: center;">Check In User</h3>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div *ngIf="!emailEntered">
+                    <p style="color: black">Enter a user's email</p>
+                    <form #checkEmailForm="ngForm">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" maxlength="50"
+                                required [(ngModel)]="emailToCheck" name="email" #email="ngModel"> 
+                            <small *ngIf="!(email.valid || email.pristine)" class="form-text text-danger">Email is Required</small>
+                        </div>
+                        <button type="button" [disabled]="!checkEmailForm.valid" (click)="onCheckConfirm()" class="btn btn-primary mr-2">Submit</button>
+                        <button type="button" (click)="onCheckCancel()" class="btn btn-primary mr-2">Cancel</button>
+                    </form>
+                </div>
+                <div *ngIf="emailEntered">
+                    <div *ngIf="userExists && userHasApplied">
+                        <p style="color: black">This User exists!</p>
+                        <p style="color: black;">Date of Birth: {{selectedApplication.birth_month}}/{{selectedApplication.birth_day}}/{{selectedApplication.birth_year}}</p>
+                        <form #checkMinorForm="ngForm">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="conduct" required
+                                        [(ngModel)]="conductChecked" name="conduct" #conduct="ngModel">
+                                    <label class="form-check-label" for="conduct">
+                                        This Attendee is over 18 or has provided all 3 forms.
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="button" [disabled]="!checkMinorForm.valid" (click)="onCheckIn()" class="btn btn-primary mr-2">Check User In!</button>
+                            <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Cancel</button>
+                        </form>
+                    </div>
+                    <div *ngIf="userExists && !userHasApplied">
+                        <p style="color: black">User Found, but no application on file. Have them fill out <a href="https://goo.gl/forms/dlmaapNy1CeMe60Y2">this form.</a></p>
+                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Go Back</button>
+                    </div>
+                    <div *ngIf="!userExists">
+                        <p style="color: black">No User Found with that email. If they do not have an account, have them fill out <a href="https://goo.gl/forms/dlmaapNy1CeMe60Y2">this form.</a></p>
+                        <button type="button" (click)="resetForm()" class="btn btn-primary mr-2">Go Back</button>
+                    </div>
+                </div>
+                <p class="text-danger mt-3" *ngIf="error != ''" [innerHTML]='error'></p>
+            </div>
+        </div>
+    </div>
+</div>

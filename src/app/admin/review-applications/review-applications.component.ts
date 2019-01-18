@@ -21,6 +21,7 @@ export class ReviewApplicationsComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        
         this.applications = this.route.snapshot.data['applications'];
 
         //Move applications to be reviewed to the top

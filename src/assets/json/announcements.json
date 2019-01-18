@@ -1,0 +1,14 @@
+[
+    {
+        "number": 0,
+        "content": "Welcome to SpartaHack! For the most up-to-date information on what's happening, join the Slack Channel <a href=\"https://spartahackv.slack.com\">here</a>!"
+    },
+    {
+        "number": 1,
+        "content": "Looking to check out hardware? You can see inventory at <a href=\"https://hardware.mlh.io\">the MLH Hardware site</a>."
+    },
+    {
+        "number": 2,
+        "content": "Use this site to explore prizes, see the schedule, and view a map."
+    }
+]

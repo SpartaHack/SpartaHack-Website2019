@@ -32,4 +32,8 @@ export class AdminComponent implements OnInit {
     onReview() {
         this.router.navigate(['admin/review']);
     }
+
+    onCheck() {
+        this.router.navigate(['admin/check-in']);
+    }
 }

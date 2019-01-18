@@ -1,0 +1,12 @@
+<local-header [title]="'Prizes'"></local-header>
+
+<div class="row">
+    <div class="col scrolling">
+        <div *ngFor="let entry of prizes" class="entry">
+            <h5>{{entry.name}}</h5>
+            <p>Prize: {{entry.prize}}</p>
+            <p>Sponsor: {{entry.sponsor}}</p>
+            <p *ngIf="entry.resource != ''" [innerHTML]="entry.resource"></p>
+        </div>
+    </div>
+</div>
