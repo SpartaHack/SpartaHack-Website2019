@@ -91,20 +91,6 @@
    "type": "Event"
  },
  {
-   "event": "TBD MINI EVENT",
-   "day": "Saturday",
-   "time": "2-3 AM",
-   "location": "B115",
-   "type": "Event"
- },
- {
-   "event": "TBD MINI EVENT",
-   "day": "Saturday",
-   "time": "3-5 AM",
-   "location": "B106",
-   "type": "Event"
- },
- {
    "event": "Breakfast",
    "day": "Saturday",
    "time": "7-9 AM",
@@ -161,13 +147,6 @@
    "type": "Tech Talk"
  },
  {
-   "event": "TBD MINI EVENT",
-   "day": "Saturday",
-   "time": "6-7 PM",
-   "location": "B106",
-   "type": "Event"
- },
- {
    "event": "Dinner",
    "day": "Saturday",
    "time": "6-7 PM",
@@ -182,17 +161,10 @@
    "type": "Event"
  },
  {
-   "event": "TBD MINI EVENT",
-   "day": "Saturday",
-   "time": "7:30-8:30 PM",
-   "location": "B100",
-   "type": "Event"
- },
- {
-   "event": "TBD MINI EVENT",
+   "event": "Smash Bros Tournament",
    "day": "Saturday",
    "time": "9-10 PM",
-   "location": "B100",
+   "location": "A122",
    "type": "Event"
  },
  {
@@ -201,13 +173,6 @@
    "time": "10:30-11:30 PM",
    "location": "B100",
    "type": "Tech Talk"
- },
- {
-   "event": "TBD MINI EVENT",
-   "day": "Saturday",
-   "time": "11:30 PM -1 AM",
-   "location": "B106",
-   "type": "Event"
  },
  {
    "event": "Midnight Snack",
