@@ -5,6 +5,7 @@
         <div *ngFor="let entry of schedule" class="entry">
             <h5>{{entry.event}}</h5>
             <p>{{entry.day}} {{entry.time}}</p>
+            <p>{{entry.presenter}}</p>
             <p>{{entry.location}} <span style="float: right;">{{entry.type}}</span></p>
             <p>{{entry.description}}</p>
         </div>
