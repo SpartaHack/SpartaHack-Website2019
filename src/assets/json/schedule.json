@@ -143,19 +143,19 @@
    "type": "Event"
  },
  {
+  "event": "MLH Cup Stacking",
+  "day": "Saturday",
+  "time": "8-9 PM",
+  "location": "B115",
+  "type": "Event"
+},
+ {
    "event": "Smash Bros Tournament",
    "day": "Saturday",
    "time": "9-10 PM",
    "location": "A122",
    "type": "Event"
  },
- {
-  "event": "MLH Cup Stacking",
-  "day": "Saturday",
-  "time": "10:30-11:30 PM",
-  "location": "B115",
-  "type": "Event"
-},
  {
    "event": "Midnight Snack",
    "day": "Saturday",
