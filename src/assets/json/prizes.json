@@ -57,6 +57,29 @@
         "sponsor": "SpartaHack",
         "name": "Best Hardware Hack",
         "prize": "$400 to split",
+    },
+    {
+        "sponsor": "MLH",
+        "name": "Best IoT Hack using a Qualcomm Device",
+        "prize": "DragonBoard 410c",
+        "resource": ""
+    },
+    {
+        "sponsor": "MLH",
+        "name": "Best Use of Snap Kit",
+        "prize": "Spectacles by Snapchat",
+        "resource": ""
+    },
+    {
+        "sponsor": "MLH",
+        "name": "Best Domain Registered with Domain.com",
+        "prize": "Raspberry Pi Kit",
+        "resource": ""
+    },
+    {
+        "sponsor": "MLH",
+        "name": "Best use of Google Cloud Platform",
+        "prize": "Google Home Mini",
         "resource": ""
     },
     {
