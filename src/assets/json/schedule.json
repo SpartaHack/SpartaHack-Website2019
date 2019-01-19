@@ -42,13 +42,6 @@
    "type": "Event"
  },
  {
-   "event": "Hardware Lab Opens",
-   "day": "Friday",
-   "time": "10:00 PM",
-   "location": "A136 (Help Desk)",
-   "type": "Logistics"
- },
- {
    "event": "Automotive Hacking & IoT Solved!",
    "day": "Friday",
    "time": "11-12 PM",
@@ -64,6 +57,13 @@
    "type": "Logistics"
  },
  {
+  "event": "Hardware Lab Opens",
+  "day": "Saturday",
+  "time": "Midnight",
+  "location": "A136 (Help Desk)",
+  "type": "Logistics"
+},
+ {
    "event": "Midnight Snack",
    "day": "Saturday",
    "time": "12:30-1:00 AM",
@@ -77,6 +77,13 @@
    "location": "3rd floor A Wing",
    "type": "Logistics"
  },
+ {
+  "event": "Blockchain Engineering By Jay Freeman AKA Saurik",
+  "day": "Saturday",
+  "time": "1-2 AM",
+  "location": "B117",
+  "type": "Tech Talk"
+},
  {
   "event": "Intro to Git & GitHub",
   "day": "Saturday",
@@ -135,13 +142,6 @@
    "location": "B106",
    "type": "Event"
  },
- {
-  "event": "Blockchain Engineering By Jay Freeman AKA Saurik",
-  "day": "Saturday",
-  "time": "7:30-8:30 PM",
-  "location": "B119",
-  "type": "Tech Talk"
-},
  {
    "event": "Smash Bros Tournament",
    "day": "Saturday",
