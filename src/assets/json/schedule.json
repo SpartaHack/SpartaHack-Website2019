@@ -14,13 +14,6 @@
    "type": "Logistics"
  },
  {
-   "event": "Dinner",
-   "day": "Friday",
-   "time": "7-8 PM",
-   "location": "B Atrium",
-   "type": "Food"
- },
- {
    "event": "Late Check-in",
    "day": "Friday",
    "time": "8:30 PM and on",
@@ -85,26 +78,12 @@
    "type": "Logistics"
  },
  {
-   "event": "MLH Cup Stacking",
-   "day": "Saturday",
-   "time": "1-2 AM",
-   "location": "B115",
-   "type": "Event"
- },
- {
   "event": "Intro to Git & GitHub",
   "day": "Saturday",
   "time": "2-3 AM",
   "location": "B119",
   "type": "Tech Talk"
   },
- {
-   "event": "Breakfast",
-   "day": "Saturday",
-   "time": "7-9 AM",
-   "location": "A120 (SpartaSnack)",
-   "type": "Food"
- },
  {
    "event": "Intro to Google Cloud Platform",
    "day": "Saturday",
@@ -118,13 +97,6 @@
    "time": "11-noon",
    "location": "B117",
    "type": "Tech Talk"
- },
- {
-   "event": "Lunch",
-   "day": "Saturday",
-   "time": "Noon-1 PM",
-   "location": "B Atrium",
-   "type": "Food"
  },
  {
    "event": "FullStack: From Development to Deployment",
@@ -157,13 +129,6 @@
    "description": "With rapid evolution of technologies and customer expectations in a connected world, traditional businesses are being upended by new agile startups with radically different business models. And yet, our experience shows there is an abundance of opportunities for all businesses if they leverage certain technological capabilities and adopt new behaviors."
  },
  {
-   "event": "Dinner",
-   "day": "Saturday",
-   "time": "6-7 PM",
-   "location": "B Atrium",
-   "type": "Food"
- },
- {
    "event": "Therapy Dogs",
    "day": "Saturday",
    "time": "7-9 PM",
@@ -171,12 +136,26 @@
    "type": "Event"
  },
  {
+  "event": "Blockchain Engineering By Jay Freeman AKA Saurik",
+  "day": "Saturday",
+  "time": "7:30-8:30 PM",
+  "location": "B119",
+  "type": "Tech Talk"
+},
+ {
    "event": "Smash Bros Tournament",
    "day": "Saturday",
    "time": "9-10 PM",
    "location": "A122",
    "type": "Event"
  },
+ {
+  "event": "MLH Cup Stacking",
+  "day": "Saturday",
+  "time": "10:30-11:30 PM",
+  "location": "B115",
+  "type": "Event"
+},
  {
    "event": "Midnight Snack",
    "day": "Saturday",
@@ -192,13 +171,6 @@
    "type": "Event"
  },
  {
-   "event": "Breakfast",
-   "day": "Sunday",
-   "time": "7-9 AM",
-   "location": "A120 (SpartaSnack)",
-   "type": "Food"
- },
- {
    "event": "Judge Registration",
    "day": "Sunday",
    "time": "10-noon",
@@ -211,13 +183,6 @@
    "time": "Noon",
    "location": "spartahackV.devpost.com",
    "type": "Logistics"
- },
- {
-   "event": "Lunch",
-   "day": "Sunday",
-   "time": "Noon-1 PM",
-   "location": "A120 (SpartaSnack)",
-   "type": "Food"
  },
  {
    "event": "Judging Assignments",
