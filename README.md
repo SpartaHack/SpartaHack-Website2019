@@ -1,2 +1,3 @@
 # SpartaHackStaticSites
-Repository for old SpartaHack websites' static sites
+
+Branch for SpartaHack 2019 static site files
