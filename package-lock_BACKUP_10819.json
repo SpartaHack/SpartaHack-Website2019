@@ -1044,11 +1044,21 @@
       "integrity": "sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=",
       "dev": true
     },
+<<<<<<< HEAD
+    "angular2-text-mask": {
+      "version": "9.0.0",
+      "resolved": "https://registry.npmjs.org/angular2-text-mask/-/angular2-text-mask-9.0.0.tgz",
+      "integrity": "sha512-iALcnhJPS1zvX48d86rgUgDe/crX6XfhZrXC4Gdlo2/YwZW7u7KJZY6/b3ieSCIWVq/E6p+wDCzeo3E6leRjDA==",
+      "requires": {
+        "text-mask-core": "^5.0.0"
+      }
+=======
     "ansi-colors": {
       "version": "3.0.6",
       "resolved": "https://registry.npmjs.org/ansi-colors/-/ansi-colors-3.0.6.tgz",
       "integrity": "sha512-rY3B55KSBMMARmGXtzaG5o+kqnCrEF99rngBq5fV+cbwJepVGhDT8eB7UhSDwsJxNsMzSQDLQAyWmgi9pfzssQ==",
       "dev": true
+>>>>>>> d7641955d1d2756b0aadc11a90819b1a6db794dd
     },
     "ansi-html": {
       "version": "0.0.7",
